@@ -1,0 +1,11 @@
+{
+  "_comment": "Word-level swaps from stiff/overused AI words to plainer alternatives.",
+  "utilize": ["use"],
+  "utilizes": ["uses"],
+  "utilizing": ["using"],
+  "facilitate": ["help with", "make easier"],
+  "leveraging": ["using"],
+  "numerous": ["many"],
+  "plethora": ["lots", "ton"],
+  "commence": ["start", "begin"]
+}
