@@ -30,6 +30,7 @@
 // Signature: (text, ctx) => { text, changes }
 
 import { findProtectedSpans } from './protected.js'
+import { applyEdits, mapIndex, splitByProtected } from './edits.js'
 
 // ---------- character maps -----------------------------------------------
 
@@ -61,83 +62,7 @@ const EM_DASH = '\u2014'
 // lower priority than `whitespace` makes the collapse win whenever it applies.
 const NBSP = '\u00A0'
 
-// ---------- edit priorities (higher wins on overlap) ---------------------
-
-const PRIORITY = {
-  chatbotLeftover: 50,
-  markdownBold: 40,
-  markdownItalic: 35,
-  emoji: 30,
-  emDash: 26,
-  typography: 25,
-  repeatedPunctuation: 20,
-  trimEdges: 15,
-  whitespace: 10,
-  nbsp: 5,
-}
-
 // ---------- shared helpers ----------------------------------------------
-
-/**
- * Apply edits to `str` in a single left-to-right pass.
- * @param {string} str
- * @param {Array<{start:number,end:number,original:string,replacement:string,rule:string}>} edits
- * @returns {{text:string, changes:Array, copied:Array<{inStart:number,inEnd:number,outStart:number}>}}
- */
-function applyEdits(str, edits) {
-  const withPrio = edits.map(e => ({ ...e, _prio: PRIORITY[e.rule] || 0 }))
-  // Sort by start ascending; on ties, higher priority first.
-  withPrio.sort((a, b) => (a.start - b.start) || (b._prio - a._prio) || (a.end - b.end))
-
-  // Drop overlaps: an edit starting before the previous kept edit's end is
-  // dropped unless it has strictly higher priority (then it replaces it).
-  const kept = []
-  for (const e of withPrio) {
-    const prev = kept[kept.length - 1]
-    if (prev && e.start < prev.end) {
-      if (e._prio > prev._prio) kept[kept.length - 1] = e
-      continue
-    }
-    kept.push(e)
-  }
-
-  let out = ''
-  let cursor = 0
-  const changes = []
-  // Ranges copied through verbatim: used to remap the length-preserving
-  // curly-quote pre-pass positions onto the final output.
-  const copied = []
-  for (const e of kept) {
-    if (e.start < cursor) continue // safety net
-    if (e.start > cursor) copied.push({ inStart: cursor, inEnd: e.start, outStart: out.length })
-    out += str.slice(cursor, e.start)
-    const start = out.length
-    out += e.replacement
-    changes.push({
-      original: e.original,
-      replacement: e.replacement,
-      rule: { stage: 'cleanup', id: e.rule },
-      start,
-      end: start + e.replacement.length,
-      // Extra, additive metadata (the contract's start/end stay output-relative).
-      inputStart: e.start,
-      inputEnd: e.end,
-    })
-    cursor = e.end
-  }
-  if (cursor < str.length) copied.push({ inStart: cursor, inEnd: str.length, outStart: out.length })
-  out += str.slice(cursor)
-
-  return { text: out, changes, copied, kept }
-}
-
-/** Map a copied-through input index to its output index, or -1 if consumed. */
-function mapIndex(copied, idx) {
-  for (const r of copied) {
-    if (idx >= r.inStart && idx < r.inEnd) return r.outStart + (idx - r.inStart)
-  }
-  return -1
-}
 
 // ---------- edit finders -------------------------------------------------
 // Each takes the original string and returns edits against it.
@@ -504,21 +429,6 @@ function applyCurlyQuotes(str) {
   return { text: out, changes }
 }
 
-// ---------- segment splitting -------------------------------------------
-
-function splitByProtected(text, spans) {
-  if (!spans || spans.length === 0) return [{ text, protected: false, offset: 0 }]
-  const segs = []
-  let cursor = 0
-  for (const s of spans) {
-    if (s.start > cursor) segs.push({ text: text.slice(cursor, s.start), protected: false, offset: cursor })
-    segs.push({ text: text.slice(s.start, s.end), protected: true, offset: s.start })
-    cursor = s.end
-  }
-  if (cursor < text.length) segs.push({ text: text.slice(cursor), protected: false, offset: cursor })
-  return segs
-}
-
 // ---------- stage entry point -------------------------------------------
 
 export function cleanup(text, ctx = {}) {
@@ -588,7 +498,7 @@ export function cleanup(text, ctx = {}) {
       ...getWhitespaceEdits(seg.text, { docStart: isDocStart, docEnd: isDocEnd }),
     ]
 
-    const { text: newSeg, changes: segChanges, copied } = applyEdits(seg.text, edits)
+    const { text: newSeg, changes: segChanges, copied } = applyEdits(seg.text, edits, 'cleanup')
 
     for (const c of segChanges) {
       allChanges.push({

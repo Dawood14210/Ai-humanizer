@@ -1,7 +1,6504 @@
 {
-  "_comment": "Stiff/AI-flavored phrases mapped to more conversational alternatives.",
-  "in conclusion": ["all in all", "at the end of the day", "to wrap up"],
-  "it is important to note that": ["keep in mind that", "worth noting:", "don't forget that"],
-  "in today's world": ["these days", "nowadays"],
-  "it goes without saying": ["obviously", "naturally"]
+  "version": "1.4.0",
+  "lastReviewed": "2026-10-18",
+  "description": "AI-flavoured words, phrases and templates with plain-English replacements. Consumed by src/engine/phrases.js.",
+  "tiers": {
+    "A": {
+      "label": "Peer-reviewed excess-word studies",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "note": "Single words consistently flagged by plain-language research."
+    },
+    "B": {
+      "label": "Wikipedia \"Signs of AI writing\"",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "note": "Phrases and constructions called out as hallmarks of LLM prose."
+    },
+    "C": {
+      "label": "Blog-compiled phrases",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "note": "Clichés and filler gathered from AI-phrase roundups."
+    }
+  },
+  "entryCount": 212,
+  "tierCounts": {
+    "A": 125,
+    "B": 37,
+    "C": 50
+  },
+  "densityThreshold": 3,
+  "plainWords": [
+    "a",
+    "about",
+    "above",
+    "add",
+    "added",
+    "adding",
+    "adds",
+    "after",
+    "again",
+    "against",
+    "ahead",
+    "all",
+    "almost",
+    "also",
+    "although",
+    "always",
+    "among",
+    "an",
+    "and",
+    "another",
+    "any",
+    "anyone",
+    "anything",
+    "applied",
+    "applies",
+    "apply",
+    "applying",
+    "are",
+    "area",
+    "areas",
+    "around",
+    "as",
+    "at",
+    "away",
+    "back",
+    "backed",
+    "backing",
+    "backs",
+    "bad",
+    "balance",
+    "base",
+    "based",
+    "bases",
+    "basic",
+    "basically",
+    "basis",
+    "be",
+    "because",
+    "become",
+    "been",
+    "before",
+    "began",
+    "begin",
+    "beginning",
+    "begins",
+    "behind",
+    "being",
+    "belief",
+    "beliefs",
+    "below",
+    "best",
+    "better",
+    "between",
+    "big",
+    "bigger",
+    "bit",
+    "blend",
+    "blends",
+    "boost",
+    "boosted",
+    "boosting",
+    "boosts",
+    "both",
+    "bought",
+    "break",
+    "breakthrough",
+    "bright",
+    "bring",
+    "broad",
+    "brought",
+    "build",
+    "building",
+    "builds",
+    "built",
+    "but",
+    "buy",
+    "buying",
+    "buys",
+    "by",
+    "call",
+    "came",
+    "can",
+    "car",
+    "care",
+    "careful",
+    "carefully",
+    "carried",
+    "carries",
+    "carry",
+    "carrying",
+    "case",
+    "cause",
+    "center",
+    "centers",
+    "central",
+    "change",
+    "changes",
+    "changing",
+    "check",
+    "checked",
+    "checking",
+    "checks",
+    "chief",
+    "child",
+    "children",
+    "city",
+    "class",
+    "clear",
+    "clearly",
+    "close",
+    "closely",
+    "come",
+    "common",
+    "company",
+    "complete",
+    "completely",
+    "complex",
+    "condition",
+    "confirm",
+    "confirmed",
+    "confirming",
+    "confirms",
+    "consider",
+    "continue",
+    "control",
+    "cost",
+    "could",
+    "count",
+    "country",
+    "course",
+    "cover",
+    "covering",
+    "covers",
+    "create",
+    "creative",
+    "cross",
+    "cut",
+    "daily",
+    "day",
+    "days",
+    "deal",
+    "deep",
+    "deeply",
+    "detail",
+    "detailed",
+    "determine",
+    "determined",
+    "determines",
+    "determining",
+    "did",
+    "difference",
+    "different",
+    "difficult",
+    "dig",
+    "digging",
+    "digs",
+    "divide",
+    "do",
+    "does",
+    "doing",
+    "done",
+    "down",
+    "drive",
+    "driver",
+    "drivers",
+    "drives",
+    "driving",
+    "drove",
+    "dug",
+    "during",
+    "each",
+    "early",
+    "earn",
+    "earned",
+    "earning",
+    "earns",
+    "ease",
+    "eased",
+    "eases",
+    "easing",
+    "easy",
+    "effect",
+    "effort",
+    "eight",
+    "either",
+    "encourage",
+    "encouraged",
+    "encourages",
+    "encouraging",
+    "end",
+    "ends",
+    "energy",
+    "enough",
+    "enter",
+    "equal",
+    "essence",
+    "essential",
+    "even",
+    "ever",
+    "every",
+    "everyone",
+    "everything",
+    "everywhere",
+    "example",
+    "expect",
+    "explain",
+    "explained",
+    "explaining",
+    "explains",
+    "explore",
+    "explored",
+    "explores",
+    "exploring",
+    "extra",
+    "eye",
+    "face",
+    "fact",
+    "fall",
+    "family",
+    "far",
+    "feel",
+    "felt",
+    "few",
+    "field",
+    "fields",
+    "finally",
+    "find",
+    "finding",
+    "finds",
+    "fine",
+    "fire",
+    "firm",
+    "first",
+    "five",
+    "fix",
+    "fixed",
+    "fixes",
+    "fixing",
+    "follow",
+    "food",
+    "foot",
+    "for",
+    "force",
+    "form",
+    "formed",
+    "forming",
+    "forms",
+    "found",
+    "four",
+    "free",
+    "friend",
+    "from",
+    "front",
+    "full",
+    "fully",
+    "further",
+    "game",
+    "gave",
+    "general",
+    "get",
+    "gets",
+    "getting",
+    "girl",
+    "give",
+    "given",
+    "go",
+    "goal",
+    "goes",
+    "going",
+    "goldmine",
+    "good",
+    "got",
+    "great",
+    "greatly",
+    "green",
+    "grew",
+    "ground",
+    "group",
+    "grow",
+    "growing",
+    "grows",
+    "guess",
+    "guide",
+    "had",
+    "hair",
+    "half",
+    "hand",
+    "handle",
+    "handled",
+    "handles",
+    "handling",
+    "happen",
+    "hard",
+    "has",
+    "have",
+    "having",
+    "he",
+    "head",
+    "hear",
+    "heard",
+    "heart",
+    "held",
+    "help",
+    "helped",
+    "helping",
+    "helps",
+    "her",
+    "here",
+    "high",
+    "higher",
+    "highlight",
+    "highlighted",
+    "him",
+    "his",
+    "hold",
+    "home",
+    "hope",
+    "horse",
+    "hot",
+    "hour",
+    "house",
+    "how",
+    "however",
+    "huge",
+    "human",
+    "hundred",
+    "hurried",
+    "hurries",
+    "hurry",
+    "hurrying",
+    "idea",
+    "ideal",
+    "if",
+    "important",
+    "improve",
+    "improved",
+    "improves",
+    "improving",
+    "in",
+    "include",
+    "includes",
+    "including",
+    "indeed",
+    "inside",
+    "instead",
+    "into",
+    "is",
+    "it",
+    "its",
+    "itself",
+    "just",
+    "keep",
+    "kept",
+    "key",
+    "kind",
+    "knew",
+    "know",
+    "known",
+    "land",
+    "language",
+    "large",
+    "last",
+    "lasting",
+    "late",
+    "later",
+    "laugh",
+    "law",
+    "lay",
+    "lead",
+    "leading",
+    "leads",
+    "learn",
+    "least",
+    "leave",
+    "led",
+    "left",
+    "leg",
+    "less",
+    "let",
+    "level",
+    "lie",
+    "life",
+    "light",
+    "like",
+    "likely",
+    "liking",
+    "line",
+    "link",
+    "links",
+    "list",
+    "little",
+    "live",
+    "lively",
+    "long",
+    "look",
+    "lose",
+    "lost",
+    "lot",
+    "love",
+    "low",
+    "loyal",
+    "made",
+    "main",
+    "make",
+    "makes",
+    "making",
+    "man",
+    "many",
+    "mark",
+    "market",
+    "mass",
+    "matter",
+    "may",
+    "me",
+    "mean",
+    "measure",
+    "men",
+    "method",
+    "methods",
+    "might",
+    "mile",
+    "milk",
+    "mind",
+    "minute",
+    "miss",
+    "mix",
+    "mixes",
+    "model",
+    "models",
+    "modern",
+    "moment",
+    "money",
+    "month",
+    "more",
+    "morning",
+    "most",
+    "mother",
+    "move",
+    "much",
+    "must",
+    "my",
+    "name",
+    "natural",
+    "naturally",
+    "near",
+    "need",
+    "needed",
+    "never",
+    "new",
+    "newest",
+    "news",
+    "next",
+    "nice",
+    "night",
+    "nine",
+    "no",
+    "none",
+    "north",
+    "notable",
+    "notably",
+    "note",
+    "nothing",
+    "now",
+    "number",
+    "object",
+    "obscure",
+    "obviously",
+    "of",
+    "off",
+    "often",
+    "old",
+    "on",
+    "once",
+    "one",
+    "only",
+    "open",
+    "or",
+    "order",
+    "other",
+    "others",
+    "our",
+    "out",
+    "over",
+    "own",
+    "page",
+    "paid",
+    "paper",
+    "part",
+    "parts",
+    "party",
+    "pass",
+    "past",
+    "path",
+    "paths",
+    "pattern",
+    "patterns",
+    "pay",
+    "peak",
+    "peaks",
+    "people",
+    "perhaps",
+    "period",
+    "person",
+    "picture",
+    "piece",
+    "place",
+    "placed",
+    "plan",
+    "plane",
+    "plant",
+    "play",
+    "point",
+    "points",
+    "poor",
+    "popular",
+    "position",
+    "possible",
+    "post",
+    "power",
+    "present",
+    "principle",
+    "principles",
+    "problem",
+    "problems",
+    "proof",
+    "proves",
+    "provide",
+    "public",
+    "pull",
+    "push",
+    "put",
+    "puzzle",
+    "puzzles",
+    "question",
+    "quick",
+    "quickly",
+    "quite",
+    "race",
+    "rain",
+    "raise",
+    "raised",
+    "raises",
+    "raising",
+    "ran",
+    "range",
+    "rapidly",
+    "rare",
+    "rate",
+    "reach",
+    "read",
+    "ready",
+    "real",
+    "really",
+    "reason",
+    "receive",
+    "record",
+    "red",
+    "region",
+    "relevant",
+    "remain",
+    "remember",
+    "repeated",
+    "report",
+    "represent",
+    "represented",
+    "representing",
+    "represents",
+    "require",
+    "required",
+    "requires",
+    "requiring",
+    "result",
+    "results",
+    "return",
+    "rich",
+    "right",
+    "ring",
+    "ringing",
+    "rings",
+    "rise",
+    "river",
+    "road",
+    "rock",
+    "roll",
+    "room",
+    "round",
+    "rule",
+    "run",
+    "said",
+    "same",
+    "saw",
+    "say",
+    "scale",
+    "school",
+    "science",
+    "sea",
+    "season",
+    "seat",
+    "second",
+    "see",
+    "seem",
+    "seen",
+    "self",
+    "send",
+    "sent",
+    "serve",
+    "set",
+    "setting",
+    "settings",
+    "seven",
+    "several",
+    "shall",
+    "shape",
+    "shapeless",
+    "share",
+    "she",
+    "shifting",
+    "ship",
+    "short",
+    "should",
+    "show",
+    "showed",
+    "showing",
+    "shows",
+    "side",
+    "sight",
+    "sign",
+    "signs",
+    "simple",
+    "simplified",
+    "simplifies",
+    "simplify",
+    "simplifying",
+    "simply",
+    "since",
+    "sing",
+    "single",
+    "sit",
+    "six",
+    "size",
+    "skill",
+    "sky",
+    "sleep",
+    "slow",
+    "small",
+    "smooth",
+    "smoothly",
+    "so",
+    "social",
+    "solid",
+    "some",
+    "someone",
+    "something",
+    "sometimes",
+    "son",
+    "song",
+    "soon",
+    "sort",
+    "sound",
+    "south",
+    "space",
+    "spark",
+    "sparked",
+    "sparking",
+    "sparks",
+    "speak",
+    "special",
+    "specialized",
+    "sped",
+    "speed",
+    "speeding",
+    "speeds",
+    "split",
+    "splits",
+    "stand",
+    "star",
+    "start",
+    "started",
+    "starting",
+    "starts",
+    "state",
+    "stay",
+    "steady",
+    "step",
+    "still",
+    "stood",
+    "stop",
+    "story",
+    "street",
+    "stress",
+    "stressed",
+    "stresses",
+    "stressing",
+    "strong",
+    "stronghold",
+    "strongholds",
+    "structure",
+    "study",
+    "subtle",
+    "such",
+    "sudden",
+    "sum",
+    "summed",
+    "summer",
+    "summing",
+    "sums",
+    "sun",
+    "support",
+    "sure",
+    "surface",
+    "system",
+    "table",
+    "take",
+    "taken",
+    "talk",
+    "tangled",
+    "task",
+    "taste",
+    "tastes",
+    "tax",
+    "teach",
+    "teamwork",
+    "tell",
+    "telling",
+    "tells",
+    "ten",
+    "tendencies",
+    "tendency",
+    "term",
+    "test",
+    "than",
+    "that",
+    "the",
+    "their",
+    "them",
+    "then",
+    "there",
+    "therefore",
+    "these",
+    "they",
+    "thing",
+    "think",
+    "third",
+    "this",
+    "thorough",
+    "those",
+    "though",
+    "thought",
+    "thousand",
+    "three",
+    "through",
+    "thus",
+    "time",
+    "tiny",
+    "tips",
+    "to",
+    "today",
+    "together",
+    "told",
+    "too",
+    "took",
+    "top",
+    "total",
+    "touch",
+    "tough",
+    "toward",
+    "town",
+    "train",
+    "tree",
+    "trend",
+    "tried",
+    "tries",
+    "trip",
+    "true",
+    "try",
+    "trying",
+    "turn",
+    "turning",
+    "two",
+    "typical",
+    "ultimately",
+    "under",
+    "understand",
+    "unit",
+    "unmatched",
+    "unneeded",
+    "until",
+    "up",
+    "upon",
+    "us",
+    "use",
+    "used",
+    "useful",
+    "usefulness",
+    "uses",
+    "using",
+    "usual",
+    "usually",
+    "vague",
+    "valuable",
+    "varied",
+    "very",
+    "view",
+    "voice",
+    "wait",
+    "walk",
+    "wall",
+    "want",
+    "warm",
+    "was",
+    "watch",
+    "water",
+    "way",
+    "ways",
+    "we",
+    "wear",
+    "week",
+    "weight",
+    "well",
+    "went",
+    "were",
+    "west",
+    "what",
+    "when",
+    "where",
+    "which",
+    "while",
+    "who",
+    "whole",
+    "whom",
+    "whose",
+    "why",
+    "wide",
+    "wider",
+    "wife",
+    "will",
+    "wind",
+    "window",
+    "wins",
+    "winter",
+    "wish",
+    "with",
+    "without",
+    "woman",
+    "women",
+    "wonder",
+    "word",
+    "work",
+    "working",
+    "works",
+    "world",
+    "worthy",
+    "would",
+    "wrap",
+    "write",
+    "wrong",
+    "wrote",
+    "yard",
+    "year",
+    "yes",
+    "yet",
+    "you",
+    "young",
+    "your"
+  ],
+  "entries": [
+    {
+      "id": "delve",
+      "lemma": "delve",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "delve": {
+          "dig": "dig",
+          "explore": "explore"
+        },
+        "delves": {
+          "dig": "digs",
+          "explore": "explores"
+        },
+        "delving": {
+          "dig": "digging",
+          "explore": "exploring"
+        },
+        "delved": {
+          "dig": "dug",
+          "explore": "explored"
+        }
+      },
+      "replacements": [
+        "dig",
+        "explore"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Classic AI tell. Rare in ordinary prose; \"dig into\" or \"explore\" reads naturally."
+    },
+    {
+      "id": "leverage",
+      "lemma": "leverage",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "leverage": {
+          "use": "use"
+        },
+        "leverages": {
+          "use": "uses"
+        },
+        "leveraging": {
+          "use": "using"
+        },
+        "leveraged": {
+          "use": "used"
+        }
+      },
+      "replacements": [
+        "use"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Corporate verbing of a noun. \"Use\" is shorter and clearer."
+    },
+    {
+      "id": "foster",
+      "lemma": "foster",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "foster": {
+          "encourage": "encourage"
+        },
+        "fosters": {
+          "encourage": "encourages"
+        },
+        "fostering": {
+          "encourage": "encouraging"
+        },
+        "fostered": {
+          "encourage": "encouraged"
+        }
+      },
+      "replacements": [
+        "encourage"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Usually just means encourage or help along."
+    },
+    {
+      "id": "garner",
+      "lemma": "garner",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "garner": {
+          "earn": "earn",
+          "get": "get"
+        },
+        "garners": {
+          "earn": "earns",
+          "get": "gets"
+        },
+        "garnering": {
+          "earn": "earning",
+          "get": "getting"
+        },
+        "garnered": {
+          "earn": "earned",
+          "get": "got"
+        }
+      },
+      "replacements": [
+        "earn",
+        "get"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Garnered attention = got attention."
+    },
+    {
+      "id": "elucidate",
+      "lemma": "elucidate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "elucidate": {
+          "explain": "explain"
+        },
+        "elucidates": {
+          "explain": "explains"
+        },
+        "elucidating": {
+          "explain": "explaining"
+        },
+        "elucidated": {
+          "explain": "explained"
+        }
+      },
+      "replacements": [
+        "explain"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Plain English Campaign lists it as a needlessly formal synonym of explain."
+    },
+    {
+      "id": "utilize",
+      "lemma": "utilize",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "utilize": {
+          "use": "use"
+        },
+        "utilizes": {
+          "use": "uses"
+        },
+        "utilizing": {
+          "use": "using"
+        },
+        "utilized": {
+          "use": "used"
+        }
+      },
+      "replacements": [
+        "use"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Garner calls utilize \"a pompous synonym for use\"."
+    },
+    {
+      "id": "facilitate",
+      "lemma": "facilitate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "facilitate": {
+          "help": "help",
+          "ease": "ease"
+        },
+        "facilitates": {
+          "help": "helps",
+          "ease": "eases"
+        },
+        "facilitating": {
+          "help": "helping",
+          "ease": "easing"
+        },
+        "facilitated": {
+          "help": "helped",
+          "ease": "eased"
+        }
+      },
+      "replacements": [
+        "help",
+        "ease"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Facilitate a meeting = run/help a meeting."
+    },
+    {
+      "id": "commence",
+      "lemma": "commence",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "commence": {
+          "start": "start",
+          "begin": "begin"
+        },
+        "commences": {
+          "start": "starts",
+          "begin": "begins"
+        },
+        "commencing": {
+          "start": "starting",
+          "begin": "beginning"
+        },
+        "commenced": {
+          "start": "started",
+          "begin": "began"
+        }
+      },
+      "replacements": [
+        "start",
+        "begin"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Formal register; start/begin is preferred in all but legal usage."
+    },
+    {
+      "id": "endeavor",
+      "lemma": "endeavor",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "endeavor": {
+          "try": "try"
+        },
+        "endeavors": {
+          "try": "tries"
+        },
+        "endeavoring": {
+          "try": "trying"
+        },
+        "endeavored": {
+          "try": "tried"
+        }
+      },
+      "replacements": [
+        "try"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Try works everywhere endeavor does outside legal writing."
+    },
+    {
+      "id": "ascertain",
+      "lemma": "ascertain",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "ascertain": {
+          "find": "find",
+          "determine": "determine"
+        },
+        "ascertains": {
+          "find": "finds",
+          "determine": "determines"
+        },
+        "ascertaining": {
+          "find": "finding",
+          "determine": "determining"
+        },
+        "ascertained": {
+          "find": "found",
+          "determine": "determined"
+        }
+      },
+      "replacements": [
+        "find",
+        "determine"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ascertain the cause = find the cause."
+    },
+    {
+      "id": "procure",
+      "lemma": "procure",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "procure": {
+          "get": "get",
+          "buy": "buy"
+        },
+        "procures": {
+          "get": "gets",
+          "buy": "buys"
+        },
+        "procuring": {
+          "get": "getting",
+          "buy": "buying"
+        },
+        "procured": {
+          "get": "got",
+          "buy": "bought"
+        }
+      },
+      "replacements": [
+        "get",
+        "buy"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Procure supplies = buy supplies."
+    },
+    {
+      "id": "expedite",
+      "lemma": "expedite",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "expedite": {
+          "speed": "speed",
+          "hurry": "hurry"
+        },
+        "expedites": {
+          "speed": "speeds",
+          "hurry": "hurries"
+        },
+        "expediting": {
+          "speed": "speeding",
+          "hurry": "hurrying"
+        },
+        "expedited": {
+          "speed": "sped",
+          "hurry": "hurried"
+        }
+      },
+      "replacements": [
+        "speed",
+        "hurry"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Expedite the order = speed up the order."
+    },
+    {
+      "id": "spearhead",
+      "lemma": "spearhead",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "spearhead": {
+          "lead": "lead"
+        },
+        "spearheads": {
+          "lead": "leads"
+        },
+        "spearheading": {
+          "lead": "leading"
+        },
+        "spearheaded": {
+          "lead": "led"
+        }
+      },
+      "replacements": [
+        "lead"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Spearhead the effort = lead the effort."
+    },
+    {
+      "id": "streamline",
+      "lemma": "streamline",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "streamline": {
+          "simplify": "simplify"
+        },
+        "streamlines": {
+          "simplify": "simplifies"
+        },
+        "streamlining": {
+          "simplify": "simplifying"
+        },
+        "streamlined": {
+          "simplify": "simplified"
+        }
+      },
+      "replacements": [
+        "simplify"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Usually means \"make simpler / remove steps\"."
+    },
+    {
+      "id": "optimize",
+      "lemma": "optimize",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "optimize": {
+          "improve": "improve"
+        },
+        "optimizes": {
+          "improve": "improves"
+        },
+        "optimizing": {
+          "improve": "improving"
+        },
+        "optimized": {
+          "improve": "improved"
+        }
+      },
+      "replacements": [
+        "improve"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Outside maths/engineering, improve is the honest word."
+    },
+    {
+      "id": "augment",
+      "lemma": "augment",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "augment": {
+          "add to": "add to",
+          "boost": "boost"
+        },
+        "augments": {
+          "add to": "adds to",
+          "boost": "boosts"
+        },
+        "augmenting": {
+          "add to": "adding to",
+          "boost": "boosting"
+        },
+        "augmented": {
+          "add to": "added to",
+          "boost": "boosted"
+        }
+      },
+      "replacements": [
+        "add to",
+        "boost"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Often a filler intensifier for \"improve\" or \"add to\"."
+    },
+    {
+      "id": "cultivate",
+      "lemma": "cultivate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "cultivate": {
+          "build": "build",
+          "grow": "grow"
+        },
+        "cultivates": {
+          "build": "builds",
+          "grow": "grows"
+        },
+        "cultivating": {
+          "build": "building",
+          "grow": "growing"
+        },
+        "cultivated": {
+          "build": "built",
+          "grow": "grew"
+        }
+      },
+      "replacements": [
+        "build",
+        "grow"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Cultivate a relationship = build a relationship."
+    },
+    {
+      "id": "harness",
+      "lemma": "harness",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "harness": {
+          "use": "use"
+        },
+        "harnesses": {
+          "use": "uses"
+        },
+        "harnessing": {
+          "use": "using"
+        },
+        "harnessed": {
+          "use": "used"
+        }
+      },
+      "replacements": [
+        "use"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Harness the power of = use."
+    },
+    {
+      "id": "elevate",
+      "lemma": "elevate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "elevate": {
+          "raise": "raise"
+        },
+        "elevates": {
+          "raise": "raises"
+        },
+        "elevating": {
+          "raise": "raising"
+        },
+        "elevated": {
+          "raise": "raised"
+        }
+      },
+      "replacements": [
+        "raise"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Elevate the conversation = raise the level of the conversation."
+    },
+    {
+      "id": "illuminate",
+      "lemma": "illuminate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "illuminate": {
+          "explain": "explain"
+        },
+        "illuminates": {
+          "explain": "explains"
+        },
+        "illuminating": {
+          "explain": "explaining"
+        },
+        "illuminated": {
+          "explain": "explained"
+        }
+      },
+      "replacements": [
+        "explain"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Figurative use means explain, not light up."
+    },
+    {
+      "id": "underscore",
+      "lemma": "underscore",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "underscore": {
+          "stress": "stress"
+        },
+        "underscores": {
+          "stress": "stresses"
+        },
+        "underscoring": {
+          "stress": "stressing"
+        },
+        "underscored": {
+          "stress": "stressed"
+        }
+      },
+      "replacements": [
+        "stress"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Very frequent in AI prose; stress or highlight reads better."
+    },
+    {
+      "id": "showcase",
+      "lemma": "showcase",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "showcase": {
+          "show": "show"
+        },
+        "showcases": {
+          "show": "shows"
+        },
+        "showcasing": {
+          "show": "showing"
+        },
+        "showcased": {
+          "show": "showed"
+        }
+      },
+      "replacements": [
+        "show"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Showcase as a verb is marketing register; show is enough."
+    },
+    {
+      "id": "embody",
+      "lemma": "embody",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "embody": {
+          "show": "show",
+          "represent": "represent"
+        },
+        "embodies": {
+          "show": "shows",
+          "represent": "represents"
+        },
+        "embodying": {
+          "show": "showing",
+          "represent": "representing"
+        },
+        "embodied": {
+          "show": "showed",
+          "represent": "represented"
+        }
+      },
+      "replacements": [
+        "show",
+        "represent"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Often used where \"is a good example of\" is meant."
+    },
+    {
+      "id": "encapsulate",
+      "lemma": "encapsulate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "encapsulate": {
+          "sum up": "sum up"
+        },
+        "encapsulates": {
+          "sum up": "sums up"
+        },
+        "encapsulating": {
+          "sum up": "summing up"
+        },
+        "encapsulated": {
+          "sum up": "summed up"
+        }
+      },
+      "replacements": [
+        "sum up"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Encapsulates the idea = sums up the idea."
+    },
+    {
+      "id": "catalyze",
+      "lemma": "catalyze",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "catalyze": {
+          "spark": "spark",
+          "drive": "drive"
+        },
+        "catalyzes": {
+          "spark": "sparks",
+          "drive": "drives"
+        },
+        "catalyzing": {
+          "spark": "sparking",
+          "drive": "driving"
+        },
+        "catalyzed": {
+          "spark": "sparked",
+          "drive": "drove"
+        }
+      },
+      "replacements": [
+        "spark",
+        "drive"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Outside chemistry, spark or drive is clearer."
+    },
+    {
+      "id": "operationalize",
+      "lemma": "operationalize",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "operationalize": {
+          "apply": "apply"
+        },
+        "operationalizes": {
+          "apply": "applies"
+        },
+        "operationalizing": {
+          "apply": "applying"
+        },
+        "operationalized": {
+          "apply": "applied"
+        }
+      },
+      "replacements": [
+        "apply"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Jargon; \"put into practice\" or simply apply."
+    },
+    {
+      "id": "implement",
+      "lemma": "implement",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "implement": {
+          "carry out": "carry out",
+          "do": "do"
+        },
+        "implements": {
+          "carry out": "carries out",
+          "do": "does"
+        },
+        "implementing": {
+          "carry out": "carrying out",
+          "do": "doing"
+        },
+        "implemented": {
+          "carry out": "carried out",
+          "do": "did"
+        }
+      },
+      "replacements": [
+        "carry out",
+        "do"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Implement a plan = carry out a plan."
+    },
+    {
+      "id": "demonstrate",
+      "lemma": "demonstrate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "demonstrate": {
+          "show": "show"
+        },
+        "demonstrates": {
+          "show": "shows"
+        },
+        "demonstrating": {
+          "show": "showing"
+        },
+        "demonstrated": {
+          "show": "showed"
+        }
+      },
+      "replacements": [
+        "show"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Results demonstrate = results show."
+    },
+    {
+      "id": "indicate",
+      "lemma": "indicate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "indicate": {
+          "show": "show"
+        },
+        "indicates": {
+          "show": "shows"
+        },
+        "indicating": {
+          "show": "showing"
+        },
+        "indicated": {
+          "show": "showed"
+        }
+      },
+      "replacements": [
+        "show"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Data indicate = data show."
+    },
+    {
+      "id": "exhibit",
+      "lemma": "exhibit",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "exhibit": {
+          "show": "show"
+        },
+        "exhibits": {
+          "show": "shows"
+        },
+        "exhibiting": {
+          "show": "showing"
+        },
+        "exhibited": {
+          "show": "showed"
+        }
+      },
+      "replacements": [
+        "show"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Exhibits a pattern = shows a pattern."
+    },
+    {
+      "id": "possess",
+      "lemma": "possess",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "possess": {
+          "have": "have"
+        },
+        "possesses": {
+          "have": "has"
+        },
+        "possessing": {
+          "have": "having"
+        },
+        "possessed": {
+          "have": "had"
+        }
+      },
+      "replacements": [
+        "have"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Possesses a quality = has a quality."
+    },
+    {
+      "id": "constitute",
+      "lemma": "constitute",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "constitute": {
+          "form": "form",
+          "make up": "make up"
+        },
+        "constitutes": {
+          "form": "forms",
+          "make up": "makes up"
+        },
+        "constituting": {
+          "form": "forming",
+          "make up": "making up"
+        },
+        "constituted": {
+          "form": "formed",
+          "make up": "made up"
+        }
+      },
+      "replacements": [
+        "form",
+        "make up"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Constitutes 40% of = makes up 40% of."
+    },
+    {
+      "id": "necessitate",
+      "lemma": "necessitate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "necessitate": {
+          "require": "require"
+        },
+        "necessitates": {
+          "require": "requires"
+        },
+        "necessitating": {
+          "require": "requiring"
+        },
+        "necessitated": {
+          "require": "required"
+        }
+      },
+      "replacements": [
+        "require"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Necessitate = require."
+    },
+    {
+      "id": "substantiate",
+      "lemma": "substantiate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "substantiate": {
+          "back up": "back up"
+        },
+        "substantiates": {
+          "back up": "backs up"
+        },
+        "substantiating": {
+          "back up": "backing up"
+        },
+        "substantiated": {
+          "back up": "backed up"
+        }
+      },
+      "replacements": [
+        "back up"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Substantiate a claim = back up a claim."
+    },
+    {
+      "id": "validate",
+      "lemma": "validate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "validate": {
+          "confirm": "confirm",
+          "check": "check"
+        },
+        "validates": {
+          "confirm": "confirms",
+          "check": "checks"
+        },
+        "validating": {
+          "confirm": "confirming",
+          "check": "checking"
+        },
+        "validated": {
+          "confirm": "confirmed",
+          "check": "checked"
+        }
+      },
+      "replacements": [
+        "confirm",
+        "check"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Outside therapy/tech jargon, confirm or check is what is meant."
+    },
+    {
+      "id": "rectify",
+      "lemma": "rectify",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "rectify": {
+          "fix": "fix"
+        },
+        "rectifies": {
+          "fix": "fixes"
+        },
+        "rectifying": {
+          "fix": "fixing"
+        },
+        "rectified": {
+          "fix": "fixed"
+        }
+      },
+      "replacements": [
+        "fix"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Rectify the error = fix the error."
+    },
+    {
+      "id": "navigate",
+      "lemma": "navigate",
+      "pattern": null,
+      "type": "word",
+      "pos": "verb",
+      "inflections": {
+        "navigate": {
+          "handle": "handle"
+        },
+        "navigates": {
+          "handle": "handles"
+        },
+        "navigating": {
+          "handle": "handling"
+        },
+        "navigated": {
+          "handle": "handled"
+        }
+      },
+      "replacements": [
+        "handle"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [
+          "to",
+          "the"
+        ],
+        "notInProtected": true
+      },
+      "notes": "Figurative \"navigate the complexities\" is a strong AI tell; the phrase-level entry handles the common form."
+    },
+    {
+      "id": "realm",
+      "lemma": "realm",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "realm": {
+          "area": "area",
+          "field": "field"
+        },
+        "realms": {
+          "area": "areas",
+          "field": "fields"
+        }
+      },
+      "replacements": [
+        "area",
+        "field"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "In the realm of = in."
+    },
+    {
+      "id": "tapestry",
+      "lemma": "tapestry",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "tapestry": {
+          "mix": "mix",
+          "blend": "blend"
+        },
+        "tapestries": {
+          "mix": "mixes",
+          "blend": "blends"
+        }
+      },
+      "replacements": [
+        "mix",
+        "blend"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A tapestry of = a mix of."
+    },
+    {
+      "id": "paradigm",
+      "lemma": "paradigm",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "paradigm": {
+          "model": "model",
+          "pattern": "pattern"
+        },
+        "paradigms": {
+          "model": "models",
+          "pattern": "patterns"
+        }
+      },
+      "replacements": [
+        "model",
+        "pattern"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A paradigm for = a model for."
+    },
+    {
+      "id": "conduit",
+      "lemma": "conduit",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "conduit": {
+          "path": "path"
+        },
+        "conduits": {
+          "path": "paths"
+        }
+      },
+      "replacements": [
+        "path"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A conduit for = a path for."
+    },
+    {
+      "id": "catalyst",
+      "lemma": "catalyst",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "catalyst": {
+          "driver": "driver",
+          "spark": "spark"
+        },
+        "catalysts": {
+          "driver": "drivers",
+          "spark": "sparks"
+        }
+      },
+      "replacements": [
+        "driver",
+        "spark"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A catalyst for = a driver of."
+    },
+    {
+      "id": "cornerstone",
+      "lemma": "cornerstone",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "cornerstone": {
+          "basis": "basis",
+          "base": "base"
+        },
+        "cornerstones": {
+          "basis": "bases",
+          "base": "bases"
+        }
+      },
+      "replacements": [
+        "basis",
+        "base"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "The cornerstone of = the basis of."
+    },
+    {
+      "id": "amalgamation",
+      "lemma": "amalgamation",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "amalgamation": {
+          "mix": "mix",
+          "blend": "blend"
+        },
+        "amalgamations": {
+          "mix": "mixes",
+          "blend": "blends"
+        }
+      },
+      "replacements": [
+        "mix",
+        "blend"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An amalgamation of = a mix of."
+    },
+    {
+      "id": "conglomeration",
+      "lemma": "conglomeration",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "conglomeration": {
+          "mix": "mix"
+        },
+        "conglomerations": {
+          "mix": "mixes"
+        }
+      },
+      "replacements": [
+        "mix"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A conglomeration of = a mix of."
+    },
+    {
+      "id": "plethora",
+      "lemma": "plethora",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "plethora": {
+          "many": "many"
+        }
+      },
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A plethora of = many. Note plethora strictly means a harmful excess."
+    },
+    {
+      "id": "myriad",
+      "lemma": "myriad",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "myriad": {
+          "many": "many"
+        }
+      },
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A myriad of = many."
+    },
+    {
+      "id": "conundrum",
+      "lemma": "conundrum",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "conundrum": {
+          "puzzle": "puzzle",
+          "problem": "problem"
+        },
+        "conundrums": {
+          "puzzle": "puzzles",
+          "problem": "problems"
+        }
+      },
+      "replacements": [
+        "puzzle",
+        "problem"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A conundrum = a puzzle."
+    },
+    {
+      "id": "dichotomy",
+      "lemma": "dichotomy",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "dichotomy": {
+          "split": "split",
+          "divide": "divide"
+        },
+        "dichotomies": {
+          "split": "splits",
+          "divide": "splits"
+        }
+      },
+      "replacements": [
+        "split",
+        "divide"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A false dichotomy = a false split."
+    },
+    {
+      "id": "synergy",
+      "lemma": "synergy",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "synergy": {
+          "teamwork": "teamwork"
+        }
+      },
+      "replacements": [
+        "teamwork"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Buzzword; usually means people working well together."
+    },
+    {
+      "id": "prowess",
+      "lemma": "prowess",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "prowess": {
+          "skill": "skill"
+        }
+      },
+      "replacements": [
+        "skill"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Technical prowess = skill."
+    },
+    {
+      "id": "penchant",
+      "lemma": "penchant",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "penchant": {
+          "liking": "liking",
+          "taste": "taste"
+        },
+        "penchants": {
+          "liking": "tastes",
+          "taste": "tastes"
+        }
+      },
+      "replacements": [
+        "liking",
+        "taste"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A penchant for = a liking for."
+    },
+    {
+      "id": "proclivity",
+      "lemma": "proclivity",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "proclivity": {
+          "tendency": "tendency"
+        },
+        "proclivities": {
+          "tendency": "tendencies"
+        }
+      },
+      "replacements": [
+        "tendency"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A proclivity for = a tendency to."
+    },
+    {
+      "id": "bastion",
+      "lemma": "bastion",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "bastion": {
+          "stronghold": "stronghold"
+        },
+        "bastions": {
+          "stronghold": "strongholds"
+        }
+      },
+      "replacements": [
+        "stronghold"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A bastion of = a stronghold of."
+    },
+    {
+      "id": "harbinger",
+      "lemma": "harbinger",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "harbinger": {
+          "sign": "sign"
+        },
+        "harbingers": {
+          "sign": "signs"
+        }
+      },
+      "replacements": [
+        "sign"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A harbinger of = a sign of."
+    },
+    {
+      "id": "utility",
+      "lemma": "utility",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "utility": {
+          "usefulness": "usefulness"
+        },
+        "utilities": {
+          "usefulness": "usefulness"
+        }
+      },
+      "replacements": [
+        "usefulness"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Of limited utility = of limited use."
+    },
+    {
+      "id": "modality",
+      "lemma": "modality",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "modality": {
+          "method": "method",
+          "way": "way"
+        },
+        "modalities": {
+          "method": "methods",
+          "way": "ways"
+        }
+      },
+      "replacements": [
+        "method",
+        "way"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Treatment modality = treatment method."
+    },
+    {
+      "id": "tenet",
+      "lemma": "tenet",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "tenet": {
+          "belief": "belief",
+          "principle": "principle"
+        },
+        "tenets": {
+          "belief": "beliefs",
+          "principle": "principles"
+        }
+      },
+      "replacements": [
+        "belief",
+        "principle"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A core tenet = a core belief."
+    },
+    {
+      "id": "underpinning",
+      "lemma": "underpinning",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "underpinning": {
+          "basis": "basis"
+        },
+        "underpinnings": {
+          "basis": "bases"
+        }
+      },
+      "replacements": [
+        "basis"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "The underpinning of = the basis of."
+    },
+    {
+      "id": "nexus",
+      "lemma": "nexus",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "nexus": {
+          "link": "link",
+          "center": "center"
+        },
+        "nexuses": {
+          "link": "links",
+          "center": "centers"
+        }
+      },
+      "replacements": [
+        "link",
+        "center"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A nexus between = a link between."
+    },
+    {
+      "id": "zenith",
+      "lemma": "zenith",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "zenith": {
+          "peak": "peak"
+        },
+        "zeniths": {
+          "peak": "peaks"
+        }
+      },
+      "replacements": [
+        "peak"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "At its zenith = at its peak."
+    },
+    {
+      "id": "nadir",
+      "lemma": "nadir",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "nadir": {
+          "low": "low"
+        }
+      },
+      "replacements": [
+        "low"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "At its nadir = at its low point."
+    },
+    {
+      "id": "milieu",
+      "lemma": "milieu",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "milieu": {
+          "setting": "setting"
+        },
+        "milieus": {
+          "setting": "settings"
+        }
+      },
+      "replacements": [
+        "setting"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A cultural milieu = a setting."
+    },
+    {
+      "id": "intricate",
+      "lemma": "intricate",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "intricate": {
+          "detailed": "detailed",
+          "complex": "complex"
+        }
+      },
+      "replacements": [
+        "detailed",
+        "complex"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Intricate detail = fine detail; often just \"complex\"."
+    },
+    {
+      "id": "meticulous",
+      "lemma": "meticulous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "meticulous": {
+          "careful": "careful",
+          "thorough": "thorough"
+        }
+      },
+      "replacements": [
+        "careful",
+        "thorough"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Meticulous work = careful work."
+    },
+    {
+      "id": "pivotal",
+      "lemma": "pivotal",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "pivotal": {
+          "key": "key",
+          "central": "central"
+        }
+      },
+      "replacements": [
+        "key",
+        "central"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [
+          "role"
+        ],
+        "notInProtected": true
+      },
+      "notes": "Pivotal = key. \"Pivotal role\" is handled by the template entry."
+    },
+    {
+      "id": "commendable",
+      "lemma": "commendable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "commendable": {
+          "good": "good",
+          "solid": "solid"
+        }
+      },
+      "replacements": [
+        "good",
+        "solid"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Commendable effort = a good effort."
+    },
+    {
+      "id": "seamless",
+      "lemma": "seamless",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "seamless": {
+          "smooth": "smooth"
+        }
+      },
+      "replacements": [
+        "smooth"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Seamless integration = smooth integration."
+    },
+    {
+      "id": "robust",
+      "lemma": "robust",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "robust": {
+          "strong": "strong",
+          "solid": "solid"
+        }
+      },
+      "replacements": [
+        "strong",
+        "solid"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Robust evidence = strong evidence."
+    },
+    {
+      "id": "holistic",
+      "lemma": "holistic",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "holistic": {
+          "whole": "whole",
+          "broad": "broad"
+        }
+      },
+      "replacements": [
+        "whole",
+        "broad"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A holistic view = a broad view."
+    },
+    {
+      "id": "comprehensive",
+      "lemma": "comprehensive",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "comprehensive": {
+          "full": "full",
+          "complete": "complete"
+        }
+      },
+      "replacements": [
+        "full",
+        "complete"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A comprehensive list = a full list."
+    },
+    {
+      "id": "rudimentary",
+      "lemma": "rudimentary",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "rudimentary": {
+          "basic": "basic"
+        }
+      },
+      "replacements": [
+        "basic"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Rudimentary version = basic version."
+    },
+    {
+      "id": "quintessential",
+      "lemma": "quintessential",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "quintessential": {
+          "typical": "typical",
+          "ideal": "ideal"
+        }
+      },
+      "replacements": [
+        "typical",
+        "ideal"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "The quintessential example = the typical example."
+    },
+    {
+      "id": "ubiquitous",
+      "lemma": "ubiquitous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "ubiquitous": {
+          "common": "common",
+          "everywhere": "everywhere"
+        }
+      },
+      "replacements": [
+        "common",
+        "everywhere"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ubiquitous = everywhere."
+    },
+    {
+      "id": "nuanced",
+      "lemma": "nuanced",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "nuanced": {
+          "subtle": "subtle",
+          "fine": "fine"
+        }
+      },
+      "replacements": [
+        "subtle",
+        "fine"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A nuanced view = a subtle view."
+    },
+    {
+      "id": "multifaceted",
+      "lemma": "multifaceted",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "multifaceted": {
+          "varied": "varied",
+          "complex": "complex"
+        }
+      },
+      "replacements": [
+        "varied",
+        "complex"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A multifaceted issue = a complex issue."
+    },
+    {
+      "id": "paramount",
+      "lemma": "paramount",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "paramount": {
+          "top": "top",
+          "chief": "chief"
+        }
+      },
+      "replacements": [
+        "top",
+        "chief"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Of paramount importance = of the first importance."
+    },
+    {
+      "id": "salient",
+      "lemma": "salient",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "salient": {
+          "key": "key",
+          "main": "main"
+        }
+      },
+      "replacements": [
+        "key",
+        "main"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "The salient point = the main point."
+    },
+    {
+      "id": "pertinent",
+      "lemma": "pertinent",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "pertinent": {
+          "relevant": "relevant"
+        }
+      },
+      "replacements": [
+        "relevant"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Pertinent details = relevant details."
+    },
+    {
+      "id": "exemplary",
+      "lemma": "exemplary",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "exemplary": {
+          "model": "model",
+          "fine": "fine"
+        }
+      },
+      "replacements": [
+        "model",
+        "fine"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Exemplary conduct = model conduct."
+    },
+    {
+      "id": "laudable",
+      "lemma": "laudable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "laudable": {
+          "good": "good",
+          "worthy": "worthy"
+        }
+      },
+      "replacements": [
+        "good",
+        "worthy"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A laudable goal = a good goal."
+    },
+    {
+      "id": "steadfast",
+      "lemma": "steadfast",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "steadfast": {
+          "firm": "firm",
+          "steady": "steady"
+        }
+      },
+      "replacements": [
+        "firm",
+        "steady"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Steadfast support = firm support."
+    },
+    {
+      "id": "unwavering",
+      "lemma": "unwavering",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "unwavering": {
+          "firm": "firm",
+          "steady": "steady"
+        }
+      },
+      "replacements": [
+        "firm",
+        "steady"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Unwavering support = firm support."
+    },
+    {
+      "id": "indelible",
+      "lemma": "indelible",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "indelible": {
+          "lasting": "lasting"
+        }
+      },
+      "replacements": [
+        "lasting"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An indelible mark = a lasting mark."
+    },
+    {
+      "id": "profound",
+      "lemma": "profound",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "profound": {
+          "deep": "deep",
+          "great": "great"
+        }
+      },
+      "replacements": [
+        "deep",
+        "great"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A profound effect = a deep effect."
+    },
+    {
+      "id": "indispensable",
+      "lemma": "indispensable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "indispensable": {
+          "essential": "essential",
+          "needed": "needed"
+        }
+      },
+      "replacements": [
+        "essential",
+        "needed"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Indispensable = essential."
+    },
+    {
+      "id": "inherent",
+      "lemma": "inherent",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "inherent": {
+          "built-in": "built-in",
+          "natural": "natural"
+        }
+      },
+      "replacements": [
+        "built-in",
+        "natural"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An inherent risk = a built-in risk."
+    },
+    {
+      "id": "intrinsic",
+      "lemma": "intrinsic",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "intrinsic": {
+          "built-in": "built-in",
+          "natural": "natural"
+        }
+      },
+      "replacements": [
+        "built-in",
+        "natural"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Intrinsic value = built-in value."
+    },
+    {
+      "id": "overarching",
+      "lemma": "overarching",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "overarching": {
+          "main": "main",
+          "broad": "broad"
+        }
+      },
+      "replacements": [
+        "main",
+        "broad"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An overarching goal = a main goal."
+    },
+    {
+      "id": "unparalleled",
+      "lemma": "unparalleled",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "unparalleled": {
+          "unmatched": "unmatched",
+          "rare": "rare"
+        }
+      },
+      "replacements": [
+        "unmatched",
+        "rare"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Unparalleled success = success without equal."
+    },
+    {
+      "id": "unprecedented",
+      "lemma": "unprecedented",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "unprecedented": {
+          "new": "new",
+          "rare": "rare"
+        }
+      },
+      "replacements": [
+        "new",
+        "rare"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An unprecedented step = a new step."
+    },
+    {
+      "id": "painstaking",
+      "lemma": "painstaking",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "painstaking": {
+          "careful": "careful",
+          "slow": "slow"
+        }
+      },
+      "replacements": [
+        "careful",
+        "slow"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Painstaking work = careful work."
+    },
+    {
+      "id": "arduous",
+      "lemma": "arduous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "arduous": {
+          "hard": "hard",
+          "tough": "tough"
+        }
+      },
+      "replacements": [
+        "hard",
+        "tough"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An arduous task = a hard task."
+    },
+    {
+      "id": "convoluted",
+      "lemma": "convoluted",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "convoluted": {
+          "tangled": "tangled",
+          "complex": "complex"
+        }
+      },
+      "replacements": [
+        "tangled",
+        "complex"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A convoluted argument = a tangled argument."
+    },
+    {
+      "id": "esoteric",
+      "lemma": "esoteric",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "esoteric": {
+          "obscure": "obscure",
+          "specialized": "specialized"
+        }
+      },
+      "replacements": [
+        "obscure",
+        "specialized"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Esoteric knowledge = specialized knowledge."
+    },
+    {
+      "id": "nebulous",
+      "lemma": "nebulous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "nebulous": {
+          "vague": "vague"
+        }
+      },
+      "replacements": [
+        "vague"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A nebulous idea = a vague idea."
+    },
+    {
+      "id": "amorphous",
+      "lemma": "amorphous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "amorphous": {
+          "shapeless": "shapeless",
+          "vague": "vague"
+        }
+      },
+      "replacements": [
+        "shapeless",
+        "vague"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "An amorphous mass = a shapeless mass."
+    },
+    {
+      "id": "superfluous",
+      "lemma": "superfluous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "superfluous": {
+          "extra": "extra",
+          "unneeded": "unneeded"
+        }
+      },
+      "replacements": [
+        "extra",
+        "unneeded"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Superfluous detail = unneeded detail."
+    },
+    {
+      "id": "redundant",
+      "lemma": "redundant",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "redundant": {
+          "extra": "extra",
+          "repeated": "repeated"
+        }
+      },
+      "replacements": [
+        "extra",
+        "repeated"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Redundant wording = repeated wording."
+    },
+    {
+      "id": "veritable",
+      "lemma": "veritable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "veritable": {
+          "real": "real",
+          "true": "true"
+        }
+      },
+      "replacements": [
+        "real",
+        "true"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A veritable feast = a real feast."
+    },
+    {
+      "id": "visceral",
+      "lemma": "visceral",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "visceral": {
+          "deep": "deep"
+        }
+      },
+      "replacements": [
+        "deep"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "A visceral reaction = a deep reaction."
+    },
+    {
+      "id": "invaluable",
+      "lemma": "invaluable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "invaluable": {
+          "valuable": "valuable",
+          "useful": "useful"
+        }
+      },
+      "replacements": [
+        "valuable",
+        "useful"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Invaluable help = useful help."
+    },
+    {
+      "id": "fundamentally",
+      "lemma": "fundamentally",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "fundamentally": {
+          "basically": "basically"
+        }
+      },
+      "replacements": [
+        "basically"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Fundamentally = basically, at bottom."
+    },
+    {
+      "id": "inherently",
+      "lemma": "inherently",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "inherently": {
+          "naturally": "naturally"
+        }
+      },
+      "replacements": [
+        "naturally"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Inherently risky = risky by nature."
+    },
+    {
+      "id": "intrinsically",
+      "lemma": "intrinsically",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "intrinsically": {
+          "naturally": "naturally"
+        }
+      },
+      "replacements": [
+        "naturally"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Intrinsically = naturally."
+    },
+    {
+      "id": "meticulously",
+      "lemma": "meticulously",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "meticulously": {
+          "carefully": "carefully"
+        }
+      },
+      "replacements": [
+        "carefully"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Meticulously planned = carefully planned."
+    },
+    {
+      "id": "seamlessly",
+      "lemma": "seamlessly",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "seamlessly": {
+          "smoothly": "smoothly"
+        }
+      },
+      "replacements": [
+        "smoothly"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Seamlessly = smoothly."
+    },
+    {
+      "id": "comprehensively",
+      "lemma": "comprehensively",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "comprehensively": {
+          "fully": "fully"
+        }
+      },
+      "replacements": [
+        "fully"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Comprehensively = fully."
+    },
+    {
+      "id": "exponentially",
+      "lemma": "exponentially",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "exponentially": {
+          "rapidly": "rapidly",
+          "quickly": "quickly"
+        }
+      },
+      "replacements": [
+        "rapidly",
+        "quickly"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Almost always hyperbolic; rapidly is what is meant."
+    },
+    {
+      "id": "accordingly",
+      "lemma": "accordingly",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "accordingly": {
+          "so": "so"
+        }
+      },
+      "replacements": [
+        "so"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Accordingly = so, therefore."
+    },
+    {
+      "id": "subsequently",
+      "lemma": "subsequently",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "subsequently": {
+          "later": "later"
+        }
+      },
+      "replacements": [
+        "later"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Subsequently = later."
+    },
+    {
+      "id": "consequently",
+      "lemma": "consequently",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "consequently": {
+          "so": "so"
+        }
+      },
+      "replacements": [
+        "so"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Consequently = so."
+    },
+    {
+      "id": "across",
+      "lemma": "across",
+      "pattern": null,
+      "type": "word",
+      "pos": "preposition",
+      "inflections": {
+        "across": {
+          "over": "over",
+          "through": "through"
+        }
+      },
+      "replacements": [
+        "over",
+        "through"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [
+          "from"
+        ],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; only swapped when a paragraph is already dense with markers."
+    },
+    {
+      "id": "within",
+      "lemma": "within",
+      "pattern": null,
+      "type": "word",
+      "pos": "preposition",
+      "inflections": {
+        "within": {
+          "in": "in",
+          "inside": "inside"
+        }
+      },
+      "replacements": [
+        "in",
+        "inside"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only."
+    },
+    {
+      "id": "potential",
+      "lemma": "potential",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "potential": {
+          "possible": "possible",
+          "likely": "likely"
+        }
+      },
+      "replacements": [
+        "possible",
+        "likely"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only. \"Potential risk\" is usually just \"risk\"."
+    },
+    {
+      "id": "findings",
+      "lemma": "findings",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "findings": {
+          "results": "results"
+        }
+      },
+      "replacements": [
+        "results"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary academic word; flag only."
+    },
+    {
+      "id": "crucial",
+      "lemma": "crucial",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "crucial": {
+          "key": "key",
+          "important": "important"
+        }
+      },
+      "replacements": [
+        "key",
+        "important"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [
+          "more",
+          "most"
+        ],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary intensifier; flag only."
+    },
+    {
+      "id": "additionally",
+      "lemma": "additionally",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "additionally": {
+          "also": "also",
+          "too": "too"
+        }
+      },
+      "replacements": [
+        "also",
+        "too"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary connector; flag only."
+    },
+    {
+      "id": "significant",
+      "lemma": "significant",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "significant": {
+          "big": "big",
+          "notable": "notable"
+        }
+      },
+      "replacements": [
+        "big",
+        "notable"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [
+          "other"
+        ],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only. Guard keeps \"significant other\" intact."
+    },
+    {
+      "id": "framework",
+      "lemma": "framework",
+      "pattern": null,
+      "type": "word",
+      "pos": "noun",
+      "inflections": {
+        "framework": {
+          "structure": "structure",
+          "system": "system"
+        }
+      },
+      "replacements": [
+        "structure",
+        "system"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only."
+    },
+    {
+      "id": "substantial",
+      "lemma": "substantial",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "substantial": {
+          "large": "large",
+          "big": "big"
+        }
+      },
+      "replacements": [
+        "large",
+        "big"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only."
+    },
+    {
+      "id": "considerable",
+      "lemma": "considerable",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "considerable": {
+          "large": "large",
+          "big": "big"
+        }
+      },
+      "replacements": [
+        "large",
+        "big"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only."
+    },
+    {
+      "id": "numerous",
+      "lemma": "numerous",
+      "pattern": null,
+      "type": "word",
+      "pos": "adjective",
+      "inflections": {
+        "numerous": {
+          "many": "many"
+        }
+      },
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary word; flag only."
+    },
+    {
+      "id": "furthermore",
+      "lemma": "furthermore",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "furthermore": {
+          "also": "also"
+        }
+      },
+      "replacements": [
+        "also"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary connector; flag only."
+    },
+    {
+      "id": "moreover",
+      "lemma": "moreover",
+      "pattern": null,
+      "type": "word",
+      "pos": "adverb",
+      "inflections": {
+        "moreover": {
+          "also": "also"
+        }
+      },
+      "replacements": [
+        "also"
+      ],
+      "deleteOk": false,
+      "flagOnly": true,
+      "tier": "A",
+      "source": "Peer-reviewed plain-language / excess-word studies (Garner's Modern English Usage, Plain English Campaign, Plain Writing Act guidance)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Ordinary connector; flag only."
+    },
+    {
+      "id": "pivotal-moment",
+      "lemma": "pivotal moment",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "turning point",
+        "key moment"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Listed verbatim in WP:AISIGNS."
+    },
+    {
+      "id": "broader-movement",
+      "lemma": "broader movement",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "wider trend",
+        "bigger trend"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Vague-significance framing flagged by WP:AISIGNS."
+    },
+    {
+      "id": "valuable-insight",
+      "lemma": "valuable insight",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "useful point"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS calls out \"valuable insight\" padding."
+    },
+    {
+      "id": "key-turning-point",
+      "lemma": "key turning point",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "turning point"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Redundant with \"turning point\"; both words are markers."
+    },
+    {
+      "id": "rich-tapestry",
+      "lemma": "rich tapestry",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "rich mix",
+        "wide mix"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Named in WP:AISIGNS."
+    },
+    {
+      "id": "a-testament-to",
+      "lemma": "a testament to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "proof of",
+        "a sign of"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS flourish."
+    },
+    {
+      "id": "encompassing",
+      "lemma": "encompassing",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "covering",
+        "including"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague-scope present participle."
+    },
+    {
+      "id": "stands-as-a-testament-to",
+      "lemma": "stands as a testament to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "shows",
+        "proves"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Extended form of the testament flourish."
+    },
+    {
+      "id": "serves-as",
+      "lemma": "serves as",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "is",
+        "works as"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"serves as\" is a padded copula."
+    },
+    {
+      "id": "in-the-realm-of",
+      "lemma": "in the realm of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "in"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague-significance padding."
+    },
+    {
+      "id": "a-wide-range-of",
+      "lemma": "a wide range of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague quantity phrase."
+    },
+    {
+      "id": "wide-array-of",
+      "lemma": "wide array of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Variant of \"a wide range of\"."
+    },
+    {
+      "id": "crucial-role",
+      "lemma": "crucial role",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "key part"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Pairs with the \"plays a ... role in\" template."
+    },
+    {
+      "id": "significant-milestone",
+      "lemma": "significant milestone",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "big step"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: significance padding."
+    },
+    {
+      "id": "ever-evolving",
+      "lemma": "ever-evolving",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "changing",
+        "shifting"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"ever-evolving\" is a hallmark flourish."
+    },
+    {
+      "id": "countless",
+      "lemma": "countless",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "many"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague quantity word."
+    },
+    {
+      "id": "meticulously-crafted",
+      "lemma": "meticulously crafted",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "careful",
+        "well made"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: flowery praise of the subject."
+    },
+    {
+      "id": "vibrant",
+      "lemma": "vibrant",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "lively",
+        "bright"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague positive adjective."
+    },
+    {
+      "id": "boasts",
+      "lemma": "boasts",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "has"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: promotional verb about the subject."
+    },
+    {
+      "id": "nestled",
+      "lemma": "nestled",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "set",
+        "placed"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"nestled\" for places."
+    },
+    {
+      "id": "a-symphony-of",
+      "lemma": "a symphony of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "a mix of",
+        "a blend of"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: overblown metaphor."
+    },
+    {
+      "id": "delicate-dance",
+      "lemma": "delicate dance",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "balance"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: metaphor padding."
+    },
+    {
+      "id": "intricate-dance",
+      "lemma": "intricate dance",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "balance"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Variant of the dance metaphor."
+    },
+    {
+      "id": "showcasing",
+      "lemma": "showcasing",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "showing"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: -ing flourish at clause end."
+    },
+    {
+      "id": "highlighting",
+      "lemma": "highlighting",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "showing"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: -ing flourish at clause end."
+    },
+    {
+      "id": "emphasizing",
+      "lemma": "emphasizing",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "stressing"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: -ing flourish at clause end."
+    },
+    {
+      "id": "ensuring",
+      "lemma": "ensuring",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "making sure"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: -ing flourish at clause end."
+    },
+    {
+      "id": "underscores-the-importance-of",
+      "lemma": "underscores the importance of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "shows why",
+        "points to"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Significance-signalling verb phrase."
+    },
+    {
+      "id": "highlights-the-significance-of",
+      "lemma": "highlights the significance of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "points to",
+        "shows"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Significance-signalling verb phrase."
+    },
+    {
+      "id": "it-is-important-to-note-that",
+      "lemma": "it is important to note that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "note that"
+      ],
+      "deleteOk": true,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: throat-clearing opener; safe to delete outright."
+    },
+    {
+      "id": "its-important-to-note-that",
+      "lemma": "it's important to note that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "note that"
+      ],
+      "deleteOk": true,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Contracted variant of the same opener."
+    },
+    {
+      "id": "it-is-worth-noting-that",
+      "lemma": "it is worth noting that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "note that"
+      ],
+      "deleteOk": true,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Variant throat-clearing opener."
+    },
+    {
+      "id": "delve-into",
+      "lemma": "delve into",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "dig into",
+        "look at"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS singles out \"delve\"."
+    },
+    {
+      "id": "plays-a-role-in",
+      "lemma": null,
+      "pattern": "\\b([^.;!?\\n]{1,60}?) (?:plays|play) an? (?:pivotal|key|crucial|vital|important|central|significant) role in ([^.;!?\\n]{1,60}?)\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [
+        "{X} matters for {Y}",
+        "{X} shapes {Y}",
+        "{X} drives {Y}"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"plays a crucial role in\" — the template preserves both sides."
+    },
+    {
+      "id": "not-only-but-also",
+      "lemma": null,
+      "pattern": "\\bnot only ([^,;\\n]{1,60}?) but also ([^.;!?\\n]{1,60}?)\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [
+        "{X} and {Y}",
+        "{X}, and {Y} too"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"not only ... but also\" is a stock AI construction."
+    },
+    {
+      "id": "in-the-ever-evolving-landscape-of",
+      "lemma": null,
+      "pattern": "\\bin the (?:ever-evolving|ever-changing|constantly evolving|rapidly evolving) (?:landscape|world|realm) of ([^.;!?\\n]{1,60}?)\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [
+        "in {X}"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: vague-significance scene setting that adds nothing."
+    },
+    {
+      "id": "navigate-the-complexities-of",
+      "lemma": null,
+      "pattern": "\\b(?:navigate|navigating|navigates) the (?:complexities|challenges|intricacies) of ([^.;!?\\n]{1,60}?)\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [
+        "deal with {X}",
+        "work through {X}"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "B",
+      "source": "Wikipedia: \"Signs of AI writing\" (essay WP:AISIGNS)",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "WP:AISIGNS: \"navigate the complexities of\" is almost uniquely AI."
+    },
+    {
+      "id": "in-todays-fast-paced-world",
+      "lemma": "in today's fast-paced world",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "these days",
+        "now"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Filler scene setter from AI-phrase roundups."
+    },
+    {
+      "id": "in-todays-world",
+      "lemma": "in today's world",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "these days",
+        "now"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Shorter variant."
+    },
+    {
+      "id": "treasure-trove",
+      "lemma": "treasure trove",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "goldmine",
+        "find"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Clichéd noun phrase."
+    },
+    {
+      "id": "game-changer",
+      "lemma": "game-changer",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "big change",
+        "breakthrough"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business-speak noun."
+    },
+    {
+      "id": "game-changer-space",
+      "lemma": "game changer",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "big change",
+        "breakthrough"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Unhyphenated variant."
+    },
+    {
+      "id": "at-the-end-of-the-day",
+      "lemma": "at the end of the day",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "in the end",
+        "ultimately"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Filler summariser."
+    },
+    {
+      "id": "when-it-comes-to",
+      "lemma": "when it comes to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "for",
+        "about"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy way to introduce a topic."
+    },
+    {
+      "id": "dive-deep-into",
+      "lemma": "dive deep into",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "dig into",
+        "look closely at"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Blog-speak for \"examine\"."
+    },
+    {
+      "id": "deep-dive",
+      "lemma": "deep dive",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "close look",
+        "full study"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Noun form of the same cliché."
+    },
+    {
+      "id": "in-the-world-of",
+      "lemma": "in the world of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "in"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Empty scene setter."
+    },
+    {
+      "id": "unlock-the-potential-of",
+      "lemma": "unlock the potential of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "improve",
+        "get more from"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Marketing verb phrase."
+    },
+    {
+      "id": "take-it-to-the-next-level",
+      "lemma": "take it to the next level",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "improve it",
+        "go further"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business-speak."
+    },
+    {
+      "id": "the-fact-that",
+      "lemma": "the fact that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "that"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy nominalisation."
+    },
+    {
+      "id": "in-order-to",
+      "lemma": "in order to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "to"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Classic wordiness; \"to\" is identical in meaning."
+    },
+    {
+      "id": "due-to-the-fact-that",
+      "lemma": "due to the fact that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "because"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy causal connector."
+    },
+    {
+      "id": "at-this-point-in-time",
+      "lemma": "at this point in time",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "now"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy substitute for \"now\"."
+    },
+    {
+      "id": "in-the-event-that",
+      "lemma": "in the event that",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "if"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Legalism for \"if\"."
+    },
+    {
+      "id": "for-the-purpose-of",
+      "lemma": "for the purpose of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "for"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy preposition."
+    },
+    {
+      "id": "with-regard-to",
+      "lemma": "with regard to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "about"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy preposition."
+    },
+    {
+      "id": "in-the-process-of",
+      "lemma": "in the process of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "while",
+        "during"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy connector."
+    },
+    {
+      "id": "a-number-of",
+      "lemma": "a number of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "some",
+        "several"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Vague quantity phrase."
+    },
+    {
+      "id": "is-able-to",
+      "lemma": "is able to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "can"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Verbosity for the modal \"can\"."
+    },
+    {
+      "id": "are-able-to",
+      "lemma": "are able to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "can"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Plural variant."
+    },
+    {
+      "id": "has-the-ability-to",
+      "lemma": "has the ability to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "can"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy modal."
+    },
+    {
+      "id": "have-the-ability-to",
+      "lemma": "have the ability to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "can"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Plural variant."
+    },
+    {
+      "id": "prior-to",
+      "lemma": "prior to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "before"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Formal substitute for \"before\"."
+    },
+    {
+      "id": "subsequent-to",
+      "lemma": "subsequent to",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "after"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Formal substitute for \"after\"."
+    },
+    {
+      "id": "in-conjunction-with",
+      "lemma": "in conjunction with",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "with"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy preposition."
+    },
+    {
+      "id": "on-a-daily-basis",
+      "lemma": "on a daily basis",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "daily",
+        "every day"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy frequency phrase."
+    },
+    {
+      "id": "the-majority-of",
+      "lemma": "the majority of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "most"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Wordy quantifier."
+    },
+    {
+      "id": "in-terms-of",
+      "lemma": "in terms of",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "about",
+        "for"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Often removable filler."
+    },
+    {
+      "id": "moving-forward",
+      "lemma": "moving forward",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "from now on",
+        "ahead"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business-speak for the future."
+    },
+    {
+      "id": "circle-back",
+      "lemma": "circle back",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "return",
+        "follow up"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Office jargon."
+    },
+    {
+      "id": "touch-base",
+      "lemma": "touch base",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "check in",
+        "talk"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Office jargon."
+    },
+    {
+      "id": "low-hanging-fruit",
+      "lemma": "low-hanging fruit",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "easy wins"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business cliché."
+    },
+    {
+      "id": "buy-in",
+      "lemma": "buy-in",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "support"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business jargon noun."
+    },
+    {
+      "id": "actionable-insights",
+      "lemma": "actionable insights",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "useful tips"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Consulting-speak."
+    },
+    {
+      "id": "best-in-class",
+      "lemma": "best-in-class",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "best"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Marketing superlative."
+    },
+    {
+      "id": "cutting-edge",
+      "lemma": "cutting-edge",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "new",
+        "leading"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Marketing adjective."
+    },
+    {
+      "id": "state-of-the-art",
+      "lemma": "state-of-the-art",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "modern",
+        "newest"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Marketing adjective."
+    },
+    {
+      "id": "paradigm-shift",
+      "lemma": "paradigm shift",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "big change"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Overused noun phrase."
+    },
+    {
+      "id": "move-the-needle",
+      "lemma": "move the needle",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "make a difference"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business cliché."
+    },
+    {
+      "id": "think-outside-the-box",
+      "lemma": "think outside the box",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "be creative"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Business cliché."
+    },
+    {
+      "id": "last-but-not-least",
+      "lemma": "last but not least",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "finally"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Stock list closer."
+    },
+    {
+      "id": "it-goes-without-saying",
+      "lemma": "it goes without saying",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "obviously"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Throat-clearing opener."
+    },
+    {
+      "id": "needless-to-say",
+      "lemma": "needless to say",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "obviously"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Throat-clearing opener."
+    },
+    {
+      "id": "in-conclusion",
+      "lemma": "in conclusion",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "in the end",
+        "to wrap up"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Essay-frame closer; fine in formal writing, filler elsewhere."
+    },
+    {
+      "id": "navigate-the-complexities",
+      "lemma": "navigate the complexities",
+      "pattern": null,
+      "type": "phrase",
+      "pos": "phrase",
+      "inflections": {},
+      "replacements": [
+        "handle the hard parts"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Bare variant; the template entry covers the \"of X\" form."
+    },
+    {
+      "id": "it-is-important-to-note-that-sentence",
+      "lemma": null,
+      "pattern": "\\b(?:it is|it's) (?:important|worth noting|worth mentioning|crucial|essential) to (?:note|mention|remember|keep in mind) that\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [],
+      "deleteOk": true,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Bare deletion of the throat-clearing opener; capitalisation of the next word is handled by cleanup."
+    },
+    {
+      "id": "serves-as-a-reminder",
+      "lemma": null,
+      "pattern": "\\bserves as a (?:reminder|testament) (?:of|that) ([^.;!?\\n]{1,60}?)\\b",
+      "type": "template",
+      "pos": "template",
+      "inflections": {},
+      "replacements": [],
+      "templates": [
+        "reminds us {X}",
+        "shows {X}"
+      ],
+      "deleteOk": false,
+      "flagOnly": false,
+      "tier": "C",
+      "source": "Blog-compiled AI-phrase roundups (\"words and phrases ChatGPT overuses\")",
+      "guard": {
+        "notBefore": [],
+        "notAfter": [],
+        "notInProtected": true
+      },
+      "notes": "Blog-compiled flourish with a captured tail."
+    }
+  ]
 }

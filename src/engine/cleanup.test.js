@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { cleanup } from './cleanup.js'
+import { invariantSuite } from './testInvariants.js'
 import { humanize } from './index.js'
 
 // Helper: run cleanup with a default ctx and just return the output string.
@@ -251,25 +252,6 @@ describe('cleanup — edge cases', () => {
 //      inputStart/inputEnd metadata (the contract's start/end stay
 //      output-relative) so the replay is unambiguous and order-independent.
 
-/** Re-apply change records onto the original input. */
-function replay(input, changes) {
-  const ordered = [...changes].sort(
-    (a, b) => (a.inputStart - b.inputStart) || (a.inputEnd - b.inputEnd)
-  )
-  let out = ''
-  let cursor = 0
-  for (const c of ordered) {
-    if (c.inputStart < cursor) {
-      throw new Error(`overlapping change records: ${JSON.stringify(c)} at cursor ${cursor}`)
-    }
-    out += input.slice(cursor, c.inputStart)
-    out += c.replacement
-    cursor = c.inputEnd
-  }
-  out += input.slice(cursor)
-  return out
-}
-
 // [input, options, expectedOutput]
 const FIXTURES = [
   // --- whitespace / typography ---
@@ -353,33 +335,9 @@ const FIXTURES = [
   ],
 ]
 
-describe('cleanup — invariants (position integrity + replay)', () => {
-  it.each(FIXTURES)('%# — %j', (input, opts, expected) => {
-    const r = cleanup(input, { options: opts, protectedWords: opts.protectedWords || [] })
-
-    // Expected output.
-    expect(r.text).toBe(expected)
-
-    // Invariant 1: every change record's positions describe its replacement in
-    // the output; a pure deletion is a zero-width range.
-    for (const c of r.changes) {
-      expect(c.rule).toEqual({ stage: 'cleanup', id: expect.any(String) })
-      expect(typeof c.start).toBe('number')
-      expect(typeof c.end).toBe('number')
-      expect(c.start).toBeGreaterThanOrEqual(0)
-      expect(c.end).toBeGreaterThanOrEqual(c.start)
-      expect(c.end).toBeLessThanOrEqual(r.text.length)
-      expect(r.text.slice(c.start, c.end)).toBe(c.replacement)
-      if (c.replacement === '') expect(c.start).toBe(c.end)
-    }
-
-    // Invariant 2: replaying the records onto the input reproduces the output.
-    expect(replay(input, r.changes)).toBe(r.text)
-
-    // A change must exist whenever the input actually changed.
-    if (r.text !== input) expect(r.changes.length).toBeGreaterThan(0)
-  })
-})
+invariantSuite('cleanup', FIXTURES, (input, opts) =>
+  cleanup(input, { options: opts, protectedWords: opts.protectedWords || [] })
+)
 
 describe('cleanup — protected content survives even when it looks like leftovers', () => {
   it('keeps an emoji AND a chatbot phrase that both live inside quotes', () => {
