@@ -77,11 +77,15 @@ describe('Plainwrite engine', () => {
   it('skips stages disabled via options.stages', () => {
     const text = '  hello   world\r\n'
     const enabled = humanize(text, { seed: 1 })
-    expect(enabled.changes.length).toBeGreaterThan(0) // normalize produces changes
-    const disabledNorm = humanize(text, { seed: 1, stages: { normalize: false } })
-    // With normalize off, all stages are stubs, so output == input (no trim)
-    expect(disabledNorm.changes).toEqual([])
-    expect(disabledNorm.output).toBe(text)
+    expect(enabled.changes.length).toBeGreaterThan(0) // normalize + cleanup produce changes
+    // Disable all currently-active stages (normalize + cleanup); remaining are stubs
+    // and must produce no changes, output must equal input exactly.
+    const disabled = humanize(text, {
+      seed: 1,
+      stages: { normalize: false, cleanup: false },
+    })
+    expect(disabled.changes).toEqual([])
+    expect(disabled.output).toBe(text)
   })
 
   it('turning off one stage leaves others runnable', () => {
