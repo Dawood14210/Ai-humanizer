@@ -13,6 +13,51 @@ describe('Plainwrite engine', () => {
     expect(typeof r.stats).toBe('object')
   })
 
+  it('maps every surviving change into final-output coordinates', () => {
+    const cases = [
+      ['  This   is a    test.  \r\nIt is important to note that we utilize numbers like 42. ', { seed: 7 }],
+      ['It is important to note that we utilize this feature. We do not need it.', { seed: 19, intensity: 'strong', synonyms: true }],
+      ['“We assist families.”  The answer was clear.', { seed: 4, intensity: 'strong', synonyms: true }],
+    ]
+    for (const [input, options] of cases) {
+      const result = humanize(input, options)
+      for (const change of result.changes) {
+        expect(typeof change.superseded).toBe('boolean')
+        if (change.superseded) {
+          expect(change.finalStart).toBeNull()
+          expect(change.finalEnd).toBeNull()
+          continue
+        }
+        expect(Number.isInteger(change.finalStart)).toBe(true)
+        expect(Number.isInteger(change.finalEnd)).toBe(true)
+        expect(result.output.slice(change.finalStart, change.finalEnd)).toBe(change.replacement)
+      }
+    }
+  })
+
+  it('replays with one selected rule and source position excluded', () => {
+    const text = 'The answer is ready.'
+    const stages = {
+      normalize: false, cleanup: false, phrases: false, transitions: false,
+      contractions: false, rhythm: false,
+    }
+    const options = { seed: 0, intensity: 'strong', synonyms: true, stages }
+    const first = humanize(text, options)
+    const selected = first.changes.find(change => !change.superseded)
+    expect(selected).toBeTruthy()
+    expect(first.output).not.toBe(text)
+    const reverted = humanize(text, {
+      ...options,
+      excludedChanges: [{
+        stage: selected.stage,
+        id: selected.rule.id,
+        inputStart: selected.inputStart,
+        inputEnd: selected.inputEnd,
+      }],
+    })
+    expect(reverted.output).toBe(text)
+  })
+
   it('handles non-string input gracefully', () => {
     expect(humanize(null).output).toBe('')
     expect(humanize(undefined).output).toBe('')
@@ -39,6 +84,14 @@ describe('Plainwrite engine', () => {
   })
 
   // --- Determinism ---------------------------------------------------------
+  it('reports stage progress without changing the deterministic engine output', () => {
+    const progress = []
+    const result = humanize('A short, tidy sentence.', { onProgress: step => progress.push(step) })
+    expect(result.output).toBe('A short, tidy sentence.')
+    expect(progress.length).toBeGreaterThan(7)
+    expect(progress.at(-1)).toMatchObject({ completed: 7, total: 7, percent: 100 })
+  })
+
   it('produces identical output for identical (input, options, seed)', () => {
     const text = '  This   is a    test.  \r\nIt is important to note that we utilize numbers like 42. '
     const a = humanize(text, { seed: 7 })
@@ -86,6 +139,17 @@ describe('Plainwrite engine', () => {
     })
     expect(disabled.changes).toEqual([])
     expect(disabled.output).toBe(text)
+  })
+
+  it('keeps synonyms off by default and enables them only when requested', () => {
+    const text = 'The answer is ready.'
+    const otherStagesOff = {
+      normalize: false, cleanup: false, phrases: false, transitions: false,
+      contractions: false, rhythm: false,
+    }
+    expect(humanize(text, { seed: 0, intensity: 'strong', stages: otherStagesOff }).output).toBe(text)
+    expect(humanize(text, { seed: 0, intensity: 'strong', synonyms: true, stages: otherStagesOff }).output)
+      .toBe('The reply is ready.')
   })
 
   it('turning off one stage leaves others runnable', () => {
@@ -151,6 +215,13 @@ describe('Plainwrite engine', () => {
       const pw = spans.filter(s => s.type === 'userWord')
       expect(pw).toHaveLength(1)
       expect(text.slice(pw[0].start, pw[0].end)).toBe('Plainwrite')
+    })
+
+    it('keeps the longest span when protected categories begin at the same offset', () => {
+      const text = '```code``` trailing phrase'
+      const spans = findProtectedSpans(text, { protectedWords: [text] })
+      expect(spans).toHaveLength(1)
+      expect(text.slice(spans[0].start, spans[0].end)).toBe(text)
     })
 
     it('returns non-overlapping, sorted spans', () => {

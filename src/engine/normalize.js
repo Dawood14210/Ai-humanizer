@@ -1,57 +1,51 @@
-// normalize.js — trims whitespace, fixes line endings, and normalizes Unicode/quotation marks
-// so downstream modules can work on a consistent string.
-// Signature: (text, ctx) => { text, changes }
-// Stage id: "normalize"
+// normalize.js — trims whitespace, fixes line endings, and collapses repeated
+// horizontal whitespace. All edits are discovered on the original input and
+// applied once, so the returned copied map can safely remap earlier changes.
+// Signature: (text, ctx) => { text, changes, copied }
 
-export function normalize(text, ctx) {
-  if (typeof text !== 'string') return { text: '', changes: [] }
+import { applyEdits } from './edits.js'
+import { findProtectedSpans, forceImmutableProtection, overlapsProtectedSpans } from './protected.js'
 
-  let out = text
-  const changes = []
-
-  // Normalize line endings to \n
-  if (out.includes('\r\n') || out.includes('\r')) {
-    const original = out
-    out = out.replace(/\r\n?/g, '\n')
-    changes.push({
-      original: original,
-      replacement: out,
-      rule: { stage: 'normalize', id: 'lineEndings' },
-      start: 0,
-      end: out.length,
-    })
+function collectMatches(text, regex, replacement, rule) {
+  const edits = []
+  regex.lastIndex = 0
+  let match
+  while ((match = regex.exec(text)) !== null) {
+    const next = typeof replacement === 'function' ? replacement(match[0]) : replacement
+    if (next !== match[0]) {
+      edits.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        original: match[0],
+        replacement: next,
+        rule,
+      })
+    }
+    if (match[0] === '') regex.lastIndex++
   }
+  return edits
+}
 
-  // Strip leading/trailing whitespace
-  const trimmed = out.trim()
-  if (trimmed !== out) {
-    changes.push({
-      original: out,
-      replacement: trimmed,
-      rule: { stage: 'normalize', id: 'trim' },
-      start: 0,
-      end: trimmed.length,
-    })
-    out = trimmed
-  }
+export function normalize(text, ctx = {}) {
+  if (typeof text !== 'string') return { text: '', changes: [], copied: [] }
 
-  // Collapse runs of spaces/tabs (but preserve double-newline paragraph breaks).
-  // At this stage we don't touch protected spans because normalization is pre-pass
-  // and protected-span detection needs to run on normalized text anyway.
-  const collapsed = out
-    .replace(/[ \t]+/g, ' ')
-    .replace(/ ?\n ?/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
-  if (collapsed !== out) {
-    changes.push({
-      original: out,
-      replacement: collapsed,
-      rule: { stage: 'normalize', id: 'whitespace' },
-      start: 0,
-      end: collapsed.length,
-    })
-    out = collapsed
-  }
-
-  return { text: out, changes }
+  // Find every edit on the unmodified string. The line-break matcher also
+  // absorbs adjacent horizontal whitespace and reduces 3+ consecutive breaks
+  // to a paragraph break; higher priority resolves its overlap with whitespace
+  // collapse or edge trimming.
+  const options = ctx.options || {}
+  const spans = findProtectedSpans(text, {
+    protectedWords: Array.isArray(ctx.protectedWords) ? ctx.protectedWords : [],
+    protect: forceImmutableProtection(options.protect),
+  })
+  const edits = [
+    ...collectMatches(text, /^\s+|\s+$/g, '', 'normalizationTrim'),
+    ...collectMatches(text, /[ \t]*(?:\r\n?|\n)+[ \t]*/g, (match) => {
+      const breaks = match.match(/\r\n?|\n/g)?.length || 1
+      return '\n'.repeat(Math.min(breaks, 2))
+    }, 'normalizationLineEndings'),
+    ...collectMatches(text, /[ \t]+/g, ' ', 'normalizationWhitespace'),
+  ].filter(edit => !overlapsProtectedSpans(edit.start, edit.end, spans))
+  const result = applyEdits(text, edits, 'normalize', { excludedChanges: ctx.excludedChanges })
+  return { text: result.text, changes: result.changes, copied: result.copied }
 }

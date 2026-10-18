@@ -23,6 +23,11 @@
 // can never accidentally collide (e.g. "cleanup:whitespace" vs "phrase:word").
 
 export const PRIORITY = {
+  // --- normalization stage ---
+  normalizationTrim: 70,
+  normalizationLineEndings: 60,
+  normalizationWhitespace: 50,
+
   // --- cleanup stage ---
   chatbotLeftover: 50,
   markdownBold: 40,
@@ -57,7 +62,7 @@ export const PRIORITY = {
  *   kept: Array
  * }}
  */
-export function applyEdits(str, edits, stage = 'unknown') {
+export function applyEdits(str, edits, stage = 'unknown', options = {}) {
   const withPrio = edits.map(e => ({ ...e, _prio: PRIORITY[e.rule] || 0 }))
   // Sort by start ascending; on ties, higher priority first, then longer first.
   withPrio.sort((a, b) => (a.start - b.start) || (b._prio - a._prio) || (a.end - b.end))
@@ -80,8 +85,21 @@ export function applyEdits(str, edits, stage = 'unknown') {
   // Ranges copied through verbatim. Used by length-preserving pre-passes to
   // remap positions recorded before this pass changed any lengths.
   const copied = []
+  const excludedChanges = Array.isArray(options.excludedChanges) ? options.excludedChanges : []
+  const outputOffset = Number.isFinite(options.outputOffset) ? options.outputOffset : 0
+  const inputOffset = Number.isFinite(options.inputOffset) ? options.inputOffset : 0
   for (const e of kept) {
     if (e.start < cursor) continue // safety net
+    const projectedStart = outputOffset + out.length + (e.start - cursor)
+    const projectedEnd = projectedStart + e.replacement.length
+    const inputStart = inputOffset + e.start
+    const inputEnd = inputOffset + e.end
+    const excluded = excludedChanges.some(change =>
+      change.stage === stage && change.id === e.rule
+      && ((Number.isInteger(change.inputStart) && Number.isInteger(change.inputEnd)
+        && change.inputStart === inputStart && change.inputEnd === inputEnd)
+        || (change.inputStart == null && change.start === projectedStart && change.end === projectedEnd)))
+    if (excluded) continue
     if (e.start > cursor) copied.push({ inStart: cursor, inEnd: e.start, outStart: out.length })
     out += str.slice(cursor, e.start)
     const start = out.length
@@ -97,6 +115,7 @@ export function applyEdits(str, edits, stage = 'unknown') {
       // unambiguous.
       inputStart: e.start,
       inputEnd: e.end,
+      ...(e.meta || {}),
     })
     cursor = e.end
   }
@@ -104,6 +123,40 @@ export function applyEdits(str, edits, stage = 'unknown') {
   out += str.slice(cursor)
 
   return { text: out, changes, copied, kept }
+}
+
+/** Map a copied-through range to output coordinates, or return null if any of it was edited. */
+export function mapCopiedRange(copied, start, end) {
+  if (!Array.isArray(copied) || start < 0 || end < start) return null
+  if (start === end) {
+    const containing = copied.find(range => start >= range.inStart && start < range.inEnd)
+    if (containing) {
+      const point = containing.outStart + (start - containing.inStart)
+      return { start: point, end: point }
+    }
+    const preceding = [...copied].reverse().find(range => start === range.inEnd)
+    if (preceding) {
+      const point = preceding.outStart + (preceding.inEnd - preceding.inStart)
+      return { start: point, end: point }
+    }
+    return start === 0 && copied.length === 0 ? { start: 0, end: 0 } : null
+  }
+
+  let cursor = start
+  let outputCursor = null
+  let outputStart = null
+  for (const range of copied) {
+    if (range.inEnd <= cursor) continue
+    if (range.inStart > cursor) return null
+    const mappedStart = range.outStart + (cursor - range.inStart)
+    if (outputCursor !== null && mappedStart !== outputCursor) return null
+    if (outputStart === null) outputStart = mappedStart
+    const next = Math.min(end, range.inEnd)
+    outputCursor = range.outStart + (next - range.inStart)
+    cursor = next
+    if (cursor === end) return { start: outputStart, end: outputCursor }
+  }
+  return null
 }
 
 /** Map a copied-through input index to its output index, or -1 if consumed. */
