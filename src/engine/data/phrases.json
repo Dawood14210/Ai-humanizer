@@ -1,0 +1,7 @@
+{
+  "_comment": "Stiff/AI-flavored phrases mapped to more conversational alternatives.",
+  "in conclusion": ["all in all", "at the end of the day", "to wrap up"],
+  "it is important to note that": ["keep in mind that", "worth noting:", "don't forget that"],
+  "in today's world": ["these days", "nowadays"],
+  "it goes without saying": ["obviously", "naturally"]
+}
