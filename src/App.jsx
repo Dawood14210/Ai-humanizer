@@ -148,7 +148,7 @@ function DiffText({ output, changes, selectedKey, onSelect }) {
           onClick={() => onSelect(change, key)}
           aria-label={`Changed from ${change.original || 'nothing'} to ${change.replacement || 'nothing'}. Show rule details.`}
           aria-pressed={isSelected}
-          className={`inline rounded px-0.5 text-left underline decoration-2 underline-offset-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${isSelected ? 'bg-indigo-200 text-indigo-950 decoration-indigo-600 dark:bg-indigo-300/25 dark:text-indigo-100 dark:decoration-indigo-300' : 'bg-amber-100/90 text-slate-900 decoration-amber-500 hover:bg-amber-200 dark:bg-amber-300/15 dark:text-slate-100 dark:decoration-amber-300 dark:hover:bg-amber-300/25'}`}
+          className={`inline rounded px-0.5 text-left underline decoration-2 underline-offset-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${isSelected ? 'bg-indigo-200 text-indigo-950 decoration-indigo-700 ring-1 ring-inset ring-indigo-300 dark:bg-indigo-300/25 dark:text-indigo-100 dark:decoration-indigo-200' : 'bg-amber-200 text-amber-950 decoration-amber-700 ring-1 ring-inset ring-amber-300 hover:bg-amber-300 dark:bg-amber-300/25 dark:text-amber-50 dark:decoration-amber-200 dark:ring-amber-300/30 dark:hover:bg-amber-300/35'}`}
         >
           {output.slice(start, end)}
         </button>,
@@ -363,6 +363,7 @@ export default function App() {
     else latestRequestRef.current = ++requestRef.current
     setBusy(false)
     setInput('')
+    setProtectedWords('')
     setResult(null)
     setMetrics(null)
     setLanguage(null)
@@ -472,9 +473,9 @@ export default function App() {
                 </div>
               </div>
               <div className="flex items-center gap-1.5">
-                <button type="button" onClick={handleCopy} disabled={!result} className="rounded-lg px-2.5 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-slate-800">Copy</button>
+                <button type="button" onClick={handleCopy} disabled={!result} className="rounded-lg px-2.5 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-slate-800">Copy output</button>
                 <button type="button" onClick={handleDownload} disabled={!result} className="rounded-lg px-2.5 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-40 dark:text-slate-300 dark:hover:bg-slate-800">Download .txt</button>
-                <button type="button" onClick={handleClear} className="rounded-lg px-2.5 py-2 text-xs font-semibold text-slate-600 hover:bg-rose-50 hover:text-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 dark:text-slate-400 dark:hover:bg-rose-400/10 dark:hover:text-rose-200">Clear</button>
+                <button type="button" onClick={handleClear} className="rounded-lg px-2.5 py-2 text-xs font-semibold text-slate-600 hover:bg-rose-50 hover:text-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 dark:text-slate-400 dark:hover:bg-rose-400/10 dark:hover:text-rose-200">Clear all</button>
               </div>
             </div>
             <div className="min-h-[300px] px-4 py-4 sm:min-h-[345px] sm:px-5">
@@ -490,7 +491,7 @@ export default function App() {
                 </div>
               )}
             </div>
-            {result && <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 px-4 py-3 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-5"><span>{result.changes.filter(change => !change.superseded).length} visible edits <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span> {result.stats.words} words</span><span className="inline-flex items-center gap-1.5"><span className="h-2 w-2 rounded-sm bg-amber-300 dark:bg-amber-300/50" /> changed text</span></div>}
+            {result && <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 px-4 py-3 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-5"><span>{result.changes.filter(change => !change.superseded).length} visible edits <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span> {result.stats.words} words</span><span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm border border-amber-400 bg-amber-200 dark:border-amber-300/50 dark:bg-amber-300/30" /> Highlighted changes</span></div>}
           </section>
         </div>
 
