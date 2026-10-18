@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { humanize } from './engine/index.js'
 
+
 export default function App() {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
 
   const handleHumanize = () => {
-    setOutput(humanize(input))
+    const result = humanize(input, { seed: 1234 })
+    setOutput(result.output)
   }
 
   return (
