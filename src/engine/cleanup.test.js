@@ -26,8 +26,8 @@ describe('cleanup — whitespace and typography', () => {
     expect(clean('Stop , go ; now :go.')).toBe('Stop, go; now: go.')
   })
 
-  it('converts curly quotes to ASCII quotes', () => {
-    expect(clean('\u201Chello\u201D')).toBe('"hello"')
+  it('preserves quoted spans but normalizes an unmatched curly apostrophe', () => {
+    expect(clean('\u201Chello\u201D')).toBe('\u201Chello\u201D')
     expect(clean('it\u2019s')).toBe("it's")
     // em dash is tight here → clause joiner → ", "; en dash → "-"
     expect(clean('em\u2014dash and en\u2013dash')).toBe('em, dash and en-dash')
@@ -149,14 +149,14 @@ describe('cleanup — chatbot leftovers', () => {
       .toBe('The sky is blue.')
   })
 
-  it('removes "Let me know if you\'d like..." closer', () => {
-    expect(clean('Set the timer. Let me know if you\'d like further details.'))
-      .toBe('Set the timer.')
+  it('preserves a useful request for the recipient to follow up', () => {
+    const input = 'Set the timer. Let me know if you\'d like further details.'
+    expect(clean(input)).toBe(input)
   })
 
-  it('removes "Feel free to ask..."', () => {
-    expect(clean('Use the form below. Feel free to ask if you have questions.'))
-      .toBe('Use the form below.')
+  it('preserves an invitation to ask questions', () => {
+    const input = 'Use the form below. Feel free to ask if you have questions.'
+    expect(clean(input)).toBe(input)
   })
 
   it('removes "As an AI language model" self-id sentence', () => {
@@ -164,8 +164,15 @@ describe('cleanup — chatbot leftovers', () => {
       .toBe('But here is info about cats.')
   })
 
-  it('removes "Thank you!" closer', () => {
+  it('removes a standalone "Thank you!" closer', () => {
     expect(clean('Add the flour. Thank you!')).toBe('Add the flour.')
+  })
+
+  it('keeps meaningful thanks and acknowledgements instead of deleting their sentences', () => {
+    expect(clean('Thank you for reviewing my application. I appreciate your time.'))
+      .toBe('Thank you for reviewing my application. I appreciate your time.')
+    expect(clean('Thanks to the volunteer team, the study ran smoothly.'))
+      .toBe('Thanks to the volunteer team, the study ran smoothly.')
   })
 
   it('removes "Great question!" opener', () => {
@@ -258,7 +265,7 @@ const FIXTURES = [
   ['  hello   world  \t ', {}, 'hello world'],
   ['a\n\n\n\nb', {}, 'a\n\nb'],
   ['Stop , go ; now :go.', {}, 'Stop, go; now: go.'],
-  ['\u201Chello\u201D', {}, '"hello"'],
+  ['\u201Chello\u201D', {}, '\u201Chello\u201D'],
   ["it\u2019s", {}, "it's"],
   ['em\u2014dash and en\u2013dash', {}, 'em, dash and en-dash'],
   ['a\u2026b', {}, 'a...b'],
@@ -306,8 +313,8 @@ const FIXTURES = [
   ['Certainly! Here is the answer. The sky is blue.', {}, 'The sky is blue.'],
   ['Sure, here is the list: apples, bananas, oranges. Enjoy.', {}, 'Enjoy.'],
   ['The sky is blue. I hope this helps!', {}, 'The sky is blue.'],
-  ["Set the timer. Let me know if you'd like further details.", {}, 'Set the timer.'],
-  ['Use the form below. Feel free to ask if you have questions.', {}, 'Use the form below.'],
+  ["Set the timer. Let me know if you'd like further details.", {}, "Set the timer. Let me know if you'd like further details."],
+  ['Use the form below. Feel free to ask if you have questions.', {}, 'Use the form below. Feel free to ask if you have questions.'],
   ['As an AI language model, I cannot do that. But here is info about cats.', {}, 'But here is info about cats.'],
   ['Add the flour. Thank you!', {}, 'Add the flour.'],
   ['Great question! The answer is 42.', {}, 'The answer is 42.'],
@@ -327,7 +334,7 @@ const FIXTURES = [
   ['Hello.World', {}, 'Hello. World'],
   ['A.  I hope this helps. B.', {}, 'A. B.'],
   ['Great question!\n\nReal content here.', {}, 'Real content here.'],
-  ['Real content.\n\nLet me know if you would like more.', {}, 'Real content.'],
+  ['Real content.\n\nLet me know if you would like more.', {}, 'Real content.\n\nLet me know if you would like more.'],
   [
     'Sure! I hope this helps. Real content stays.',
     {},
@@ -347,10 +354,9 @@ describe('cleanup — protected content survives even when it looks like leftove
     expect(clean(input, { formal: true })).toBe(input)
   })
 
-  it('keeps them inside curly quotes too (curly quotes are normalized, content is not)', () => {
+  it('keeps the complete curly-quoted span verbatim', () => {
     const input = 'She said \u201CI hope this helps \u{1F44B}\u201D and left.'
-    // Only the two curly quote characters change; the emoji and the phrase stay.
-    expect(clean(input, { formal: true })).toBe('She said "I hope this helps \u{1F44B}" and left.')
+    expect(clean(input, { formal: true })).toBe(input)
   })
 
   it('removes the same chatbot phrase when it is NOT inside quotes', () => {

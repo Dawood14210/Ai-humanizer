@@ -114,6 +114,18 @@ describe('phrases.json — shape', () => {
     expect(new Set(keys).size).toBe(keys.length)
   })
 
+  it('marks the specified ordinary words as density-gated', () => {
+    const required = [
+      'across', 'within', 'potential', 'findings',
+      'crucial', 'additionally', 'significant', 'framework',
+    ]
+    for (const lemma of required) {
+      const entry = entries.find(e => e.type === 'word' && e.lemma === lemma)
+      expect(entry, `${lemma} dictionary entry`).toBeDefined()
+      expect(entry.flagOnly, `${lemma} must be flag-only`).toBe(true)
+    }
+  })
+
   it('word entries: every inflection key maps each replacement to a form', () => {
     for (const e of entries.filter(x => x.type === 'word')) {
       expect(Object.keys(e.inflections).length, e.id).toBeGreaterThan(0)
@@ -376,6 +388,22 @@ describe('phrases — templates', () => {
   it('applies a two-group template', () => {
     const out = swap('It is not only fast but also cheap.')
     expect(out).toMatch(/^It is (fast and cheap|fast, and cheap too)\.$/)
+  })
+
+  it('honours dictionary guards on template entries', () => {
+    const entry = DICT.entries.find(e => e.id === 'serves-as-a-reminder')
+    const originalGuard = entry.guard
+    try {
+      // Temporarily exercise the guard in isolation without changing the
+      // production dictionary's intended matching behavior.
+      entry.guard = { ...originalGuard, notBefore: ['it'] }
+      expect(swap('It serves as a reminder of the old rule.'))
+        .toBe('It serves as a reminder of the old rule.')
+      expect(swap('History serves as a reminder of the old rule.'))
+        .not.toBe('History serves as a reminder of the old rule.')
+    } finally {
+      entry.guard = originalGuard
+    }
   })
 
   it('the template beats the single word it contains', () => {

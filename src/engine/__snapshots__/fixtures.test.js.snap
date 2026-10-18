@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`representative writing fixtures > 'AI-style essay' keeps final change coordinates aligned and matches its snapshot > AI-style essay 1`] = `"In today's rapidly evolving world,technology performs a pivotal role. Also, it is essential to use many tools to cheer meaningful change."`;
+
+exports[`representative writing fixtures > 'academic abstract' keeps final change coordinates aligned and matches its snapshot > academic abstract 1`] = `"This study inspects how shade cover affects soil moisture in urban gardens. We measured twelve plots over eight weeks and found that shaded plots retained more water after rainfall. The outcomes suggest that small planting changes can reduce summer watering needs."`;
+
+exports[`representative writing fixtures > 'email' keeps final change coordinates aligned and matches its snapshot > email 1`] = `
+"Hi Jordan,
+
+I hope this email finds you well. I wanted to reach out and ask if you can share the latest report.
+
+Best,
+Mina"
+`;
+
+exports[`representative writing fixtures > 'list-heavy text' keeps final change coordinates aligned and matches its snapshot > list-heavy text 1`] = `
+"Key steps:
+- First, collect the samples.
+- Next, record the temperature.
+- Finally, compare the readings and share the results."
+`;
+
+exports[`representative writing fixtures > 'mixed languages' keeps final change coordinates aligned and matches its snapshot > mixed languages 1`] = `"The team reviewed the draft together. Después, el equipo compartió sus ideas con la comunidad y habló sobre los próximos pasos."`;
+
+exports[`representative writing fixtures > 'product description' keeps final change coordinates aligned and matches its snapshot > product description 1`] = `"Meet the Nova bottle: a lightweight, durable design that keeps sips cold for 24 hours. Its leak-proof lid fits most sacks, and the wide opening makes it easy to clean."`;
+
+exports[`representative writing fixtures > 'quotes and code' keeps final change coordinates aligned and matches its snapshot > quotes and code 1`] = `
+"The reviewer wrote, “The change is significant and the approach is crucial.”
+
+\`\`\`js
+const result  = 42;
+console.log(result);
+\`\`\`
+
+The code prints one value."
+`;
+
+exports[`representative writing fixtures > 'text with many markers' keeps final change coordinates aligned and matches its snapshot > text with many markers 1`] = `"Now, we employ a full structure to help meaningful outcomes. Also, this central approach performs a key part and is proof of large progress."`;
+
+exports[`representative writing fixtures > 'text with no markers' keeps final change coordinates aligned and matches its snapshot > text with no markers 1`] = `"Mira packed lunch, caught the bus, and read a novel by the window. The afternoon passed quietly."`;
+
+exports[`representative writing fixtures > 'very short text' keeps final change coordinates aligned and matches its snapshot > very short text 1`] = `"Good work."`;

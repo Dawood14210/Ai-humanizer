@@ -29,7 +29,7 @@
 // Signature: (text, ctx) => { text, changes }
 // Stage id: "phrases"
 
-import { findProtectedSpans } from './protected.js'
+import { findProtectedSpans, forceImmutableProtection, overlapsProtectedSpans } from './protected.js'
 import { applyEdits } from './edits.js'
 import { makeRng } from './rng.js'
 import dictionary from './data/phrases.json'
@@ -192,12 +192,7 @@ export function applyCapitalization(source, target) {
 // ---------------------------------------------------------------------------
 
 function overlapsSpan(start, end, spans) {
-  for (const s of spans) {
-    if (s.end <= start) continue
-    if (s.start >= end) return false
-    return true
-  }
-  return false
+  return overlapsProtectedSpans(start, end, spans)
 }
 
 /**
@@ -265,6 +260,13 @@ function pick(list, rng) {
 function renderReplacement(f, rng, originalText) {
   const { entry, text: matched, match } = f
 
+  // Guards apply to every rule type, including regex templates. Keep this
+  // ahead of template rendering so a template cannot bypass its dictionary
+  // conditions simply because it has a different replacement format.
+  const guard = entry.guard || {}
+  if (guard.notBefore?.includes(wordBefore(originalText, f.start))) return null
+  if (guard.notAfter?.includes(wordAfter(originalText, f.end))) return null
+
   if (entry.type === 'template') {
     const templates = entry.templates || []
     if (templates.length === 0) {
@@ -283,11 +285,6 @@ function renderReplacement(f, rng, originalText) {
   // Candidate replacements. Deletion is an extra candidate when deleteOk is set.
   const candidates = [...(entry.replacements || [])]
   if (entry.deleteOk) candidates.push('')
-
-  // Guard: bail out when the neighbouring words say this sense is not ours.
-  const guard = entry.guard || {}
-  if (guard.notBefore?.includes(wordBefore(originalText, f.start))) return null
-  if (guard.notAfter?.includes(wordAfter(originalText, f.end))) return null
 
   const chosen = pick(candidates, rng)
 
@@ -323,7 +320,7 @@ export function rewritePhrases(text, ctx = {}) {
     : makeRng(Number.isFinite(opts.seed) ? opts.seed : 0x9e3779b9)
   const protectedWords = Array.isArray(ctx.protectedWords) ? ctx.protectedWords : []
 
-  const spans = findProtectedSpans(text, { protectedWords, protect: opts.protect || {} })
+  const spans = findProtectedSpans(text, { protectedWords, protect: forceImmutableProtection(opts.protect) })
   const threshold = Number.isFinite(opts.densityThreshold)
     ? opts.densityThreshold
     : (dictionary.densityThreshold || 3)
@@ -375,11 +372,16 @@ export function rewritePhrases(text, ctx = {}) {
       original: text.slice(start, end),
       replacement: finalReplacement,
       rule: f.rule,
+      meta: {
+        ruleName: f.entry.id,
+        tier: f.entry.tier,
+        source: f.entry.source,
+      },
     })
   }
 
-  const { text: out, changes } = applyEdits(text, edits, 'phrases')
-  return { text: out, changes }
+  const { text: out, changes, copied } = applyEdits(text, edits, 'phrases', { excludedChanges: ctx.excludedChanges })
+  return { text: out, changes, copied }
 }
 
 /** The loaded dictionary (handy for tests and tooling). */

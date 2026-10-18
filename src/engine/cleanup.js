@@ -29,7 +29,7 @@
 //
 // Signature: (text, ctx) => { text, changes }
 
-import { findProtectedSpans } from './protected.js'
+import { findProtectedSpans, forceImmutableProtection, overlapsProtectedSpans } from './protected.js'
 import { applyEdits, mapIndex, splitByProtected } from './edits.js'
 
 // ---------- character maps -----------------------------------------------
@@ -85,15 +85,11 @@ function getChatbotEdits(str) {
     /\bi\s+hope\s+(?:this|that)\s+helps!?/i,
     /\bhope\s+(?:this|that)\s+helps!?/i,
     /\bhope\s+that\s+makes\s+sense!?/i,
-    /\bdoes\s+that\s+make\s+sense\??/i,
-    /\b(?:please\s+)?let\s+me\s+know\b/i,
-    /\bfeel\s+free\s+to\s+(?:ask|reach\s+out|let\s+me\s+know)\b/i,
-    /\bhappy\s+to\s+help!?/i,
-    /\bdon(?:'|’)?t\s+hesitate\s+to\s+(?:ask|reach\s+out)\b/i,
-    /\bif\s+you\s+have\s+any\s+(?:further\s+)?questions\b/i,
-    /\bthank\s+you(?:\s+(?:very\s+much|so\s+much|in\s+advance|for\s+\w+))?[!.]?/i,
-    /\bthanks!?\b/i,
   ]
+  // Only remove standalone courtesy sign-offs. Phrases such as "Thank you for
+  // reviewing my application" and "Thanks to the volunteers" carry user
+  // meaning and must not trigger whole-sentence deletion.
+  const STANDALONE_SIGNOFF = /^\s*(?:thank\s+you(?:\s+(?:very\s+much|so\s+much|in\s+advance))?|thanks)[!.]?\s*$/i
 
   // Sentence = body + terminator, with NO trailing whitespace (whitespace gaps
   // are handled explicitly below so we never leave a double space).
@@ -107,7 +103,8 @@ function getChatbotEdits(str) {
     if (/^\s*$/.test(whole)) continue
     const hit = (start === 0 ? OPENER.some(re => re.test(whole)) : false) ||
       OPENER.some(re => re.test(whole)) ||
-      ANYWHERE.some(re => re.test(whole))
+      ANYWHERE.some(re => re.test(whole)) ||
+      STANDALONE_SIGNOFF.test(whole)
     if (!hit) continue
 
     // The body may carry leading whitespace ("  I hope this helps."); the
@@ -405,13 +402,23 @@ function getWhitespaceEdits(str, opts = {}) {
  * Positions are recorded at the same indices they were found at (no shifting),
  * which is safe because every substitution is exactly 1 char → 1 char.
  */
-function applyCurlyQuotes(str) {
+function applyCurlyQuotes(str, excludedChanges = [], protectedSpans = []) {
   const changes = []
   let out = ''
+  let spanIndex = 0
   for (let i = 0; i < str.length; i++) {
+    while (spanIndex < protectedSpans.length && protectedSpans[spanIndex].end <= i) spanIndex++
     const ch = str[i]
     const rep = Object.prototype.hasOwnProperty.call(CURLY_QUOTES, ch) ? CURLY_QUOTES[ch] : null
-    if (rep !== null) {
+    const span = protectedSpans[spanIndex]
+    const inProtectedSpan = Boolean(span && span.start < i + ch.length && span.end > i)
+    const excluded = rep !== null && (
+      inProtectedSpan
+      || excludedChanges.some(change =>
+        change.stage === 'cleanup' && change.id === 'curlyQuotes'
+        && change.inputStart === i && change.inputEnd === i + ch.length)
+    )
+    if (rep !== null && !excluded) {
       out += rep
       changes.push({
         original: ch,
@@ -437,12 +444,12 @@ export function cleanup(text, ctx = {}) {
   }
   const opts = ctx.options || {}
   const protectedWords = Array.isArray(ctx.protectedWords) ? ctx.protectedWords : []
-  const protectOpts = { protectedWords, protect: opts.protect || {} }
+  const protectOpts = { protectedWords, protect: forceImmutableProtection(opts.protect) }
+  const originalSpans = findProtectedSpans(text, protectOpts)
 
-  // 1) Length-preserving curly-quote pre-pass on the whole text. After this,
-  //    “...” spans are plain "..." spans, so protected-span detection sees them.
-  //    Indices in `working` are identical to indices in `text`.
-  const pre = applyCurlyQuotes(text)
+  // 1) Normalize curly quotes only outside immutable protected spans. Their
+  //    positions stay fixed because every allowed replacement is one char.
+  const pre = applyCurlyQuotes(text, ctx.excludedChanges, originalSpans)
   const working = pre.text
   const curly = pre.changes
 
@@ -464,6 +471,7 @@ export function cleanup(text, ctx = {}) {
   }
 
   const allChanges = []
+  const copiedMap = []
   let out = ''
 
   for (let i = 0; i < segs.length; i++) {
@@ -473,6 +481,7 @@ export function cleanup(text, ctx = {}) {
 
     // --- protected segment: copy verbatim ---
     if (seg.protected) {
+      if (seg.text.length > 0) copiedMap.push({ inStart: seg.offset, inEnd: seg.offset + seg.text.length, outStart: base })
       for (const c of segCurly) {
         const local = c.inputStart - seg.offset
         allChanges.push({ ...c, start: base + local, end: base + local + c.replacement.length })
@@ -498,7 +507,18 @@ export function cleanup(text, ctx = {}) {
       ...getWhitespaceEdits(seg.text, { docStart: isDocStart, docEnd: isDocEnd }),
     ]
 
-    const { text: newSeg, changes: segChanges, copied } = applyEdits(seg.text, edits, 'cleanup')
+    const { text: newSeg, changes: segChanges, copied } = applyEdits(seg.text, edits, 'cleanup', {
+      excludedChanges: ctx?.excludedChanges,
+      inputOffset: seg.offset,
+      outputOffset: base,
+    })
+    for (const range of copied) {
+      copiedMap.push({
+        inStart: seg.offset + range.inStart,
+        inEnd: seg.offset + range.inEnd,
+        outStart: base + range.outStart,
+      })
+    }
 
     for (const c of segChanges) {
       allChanges.push({
@@ -537,5 +557,33 @@ export function cleanup(text, ctx = {}) {
   //    consumer can replay them left-to-right.
   allChanges.sort((a, b) => (a.inputStart - b.inputStart) || (a.start - b.start))
 
-  return { text: out, changes: allChanges }
+  // The quote-normalization pre-pass is length-preserving but still rewrites
+  // characters. Exclude those source positions from the copied map so changes
+  // from earlier stages that cover a quote are marked superseded.
+  const curlyPositions = curly.map(change => change.inputStart).sort((a, b) => a - b)
+  const copied = []
+  let curlyIndex = 0
+  for (const range of copiedMap) {
+    while (curlyIndex < curlyPositions.length && curlyPositions[curlyIndex] < range.inStart) curlyIndex++
+    let scan = curlyIndex
+    let cursor = range.inStart
+    while (scan < curlyPositions.length && curlyPositions[scan] < range.inEnd) {
+      const position = curlyPositions[scan]
+      if (cursor < position) copied.push({
+        inStart: cursor,
+        inEnd: position,
+        outStart: range.outStart + (cursor - range.inStart),
+      })
+      cursor = position + 1
+      scan++
+    }
+    if (cursor < range.inEnd) copied.push({
+      inStart: cursor,
+      inEnd: range.inEnd,
+      outStart: range.outStart + (cursor - range.inStart),
+    })
+    curlyIndex = scan
+  }
+
+  return { text: out, changes: allChanges, copied }
 }

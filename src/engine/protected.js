@@ -3,6 +3,33 @@
 // caller-supplied protected words/phrases. Spans are non-overlapping and sorted
 // by start position, measured in UTF-16 code units (same as JS string indices).
 
+export const IMMUTABLE_PROTECTION = Object.freeze({
+  codeBlock: true,
+  inlineCode: true,
+  doubleQuote: true,
+  singleQuote: true,
+  url: true,
+  email: true,
+  citation: true,
+  number: true,
+  userWord: true,
+})
+
+export function forceImmutableProtection(config = {}) {
+  return { ...(config || {}), ...IMMUTABLE_PROTECTION }
+}
+
+export function overlapsProtectedSpans(start, end, spans = []) {
+  let low = 0
+  let high = spans.length
+  while (low < high) {
+    const middle = (low + high) >>> 1
+    if (spans[middle].end <= start) low = middle + 1
+    else high = middle
+  }
+  return low < spans.length && spans[low].start < end
+}
+
 export const PROTECTED_TYPES = [
   'codeBlock',    // ``` ... ``` or indented code
   'inlineCode',   // `...`
@@ -125,7 +152,7 @@ export function findProtectedSpans(text, opts = {}) {
   }
 
   // Prune overlaps: sort by start (ties: longer first), drop anything covered.
-  spans.sort((a, b) => (a.start - b.start) || (b.end - b.end))
+  spans.sort((a, b) => (a.start - b.start) || (b.end - a.end))
   const out = []
   for (const sp of spans) {
     const last = out[out.length - 1]

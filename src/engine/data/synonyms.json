@@ -1,11 +1,5900 @@
 {
-  "_comment": "Word-level swaps from stiff/overused AI words to plainer alternatives.",
-  "utilize": ["use"],
-  "utilizes": ["uses"],
-  "utilizing": ["using"],
-  "facilitate": ["help with", "make easier"],
-  "leveraging": ["using"],
-  "numerous": ["many"],
-  "plethora": ["lots", "ton"],
-  "commence": ["start", "begin"]
+  "version": "1.0.0",
+  "description": "Curated, local rule-based word substitutions. No external lexical database is loaded.",
+  "entries": [
+    {
+      "word": "assist",
+      "pos": "verb",
+      "replacements": [
+        "aid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "assist",
+          "thirdPerson": "assists",
+          "past": "assisted",
+          "-ing": "assisting"
+        },
+        "replacements": {
+          "aid": {
+            "base": "aid",
+            "thirdPerson": "aids",
+            "past": "aided",
+            "-ing": "aiding"
+          }
+        }
+      }
+    },
+    {
+      "word": "avoid",
+      "pos": "verb",
+      "replacements": [
+        "evade"
+      ],
+      "inflections": {
+        "source": {
+          "base": "avoid",
+          "thirdPerson": "avoids",
+          "past": "avoided",
+          "-ing": "avoiding"
+        },
+        "replacements": {
+          "evade": {
+            "base": "evade",
+            "thirdPerson": "evades",
+            "past": "evaded",
+            "-ing": "evading"
+          }
+        }
+      }
+    },
+    {
+      "word": "cancel",
+      "pos": "verb",
+      "replacements": [
+        "stop"
+      ],
+      "inflections": {
+        "source": {
+          "base": "cancel",
+          "thirdPerson": "cancels",
+          "past": "canceled",
+          "-ing": "canceling"
+        },
+        "replacements": {
+          "stop": {
+            "base": "stop",
+            "thirdPerson": "stops",
+            "past": "stopped",
+            "-ing": "stopping"
+          }
+        }
+      }
+    },
+    {
+      "word": "collect",
+      "pos": "verb",
+      "replacements": [
+        "gather"
+      ],
+      "inflections": {
+        "source": {
+          "base": "collect",
+          "thirdPerson": "collects",
+          "past": "collected",
+          "-ing": "collecting"
+        },
+        "replacements": {
+          "gather": {
+            "base": "gather",
+            "thirdPerson": "gathers",
+            "past": "gathered",
+            "-ing": "gathering"
+          }
+        }
+      }
+    },
+    {
+      "word": "complete",
+      "pos": "verb",
+      "replacements": [
+        "finish"
+      ],
+      "inflections": {
+        "source": {
+          "base": "complete",
+          "thirdPerson": "completes",
+          "past": "completed",
+          "-ing": "completing"
+        },
+        "replacements": {
+          "finish": {
+            "base": "finish",
+            "thirdPerson": "finishes",
+            "past": "finished",
+            "-ing": "finishing"
+          }
+        }
+      }
+    },
+    {
+      "word": "continue",
+      "pos": "verb",
+      "replacements": [
+        "persist"
+      ],
+      "inflections": {
+        "source": {
+          "base": "continue",
+          "thirdPerson": "continues",
+          "past": "continued",
+          "-ing": "continuing"
+        },
+        "replacements": {
+          "persist": {
+            "base": "persist",
+            "thirdPerson": "persists",
+            "past": "persisted",
+            "-ing": "persisting"
+          }
+        }
+      }
+    },
+    {
+      "word": "copy",
+      "pos": "verb",
+      "replacements": [
+        "duplicate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "copy",
+          "thirdPerson": "copies",
+          "past": "copied",
+          "-ing": "copying"
+        },
+        "replacements": {
+          "duplicate": {
+            "base": "duplicate",
+            "thirdPerson": "duplicates",
+            "past": "duplicated",
+            "-ing": "duplicating"
+          }
+        }
+      }
+    },
+    {
+      "word": "create",
+      "pos": "verb",
+      "replacements": [
+        "form"
+      ],
+      "inflections": {
+        "source": {
+          "base": "create",
+          "thirdPerson": "creates",
+          "past": "created",
+          "-ing": "creating"
+        },
+        "replacements": {
+          "form": {
+            "base": "form",
+            "thirdPerson": "forms",
+            "past": "formed",
+            "-ing": "forming"
+          }
+        }
+      }
+    },
+    {
+      "word": "decide",
+      "pos": "verb",
+      "replacements": [
+        "determine"
+      ],
+      "inflections": {
+        "source": {
+          "base": "decide",
+          "thirdPerson": "decides",
+          "past": "decided",
+          "-ing": "deciding"
+        },
+        "replacements": {
+          "determine": {
+            "base": "determine",
+            "thirdPerson": "determines",
+            "past": "determined",
+            "-ing": "determining"
+          }
+        }
+      }
+    },
+    {
+      "word": "deliver",
+      "pos": "verb",
+      "replacements": [
+        "dispatch"
+      ],
+      "inflections": {
+        "source": {
+          "base": "deliver",
+          "thirdPerson": "delivers",
+          "past": "delivered",
+          "-ing": "delivering"
+        },
+        "replacements": {
+          "dispatch": {
+            "base": "dispatch",
+            "thirdPerson": "dispatches",
+            "past": "dispatched",
+            "-ing": "dispatching"
+          }
+        }
+      }
+    },
+    {
+      "word": "describe",
+      "pos": "verb",
+      "replacements": [
+        "explain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "describe",
+          "thirdPerson": "describes",
+          "past": "described",
+          "-ing": "describing"
+        },
+        "replacements": {
+          "explain": {
+            "base": "explain",
+            "thirdPerson": "explains",
+            "past": "explained",
+            "-ing": "explaining"
+          }
+        }
+      }
+    },
+    {
+      "word": "discover",
+      "pos": "verb",
+      "replacements": [
+        "uncover"
+      ],
+      "inflections": {
+        "source": {
+          "base": "discover",
+          "thirdPerson": "discovers",
+          "past": "discovered",
+          "-ing": "discovering"
+        },
+        "replacements": {
+          "uncover": {
+            "base": "uncover",
+            "thirdPerson": "uncovers",
+            "past": "uncovered",
+            "-ing": "uncovering"
+          }
+        }
+      }
+    },
+    {
+      "word": "dislike",
+      "pos": "verb",
+      "replacements": [
+        "detest"
+      ],
+      "inflections": {
+        "source": {
+          "base": "dislike",
+          "thirdPerson": "dislikes",
+          "past": "disliked",
+          "-ing": "disliking"
+        },
+        "replacements": {
+          "detest": {
+            "base": "detest",
+            "thirdPerson": "detests",
+            "past": "detested",
+            "-ing": "detesting"
+          }
+        }
+      }
+    },
+    {
+      "word": "divide",
+      "pos": "verb",
+      "replacements": [
+        "split"
+      ],
+      "inflections": {
+        "source": {
+          "base": "divide",
+          "thirdPerson": "divides",
+          "past": "divided",
+          "-ing": "dividing"
+        },
+        "replacements": {
+          "split": {
+            "base": "split",
+            "thirdPerson": "splits",
+            "past": "split",
+            "-ing": "splitting"
+          }
+        }
+      }
+    },
+    {
+      "word": "earn",
+      "pos": "verb",
+      "replacements": [
+        "receive"
+      ],
+      "inflections": {
+        "source": {
+          "base": "earn",
+          "thirdPerson": "earns",
+          "past": "earned",
+          "-ing": "earning"
+        },
+        "replacements": {
+          "receive": {
+            "base": "receive",
+            "thirdPerson": "receives",
+            "past": "received",
+            "-ing": "receiving"
+          }
+        }
+      }
+    },
+    {
+      "word": "educate",
+      "pos": "verb",
+      "replacements": [
+        "instruct"
+      ],
+      "inflections": {
+        "source": {
+          "base": "educate",
+          "thirdPerson": "educates",
+          "past": "educated",
+          "-ing": "educating"
+        },
+        "replacements": {
+          "instruct": {
+            "base": "instruct",
+            "thirdPerson": "instructs",
+            "past": "instructed",
+            "-ing": "instructing"
+          }
+        }
+      }
+    },
+    {
+      "word": "encourage",
+      "pos": "verb",
+      "replacements": [
+        "cheer"
+      ],
+      "inflections": {
+        "source": {
+          "base": "encourage",
+          "thirdPerson": "encourages",
+          "past": "encouraged",
+          "-ing": "encouraging"
+        },
+        "replacements": {
+          "cheer": {
+            "base": "cheer",
+            "thirdPerson": "cheers",
+            "past": "cheered",
+            "-ing": "cheering"
+          }
+        }
+      }
+    },
+    {
+      "word": "enjoy",
+      "pos": "verb",
+      "replacements": [
+        "like"
+      ],
+      "inflections": {
+        "source": {
+          "base": "enjoy",
+          "thirdPerson": "enjoys",
+          "past": "enjoyed",
+          "-ing": "enjoying"
+        },
+        "replacements": {
+          "like": {
+            "base": "like",
+            "thirdPerson": "likes",
+            "past": "liked",
+            "-ing": "liking"
+          }
+        }
+      }
+    },
+    {
+      "word": "escape",
+      "pos": "verb",
+      "replacements": [
+        "flee"
+      ],
+      "inflections": {
+        "source": {
+          "base": "escape",
+          "thirdPerson": "escapes",
+          "past": "escaped",
+          "-ing": "escaping"
+        },
+        "replacements": {
+          "flee": {
+            "base": "flee",
+            "thirdPerson": "flees",
+            "past": "fleed",
+            "-ing": "fleing"
+          }
+        }
+      }
+    },
+    {
+      "word": "examine",
+      "pos": "verb",
+      "replacements": [
+        "inspect"
+      ],
+      "inflections": {
+        "source": {
+          "base": "examine",
+          "thirdPerson": "examines",
+          "past": "examined",
+          "-ing": "examining"
+        },
+        "replacements": {
+          "inspect": {
+            "base": "inspect",
+            "thirdPerson": "inspects",
+            "past": "inspected",
+            "-ing": "inspecting"
+          }
+        }
+      }
+    },
+    {
+      "word": "expect",
+      "pos": "verb",
+      "replacements": [
+        "anticipate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "expect",
+          "thirdPerson": "expects",
+          "past": "expected",
+          "-ing": "expecting"
+        },
+        "replacements": {
+          "anticipate": {
+            "base": "anticipate",
+            "thirdPerson": "anticipates",
+            "past": "anticipated",
+            "-ing": "anticipating"
+          }
+        }
+      }
+    },
+    {
+      "word": "explain",
+      "pos": "verb",
+      "replacements": [
+        "clarify"
+      ],
+      "inflections": {
+        "source": {
+          "base": "explain",
+          "thirdPerson": "explains",
+          "past": "explained",
+          "-ing": "explaining"
+        },
+        "replacements": {
+          "clarify": {
+            "base": "clarify",
+            "thirdPerson": "clarifies",
+            "past": "clarified",
+            "-ing": "clarifying"
+          }
+        }
+      }
+    },
+    {
+      "word": "fix",
+      "pos": "verb",
+      "replacements": [
+        "repair"
+      ],
+      "inflections": {
+        "source": {
+          "base": "fix",
+          "thirdPerson": "fixes",
+          "past": "fixed",
+          "-ing": "fixing"
+        },
+        "replacements": {
+          "repair": {
+            "base": "repair",
+            "thirdPerson": "repairs",
+            "past": "repaired",
+            "-ing": "repairing"
+          }
+        }
+      }
+    },
+    {
+      "word": "follow",
+      "pos": "verb",
+      "replacements": [
+        "obey"
+      ],
+      "inflections": {
+        "source": {
+          "base": "follow",
+          "thirdPerson": "follows",
+          "past": "followed",
+          "-ing": "following"
+        },
+        "replacements": {
+          "obey": {
+            "base": "obey",
+            "thirdPerson": "obeys",
+            "past": "obeyed",
+            "-ing": "obeying"
+          }
+        }
+      }
+    },
+    {
+      "word": "gather",
+      "pos": "verb",
+      "replacements": [
+        "collect"
+      ],
+      "inflections": {
+        "source": {
+          "base": "gather",
+          "thirdPerson": "gathers",
+          "past": "gathered",
+          "-ing": "gathering"
+        },
+        "replacements": {
+          "collect": {
+            "base": "collect",
+            "thirdPerson": "collects",
+            "past": "collected",
+            "-ing": "collecting"
+          }
+        }
+      }
+    },
+    {
+      "word": "guess",
+      "pos": "verb",
+      "replacements": [
+        "estimate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "guess",
+          "thirdPerson": "guesses",
+          "past": "guessed",
+          "-ing": "guessing"
+        },
+        "replacements": {
+          "estimate": {
+            "base": "estimate",
+            "thirdPerson": "estimates",
+            "past": "estimated",
+            "-ing": "estimating"
+          }
+        }
+      }
+    },
+    {
+      "word": "help",
+      "pos": "verb",
+      "replacements": [
+        "aid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "help",
+          "thirdPerson": "helps",
+          "past": "helped",
+          "-ing": "helping"
+        },
+        "replacements": {
+          "aid": {
+            "base": "aid",
+            "thirdPerson": "aids",
+            "past": "aided",
+            "-ing": "aiding"
+          }
+        }
+      }
+    },
+    {
+      "word": "improve",
+      "pos": "verb",
+      "replacements": [
+        "enhance"
+      ],
+      "inflections": {
+        "source": {
+          "base": "improve",
+          "thirdPerson": "improves",
+          "past": "improved",
+          "-ing": "improving"
+        },
+        "replacements": {
+          "enhance": {
+            "base": "enhance",
+            "thirdPerson": "enhances",
+            "past": "enhanced",
+            "-ing": "enhancing"
+          }
+        }
+      }
+    },
+    {
+      "word": "include",
+      "pos": "verb",
+      "replacements": [
+        "contain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "include",
+          "thirdPerson": "includes",
+          "past": "included",
+          "-ing": "including"
+        },
+        "replacements": {
+          "contain": {
+            "base": "contain",
+            "thirdPerson": "contains",
+            "past": "contained",
+            "-ing": "containing"
+          }
+        }
+      }
+    },
+    {
+      "word": "inform",
+      "pos": "verb",
+      "replacements": [
+        "tell"
+      ],
+      "inflections": {
+        "source": {
+          "base": "inform",
+          "thirdPerson": "informs",
+          "past": "informed",
+          "-ing": "informing"
+        },
+        "replacements": {
+          "tell": {
+            "base": "tell",
+            "thirdPerson": "tells",
+            "past": "told",
+            "-ing": "telling"
+          }
+        }
+      }
+    },
+    {
+      "word": "invite",
+      "pos": "verb",
+      "replacements": [
+        "welcome"
+      ],
+      "inflections": {
+        "source": {
+          "base": "invite",
+          "thirdPerson": "invites",
+          "past": "invited",
+          "-ing": "inviting"
+        },
+        "replacements": {
+          "welcome": {
+            "base": "welcome",
+            "thirdPerson": "welcomes",
+            "past": "welcomed",
+            "-ing": "welcoming"
+          }
+        }
+      }
+    },
+    {
+      "word": "join",
+      "pos": "verb",
+      "replacements": [
+        "connect"
+      ],
+      "inflections": {
+        "source": {
+          "base": "join",
+          "thirdPerson": "joins",
+          "past": "joined",
+          "-ing": "joining"
+        },
+        "replacements": {
+          "connect": {
+            "base": "connect",
+            "thirdPerson": "connects",
+            "past": "connected",
+            "-ing": "connecting"
+          }
+        }
+      }
+    },
+    {
+      "word": "jump",
+      "pos": "verb",
+      "replacements": [
+        "leap"
+      ],
+      "inflections": {
+        "source": {
+          "base": "jump",
+          "thirdPerson": "jumps",
+          "past": "jumped",
+          "-ing": "jumping"
+        },
+        "replacements": {
+          "leap": {
+            "base": "leap",
+            "thirdPerson": "leaps",
+            "past": "leaped",
+            "-ing": "leaping"
+          }
+        }
+      }
+    },
+    {
+      "word": "keep",
+      "pos": "verb",
+      "replacements": [
+        "retain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "keep",
+          "thirdPerson": "keeps",
+          "past": "kept",
+          "-ing": "keeping"
+        },
+        "replacements": {
+          "retain": {
+            "base": "retain",
+            "thirdPerson": "retains",
+            "past": "retained",
+            "-ing": "retaining"
+          }
+        }
+      }
+    },
+    {
+      "word": "leave",
+      "pos": "verb",
+      "replacements": [
+        "depart"
+      ],
+      "inflections": {
+        "source": {
+          "base": "leave",
+          "thirdPerson": "leaves",
+          "past": "left",
+          "-ing": "leaving"
+        },
+        "replacements": {
+          "depart": {
+            "base": "depart",
+            "thirdPerson": "departs",
+            "past": "departed",
+            "-ing": "departing"
+          }
+        }
+      }
+    },
+    {
+      "word": "lend",
+      "pos": "verb",
+      "replacements": [
+        "loan"
+      ],
+      "inflections": {
+        "source": {
+          "base": "lend",
+          "thirdPerson": "lends",
+          "past": "lent",
+          "-ing": "lending"
+        },
+        "replacements": {
+          "loan": {
+            "base": "loan",
+            "thirdPerson": "loans",
+            "past": "loaned",
+            "-ing": "loaning"
+          }
+        }
+      }
+    },
+    {
+      "word": "lower",
+      "pos": "verb",
+      "replacements": [
+        "reduce"
+      ],
+      "inflections": {
+        "source": {
+          "base": "lower",
+          "thirdPerson": "lowers",
+          "past": "lowered",
+          "-ing": "lowering"
+        },
+        "replacements": {
+          "reduce": {
+            "base": "reduce",
+            "thirdPerson": "reduces",
+            "past": "reduced",
+            "-ing": "reducing"
+          }
+        }
+      }
+    },
+    {
+      "word": "mix",
+      "pos": "verb",
+      "replacements": [
+        "blend"
+      ],
+      "inflections": {
+        "source": {
+          "base": "mix",
+          "thirdPerson": "mixes",
+          "past": "mixed",
+          "-ing": "mixing"
+        },
+        "replacements": {
+          "blend": {
+            "base": "blend",
+            "thirdPerson": "blends",
+            "past": "blended",
+            "-ing": "blending"
+          }
+        }
+      }
+    },
+    {
+      "word": "need",
+      "pos": "verb",
+      "replacements": [
+        "require"
+      ],
+      "inflections": {
+        "source": {
+          "base": "need",
+          "thirdPerson": "needs",
+          "past": "needed",
+          "-ing": "needing"
+        },
+        "replacements": {
+          "require": {
+            "base": "require",
+            "thirdPerson": "requires",
+            "past": "required",
+            "-ing": "requiring"
+          }
+        }
+      }
+    },
+    {
+      "word": "notice",
+      "pos": "verb",
+      "replacements": [
+        "spot"
+      ],
+      "inflections": {
+        "source": {
+          "base": "notice",
+          "thirdPerson": "notices",
+          "past": "noticed",
+          "-ing": "noticing"
+        },
+        "replacements": {
+          "spot": {
+            "base": "spot",
+            "thirdPerson": "spots",
+            "past": "spotted",
+            "-ing": "spotting"
+          }
+        }
+      }
+    },
+    {
+      "word": "obtain",
+      "pos": "verb",
+      "replacements": [
+        "acquire"
+      ],
+      "inflections": {
+        "source": {
+          "base": "obtain",
+          "thirdPerson": "obtains",
+          "past": "obtained",
+          "-ing": "obtaining"
+        },
+        "replacements": {
+          "acquire": {
+            "base": "acquire",
+            "thirdPerson": "acquires",
+            "past": "acquired",
+            "-ing": "acquiring"
+          }
+        }
+      }
+    },
+    {
+      "word": "offer",
+      "pos": "verb",
+      "replacements": [
+        "provide"
+      ],
+      "inflections": {
+        "source": {
+          "base": "offer",
+          "thirdPerson": "offers",
+          "past": "offered",
+          "-ing": "offering"
+        },
+        "replacements": {
+          "provide": {
+            "base": "provide",
+            "thirdPerson": "provides",
+            "past": "provided",
+            "-ing": "providing"
+          }
+        }
+      }
+    },
+    {
+      "word": "open",
+      "pos": "verb",
+      "replacements": [
+        "unseal"
+      ],
+      "inflections": {
+        "source": {
+          "base": "open",
+          "thirdPerson": "opens",
+          "past": "opened",
+          "-ing": "opening"
+        },
+        "replacements": {
+          "unseal": {
+            "base": "unseal",
+            "thirdPerson": "unseals",
+            "past": "unsealed",
+            "-ing": "unsealing"
+          }
+        }
+      }
+    },
+    {
+      "word": "order",
+      "pos": "verb",
+      "replacements": [
+        "arrange"
+      ],
+      "inflections": {
+        "source": {
+          "base": "order",
+          "thirdPerson": "orders",
+          "past": "ordered",
+          "-ing": "ordering"
+        },
+        "replacements": {
+          "arrange": {
+            "base": "arrange",
+            "thirdPerson": "arranges",
+            "past": "arranged",
+            "-ing": "arranging"
+          }
+        }
+      }
+    },
+    {
+      "word": "organize",
+      "pos": "verb",
+      "replacements": [
+        "sort"
+      ],
+      "inflections": {
+        "source": {
+          "base": "organize",
+          "thirdPerson": "organizes",
+          "past": "organized",
+          "-ing": "organizing"
+        },
+        "replacements": {
+          "sort": {
+            "base": "sort",
+            "thirdPerson": "sorts",
+            "past": "sorted",
+            "-ing": "sorting"
+          }
+        }
+      }
+    },
+    {
+      "word": "pay",
+      "pos": "verb",
+      "replacements": [
+        "settle"
+      ],
+      "inflections": {
+        "source": {
+          "base": "pay",
+          "thirdPerson": "pays",
+          "past": "paid",
+          "-ing": "paying"
+        },
+        "replacements": {
+          "settle": {
+            "base": "settle",
+            "thirdPerson": "settles",
+            "past": "settled",
+            "-ing": "settling"
+          }
+        }
+      }
+    },
+    {
+      "word": "permit",
+      "pos": "verb",
+      "replacements": [
+        "allow"
+      ],
+      "inflections": {
+        "source": {
+          "base": "permit",
+          "thirdPerson": "permits",
+          "past": "permitted",
+          "-ing": "permitting"
+        },
+        "replacements": {
+          "allow": {
+            "base": "allow",
+            "thirdPerson": "allows",
+            "past": "allowed",
+            "-ing": "allowing"
+          }
+        }
+      }
+    },
+    {
+      "word": "plan",
+      "pos": "verb",
+      "replacements": [
+        "prepare"
+      ],
+      "inflections": {
+        "source": {
+          "base": "plan",
+          "thirdPerson": "plans",
+          "past": "planned",
+          "-ing": "planning"
+        },
+        "replacements": {
+          "prepare": {
+            "base": "prepare",
+            "thirdPerson": "prepares",
+            "past": "prepared",
+            "-ing": "preparing"
+          }
+        }
+      }
+    },
+    {
+      "word": "play",
+      "pos": "verb",
+      "replacements": [
+        "perform"
+      ],
+      "inflections": {
+        "source": {
+          "base": "play",
+          "thirdPerson": "plays",
+          "past": "played",
+          "-ing": "playing"
+        },
+        "replacements": {
+          "perform": {
+            "base": "perform",
+            "thirdPerson": "performs",
+            "past": "performed",
+            "-ing": "performing"
+          }
+        }
+      }
+    },
+    {
+      "word": "prefer",
+      "pos": "verb",
+      "replacements": [
+        "favor"
+      ],
+      "inflections": {
+        "source": {
+          "base": "prefer",
+          "thirdPerson": "prefers",
+          "past": "preferred",
+          "-ing": "preferring"
+        },
+        "replacements": {
+          "favor": {
+            "base": "favor",
+            "thirdPerson": "favors",
+            "past": "favored",
+            "-ing": "favoring"
+          }
+        }
+      }
+    },
+    {
+      "word": "protect",
+      "pos": "verb",
+      "replacements": [
+        "guard"
+      ],
+      "inflections": {
+        "source": {
+          "base": "protect",
+          "thirdPerson": "protects",
+          "past": "protected",
+          "-ing": "protecting"
+        },
+        "replacements": {
+          "guard": {
+            "base": "guard",
+            "thirdPerson": "guards",
+            "past": "guarded",
+            "-ing": "guarding"
+          }
+        }
+      }
+    },
+    {
+      "word": "provide",
+      "pos": "verb",
+      "replacements": [
+        "supply"
+      ],
+      "inflections": {
+        "source": {
+          "base": "provide",
+          "thirdPerson": "provides",
+          "past": "provided",
+          "-ing": "providing"
+        },
+        "replacements": {
+          "supply": {
+            "base": "supply",
+            "thirdPerson": "supplies",
+            "past": "supplied",
+            "-ing": "supplying"
+          }
+        }
+      }
+    },
+    {
+      "word": "reach",
+      "pos": "verb",
+      "replacements": [
+        "arrive"
+      ],
+      "inflections": {
+        "source": {
+          "base": "reach",
+          "thirdPerson": "reaches",
+          "past": "reached",
+          "-ing": "reaching"
+        },
+        "replacements": {
+          "arrive": {
+            "base": "arrive",
+            "thirdPerson": "arrives",
+            "past": "arrived",
+            "-ing": "arriving"
+          }
+        }
+      }
+    },
+    {
+      "word": "receive",
+      "pos": "verb",
+      "replacements": [
+        "obtain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "receive",
+          "thirdPerson": "receives",
+          "past": "received",
+          "-ing": "receiving"
+        },
+        "replacements": {
+          "obtain": {
+            "base": "obtain",
+            "thirdPerson": "obtains",
+            "past": "obtained",
+            "-ing": "obtaining"
+          }
+        }
+      }
+    },
+    {
+      "word": "reduce",
+      "pos": "verb",
+      "replacements": [
+        "lessen"
+      ],
+      "inflections": {
+        "source": {
+          "base": "reduce",
+          "thirdPerson": "reduces",
+          "past": "reduced",
+          "-ing": "reducing"
+        },
+        "replacements": {
+          "lessen": {
+            "base": "lessen",
+            "thirdPerson": "lessens",
+            "past": "lessened",
+            "-ing": "lessening"
+          }
+        }
+      }
+    },
+    {
+      "word": "refuse",
+      "pos": "verb",
+      "replacements": [
+        "reject"
+      ],
+      "inflections": {
+        "source": {
+          "base": "refuse",
+          "thirdPerson": "refuses",
+          "past": "refused",
+          "-ing": "refusing"
+        },
+        "replacements": {
+          "reject": {
+            "base": "reject",
+            "thirdPerson": "rejects",
+            "past": "rejected",
+            "-ing": "rejecting"
+          }
+        }
+      }
+    },
+    {
+      "word": "remove",
+      "pos": "verb",
+      "replacements": [
+        "delete"
+      ],
+      "inflections": {
+        "source": {
+          "base": "remove",
+          "thirdPerson": "removes",
+          "past": "removed",
+          "-ing": "removing"
+        },
+        "replacements": {
+          "delete": {
+            "base": "delete",
+            "thirdPerson": "deletes",
+            "past": "deleted",
+            "-ing": "deleting"
+          }
+        }
+      }
+    },
+    {
+      "word": "repair",
+      "pos": "verb",
+      "replacements": [
+        "mend"
+      ],
+      "inflections": {
+        "source": {
+          "base": "repair",
+          "thirdPerson": "repairs",
+          "past": "repaired",
+          "-ing": "repairing"
+        },
+        "replacements": {
+          "mend": {
+            "base": "mend",
+            "thirdPerson": "mends",
+            "past": "mended",
+            "-ing": "mending"
+          }
+        }
+      }
+    },
+    {
+      "word": "reply",
+      "pos": "verb",
+      "replacements": [
+        "answer"
+      ],
+      "inflections": {
+        "source": {
+          "base": "reply",
+          "thirdPerson": "replies",
+          "past": "replied",
+          "-ing": "replying"
+        },
+        "replacements": {
+          "answer": {
+            "base": "answer",
+            "thirdPerson": "answers",
+            "past": "answered",
+            "-ing": "answering"
+          }
+        }
+      }
+    },
+    {
+      "word": "request",
+      "pos": "verb",
+      "replacements": [
+        "ask"
+      ],
+      "inflections": {
+        "source": {
+          "base": "request",
+          "thirdPerson": "requests",
+          "past": "requested",
+          "-ing": "requesting"
+        },
+        "replacements": {
+          "ask": {
+            "base": "ask",
+            "thirdPerson": "asks",
+            "past": "asked",
+            "-ing": "asking"
+          }
+        }
+      }
+    },
+    {
+      "word": "return",
+      "pos": "verb",
+      "replacements": [
+        "revert"
+      ],
+      "inflections": {
+        "source": {
+          "base": "return",
+          "thirdPerson": "returns",
+          "past": "returned",
+          "-ing": "returning"
+        },
+        "replacements": {
+          "revert": {
+            "base": "revert",
+            "thirdPerson": "reverts",
+            "past": "reverted",
+            "-ing": "reverting"
+          }
+        }
+      }
+    },
+    {
+      "word": "save",
+      "pos": "verb",
+      "replacements": [
+        "preserve"
+      ],
+      "inflections": {
+        "source": {
+          "base": "save",
+          "thirdPerson": "saves",
+          "past": "saved",
+          "-ing": "saving"
+        },
+        "replacements": {
+          "preserve": {
+            "base": "preserve",
+            "thirdPerson": "preserves",
+            "past": "preserved",
+            "-ing": "preserving"
+          }
+        }
+      }
+    },
+    {
+      "word": "search",
+      "pos": "verb",
+      "replacements": [
+        "seek"
+      ],
+      "inflections": {
+        "source": {
+          "base": "search",
+          "thirdPerson": "searches",
+          "past": "searched",
+          "-ing": "searching"
+        },
+        "replacements": {
+          "seek": {
+            "base": "seek",
+            "thirdPerson": "seeks",
+            "past": "seeked",
+            "-ing": "seeking"
+          }
+        }
+      }
+    },
+    {
+      "word": "select",
+      "pos": "verb",
+      "replacements": [
+        "pick"
+      ],
+      "inflections": {
+        "source": {
+          "base": "select",
+          "thirdPerson": "selects",
+          "past": "selected",
+          "-ing": "selecting"
+        },
+        "replacements": {
+          "pick": {
+            "base": "pick",
+            "thirdPerson": "picks",
+            "past": "picked",
+            "-ing": "picking"
+          }
+        }
+      }
+    },
+    {
+      "word": "send",
+      "pos": "verb",
+      "replacements": [
+        "mail"
+      ],
+      "inflections": {
+        "source": {
+          "base": "send",
+          "thirdPerson": "sends",
+          "past": "sent",
+          "-ing": "sending"
+        },
+        "replacements": {
+          "mail": {
+            "base": "mail",
+            "thirdPerson": "mails",
+            "past": "mailed",
+            "-ing": "mailing"
+          }
+        }
+      }
+    },
+    {
+      "word": "separate",
+      "pos": "verb",
+      "replacements": [
+        "divide"
+      ],
+      "inflections": {
+        "source": {
+          "base": "separate",
+          "thirdPerson": "separates",
+          "past": "separated",
+          "-ing": "separating"
+        },
+        "replacements": {
+          "divide": {
+            "base": "divide",
+            "thirdPerson": "divides",
+            "past": "divided",
+            "-ing": "dividing"
+          }
+        }
+      }
+    },
+    {
+      "word": "share",
+      "pos": "verb",
+      "replacements": [
+        "distribute"
+      ],
+      "inflections": {
+        "source": {
+          "base": "share",
+          "thirdPerson": "shares",
+          "past": "shared",
+          "-ing": "sharing"
+        },
+        "replacements": {
+          "distribute": {
+            "base": "distribute",
+            "thirdPerson": "distributes",
+            "past": "distributed",
+            "-ing": "distributing"
+          }
+        }
+      }
+    },
+    {
+      "word": "shout",
+      "pos": "verb",
+      "replacements": [
+        "yell"
+      ],
+      "inflections": {
+        "source": {
+          "base": "shout",
+          "thirdPerson": "shouts",
+          "past": "shouted",
+          "-ing": "shouting"
+        },
+        "replacements": {
+          "yell": {
+            "base": "yell",
+            "thirdPerson": "yells",
+            "past": "yelled",
+            "-ing": "yelling"
+          }
+        }
+      }
+    },
+    {
+      "word": "show",
+      "pos": "verb",
+      "replacements": [
+        "display"
+      ],
+      "inflections": {
+        "source": {
+          "base": "show",
+          "thirdPerson": "shows",
+          "past": "showed",
+          "-ing": "showing"
+        },
+        "replacements": {
+          "display": {
+            "base": "display",
+            "thirdPerson": "displays",
+            "past": "displayed",
+            "-ing": "displaying"
+          }
+        }
+      }
+    },
+    {
+      "word": "start",
+      "pos": "verb",
+      "replacements": [
+        "begin"
+      ],
+      "inflections": {
+        "source": {
+          "base": "start",
+          "thirdPerson": "starts",
+          "past": "started",
+          "-ing": "starting"
+        },
+        "replacements": {
+          "begin": {
+            "base": "begin",
+            "thirdPerson": "begins",
+            "past": "began",
+            "-ing": "beginning"
+          }
+        }
+      }
+    },
+    {
+      "word": "stay",
+      "pos": "verb",
+      "replacements": [
+        "remain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "stay",
+          "thirdPerson": "stays",
+          "past": "stayed",
+          "-ing": "staying"
+        },
+        "replacements": {
+          "remain": {
+            "base": "remain",
+            "thirdPerson": "remains",
+            "past": "remained",
+            "-ing": "remaining"
+          }
+        }
+      }
+    },
+    {
+      "word": "stop",
+      "pos": "verb",
+      "replacements": [
+        "cease"
+      ],
+      "inflections": {
+        "source": {
+          "base": "stop",
+          "thirdPerson": "stops",
+          "past": "stopped",
+          "-ing": "stopping"
+        },
+        "replacements": {
+          "cease": {
+            "base": "cease",
+            "thirdPerson": "ceases",
+            "past": "ceased",
+            "-ing": "ceasing"
+          }
+        }
+      }
+    },
+    {
+      "word": "study",
+      "pos": "verb",
+      "replacements": [
+        "learn"
+      ],
+      "inflections": {
+        "source": {
+          "base": "study",
+          "thirdPerson": "studies",
+          "past": "studied",
+          "-ing": "studying"
+        },
+        "replacements": {
+          "learn": {
+            "base": "learn",
+            "thirdPerson": "learns",
+            "past": "learned",
+            "-ing": "learning"
+          }
+        }
+      }
+    },
+    {
+      "word": "suggest",
+      "pos": "verb",
+      "replacements": [
+        "recommend"
+      ],
+      "inflections": {
+        "source": {
+          "base": "suggest",
+          "thirdPerson": "suggests",
+          "past": "suggested",
+          "-ing": "suggesting"
+        },
+        "replacements": {
+          "recommend": {
+            "base": "recommend",
+            "thirdPerson": "recommends",
+            "past": "recommended",
+            "-ing": "recommending"
+          }
+        }
+      }
+    },
+    {
+      "word": "support",
+      "pos": "verb",
+      "replacements": [
+        "assist"
+      ],
+      "inflections": {
+        "source": {
+          "base": "support",
+          "thirdPerson": "supports",
+          "past": "supported",
+          "-ing": "supporting"
+        },
+        "replacements": {
+          "assist": {
+            "base": "assist",
+            "thirdPerson": "assists",
+            "past": "assisted",
+            "-ing": "assisting"
+          }
+        }
+      }
+    },
+    {
+      "word": "talk",
+      "pos": "verb",
+      "replacements": [
+        "speak"
+      ],
+      "inflections": {
+        "source": {
+          "base": "talk",
+          "thirdPerson": "talks",
+          "past": "talked",
+          "-ing": "talking"
+        },
+        "replacements": {
+          "speak": {
+            "base": "speak",
+            "thirdPerson": "speaks",
+            "past": "spoke",
+            "-ing": "speaking"
+          }
+        }
+      }
+    },
+    {
+      "word": "teach",
+      "pos": "verb",
+      "replacements": [
+        "educate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "teach",
+          "thirdPerson": "teaches",
+          "past": "taught",
+          "-ing": "teaching"
+        },
+        "replacements": {
+          "educate": {
+            "base": "educate",
+            "thirdPerson": "educates",
+            "past": "educated",
+            "-ing": "educating"
+          }
+        }
+      }
+    },
+    {
+      "word": "thank",
+      "pos": "verb",
+      "replacements": [
+        "praise"
+      ],
+      "inflections": {
+        "source": {
+          "base": "thank",
+          "thirdPerson": "thanks",
+          "past": "thanked",
+          "-ing": "thanking"
+        },
+        "replacements": {
+          "praise": {
+            "base": "praise",
+            "thirdPerson": "praises",
+            "past": "praised",
+            "-ing": "praising"
+          }
+        }
+      }
+    },
+    {
+      "word": "throw",
+      "pos": "verb",
+      "replacements": [
+        "toss"
+      ],
+      "inflections": {
+        "source": {
+          "base": "throw",
+          "thirdPerson": "throws",
+          "past": "threw",
+          "-ing": "throwing"
+        },
+        "replacements": {
+          "toss": {
+            "base": "toss",
+            "thirdPerson": "tosses",
+            "past": "tossed",
+            "-ing": "tossing"
+          }
+        }
+      }
+    },
+    {
+      "word": "touch",
+      "pos": "verb",
+      "replacements": [
+        "feel"
+      ],
+      "inflections": {
+        "source": {
+          "base": "touch",
+          "thirdPerson": "touches",
+          "past": "touched",
+          "-ing": "touching"
+        },
+        "replacements": {
+          "feel": {
+            "base": "feel",
+            "thirdPerson": "feels",
+            "past": "felt",
+            "-ing": "feeling"
+          }
+        }
+      }
+    },
+    {
+      "word": "travel",
+      "pos": "verb",
+      "replacements": [
+        "tour"
+      ],
+      "inflections": {
+        "source": {
+          "base": "travel",
+          "thirdPerson": "travels",
+          "past": "traveled",
+          "-ing": "traveling"
+        },
+        "replacements": {
+          "tour": {
+            "base": "tour",
+            "thirdPerson": "tours",
+            "past": "toured",
+            "-ing": "touring"
+          }
+        }
+      }
+    },
+    {
+      "word": "try",
+      "pos": "verb",
+      "replacements": [
+        "attempt"
+      ],
+      "inflections": {
+        "source": {
+          "base": "try",
+          "thirdPerson": "tries",
+          "past": "tried",
+          "-ing": "trying"
+        },
+        "replacements": {
+          "attempt": {
+            "base": "attempt",
+            "thirdPerson": "attempts",
+            "past": "attempted",
+            "-ing": "attempting"
+          }
+        }
+      }
+    },
+    {
+      "word": "understand",
+      "pos": "verb",
+      "replacements": [
+        "grasp"
+      ],
+      "inflections": {
+        "source": {
+          "base": "understand",
+          "thirdPerson": "understands",
+          "past": "understood",
+          "-ing": "understanding"
+        },
+        "replacements": {
+          "grasp": {
+            "base": "grasp",
+            "thirdPerson": "grasps",
+            "past": "grasped",
+            "-ing": "grasping"
+          }
+        }
+      }
+    },
+    {
+      "word": "use",
+      "pos": "verb",
+      "replacements": [
+        "employ"
+      ],
+      "inflections": {
+        "source": {
+          "base": "use",
+          "thirdPerson": "uses",
+          "past": "used",
+          "-ing": "using"
+        },
+        "replacements": {
+          "employ": {
+            "base": "employ",
+            "thirdPerson": "employs",
+            "past": "employed",
+            "-ing": "employing"
+          }
+        }
+      }
+    },
+    {
+      "word": "visit",
+      "pos": "verb",
+      "replacements": [
+        "see"
+      ],
+      "inflections": {
+        "source": {
+          "base": "visit",
+          "thirdPerson": "visits",
+          "past": "visited",
+          "-ing": "visiting"
+        },
+        "replacements": {
+          "see": {
+            "base": "see",
+            "thirdPerson": "sees",
+            "past": "saw",
+            "-ing": "seeing"
+          }
+        }
+      }
+    },
+    {
+      "word": "wait",
+      "pos": "verb",
+      "replacements": [
+        "pause"
+      ],
+      "inflections": {
+        "source": {
+          "base": "wait",
+          "thirdPerson": "waits",
+          "past": "waited",
+          "-ing": "waiting"
+        },
+        "replacements": {
+          "pause": {
+            "base": "pause",
+            "thirdPerson": "pauses",
+            "past": "paused",
+            "-ing": "pausing"
+          }
+        }
+      }
+    },
+    {
+      "word": "walk",
+      "pos": "verb",
+      "replacements": [
+        "stroll"
+      ],
+      "inflections": {
+        "source": {
+          "base": "walk",
+          "thirdPerson": "walks",
+          "past": "walked",
+          "-ing": "walking"
+        },
+        "replacements": {
+          "stroll": {
+            "base": "stroll",
+            "thirdPerson": "strolls",
+            "past": "strolled",
+            "-ing": "strolling"
+          }
+        }
+      }
+    },
+    {
+      "word": "watch",
+      "pos": "verb",
+      "replacements": [
+        "observe"
+      ],
+      "inflections": {
+        "source": {
+          "base": "watch",
+          "thirdPerson": "watches",
+          "past": "watched",
+          "-ing": "watching"
+        },
+        "replacements": {
+          "observe": {
+            "base": "observe",
+            "thirdPerson": "observes",
+            "past": "observed",
+            "-ing": "observing"
+          }
+        }
+      }
+    },
+    {
+      "word": "work",
+      "pos": "verb",
+      "replacements": [
+        "labor"
+      ],
+      "inflections": {
+        "source": {
+          "base": "work",
+          "thirdPerson": "works",
+          "past": "worked",
+          "-ing": "working"
+        },
+        "replacements": {
+          "labor": {
+            "base": "labor",
+            "thirdPerson": "labors",
+            "past": "labored",
+            "-ing": "laboring"
+          }
+        }
+      }
+    },
+    {
+      "word": "write",
+      "pos": "verb",
+      "replacements": [
+        "compose"
+      ],
+      "inflections": {
+        "source": {
+          "base": "write",
+          "thirdPerson": "writes",
+          "past": "wrote",
+          "-ing": "writing"
+        },
+        "replacements": {
+          "compose": {
+            "base": "compose",
+            "thirdPerson": "composes",
+            "past": "composed",
+            "-ing": "composing"
+          }
+        }
+      }
+    },
+    {
+      "word": "blame",
+      "pos": "verb",
+      "replacements": [
+        "fault"
+      ],
+      "inflections": {
+        "source": {
+          "base": "blame",
+          "thirdPerson": "blames",
+          "past": "blamed",
+          "-ing": "blaming"
+        },
+        "replacements": {
+          "fault": {
+            "base": "fault",
+            "thirdPerson": "faults",
+            "past": "faulted",
+            "-ing": "faulting"
+          }
+        }
+      }
+    },
+    {
+      "word": "breathe",
+      "pos": "verb",
+      "replacements": [
+        "inhale"
+      ],
+      "inflections": {
+        "source": {
+          "base": "breathe",
+          "thirdPerson": "breathes",
+          "past": "breathed",
+          "-ing": "breathing"
+        },
+        "replacements": {
+          "inhale": {
+            "base": "inhale",
+            "thirdPerson": "inhales",
+            "past": "inhaled",
+            "-ing": "inhaling"
+          }
+        }
+      }
+    },
+    {
+      "word": "cook",
+      "pos": "verb",
+      "replacements": [
+        "prepare"
+      ],
+      "inflections": {
+        "source": {
+          "base": "cook",
+          "thirdPerson": "cooks",
+          "past": "cooked",
+          "-ing": "cooking"
+        },
+        "replacements": {
+          "prepare": {
+            "base": "prepare",
+            "thirdPerson": "prepares",
+            "past": "prepared",
+            "-ing": "preparing"
+          }
+        }
+      }
+    },
+    {
+      "word": "count",
+      "pos": "verb",
+      "replacements": [
+        "tally"
+      ],
+      "inflections": {
+        "source": {
+          "base": "count",
+          "thirdPerson": "counts",
+          "past": "counted",
+          "-ing": "counting"
+        },
+        "replacements": {
+          "tally": {
+            "base": "tally",
+            "thirdPerson": "tallies",
+            "past": "tallied",
+            "-ing": "tallying"
+          }
+        }
+      }
+    },
+    {
+      "word": "draw",
+      "pos": "verb",
+      "replacements": [
+        "sketch"
+      ],
+      "inflections": {
+        "source": {
+          "base": "draw",
+          "thirdPerson": "draws",
+          "past": "drew",
+          "-ing": "drawing"
+        },
+        "replacements": {
+          "sketch": {
+            "base": "sketch",
+            "thirdPerson": "sketches",
+            "past": "sketched",
+            "-ing": "sketching"
+          }
+        }
+      }
+    },
+    {
+      "word": "drink",
+      "pos": "verb",
+      "replacements": [
+        "sip"
+      ],
+      "inflections": {
+        "source": {
+          "base": "drink",
+          "thirdPerson": "drinks",
+          "past": "drank",
+          "-ing": "drinking"
+        },
+        "replacements": {
+          "sip": {
+            "base": "sip",
+            "thirdPerson": "sips",
+            "past": "sipped",
+            "-ing": "sipping"
+          }
+        }
+      }
+    },
+    {
+      "word": "drive",
+      "pos": "verb",
+      "replacements": [
+        "steer"
+      ],
+      "inflections": {
+        "source": {
+          "base": "drive",
+          "thirdPerson": "drives",
+          "past": "drove",
+          "-ing": "driving"
+        },
+        "replacements": {
+          "steer": {
+            "base": "steer",
+            "thirdPerson": "steers",
+            "past": "steered",
+            "-ing": "steering"
+          }
+        }
+      }
+    },
+    {
+      "word": "answer",
+      "pos": "noun",
+      "replacements": [
+        "reply"
+      ],
+      "inflections": {
+        "source": {
+          "base": "answer",
+          "plural": "answers"
+        },
+        "replacements": {
+          "reply": {
+            "base": "reply",
+            "plural": "replies"
+          }
+        }
+      }
+    },
+    {
+      "word": "area",
+      "pos": "noun",
+      "replacements": [
+        "region"
+      ],
+      "inflections": {
+        "source": {
+          "base": "area",
+          "plural": "areas"
+        },
+        "replacements": {
+          "region": {
+            "base": "region",
+            "plural": "regions"
+          }
+        }
+      }
+    },
+    {
+      "word": "author",
+      "pos": "noun",
+      "replacements": [
+        "writer"
+      ],
+      "inflections": {
+        "source": {
+          "base": "author",
+          "plural": "authors"
+        },
+        "replacements": {
+          "writer": {
+            "base": "writer",
+            "plural": "writers"
+          }
+        }
+      }
+    },
+    {
+      "word": "beginning",
+      "pos": "noun",
+      "replacements": [
+        "start"
+      ],
+      "inflections": {
+        "source": {
+          "base": "beginning",
+          "plural": "beginnings"
+        },
+        "replacements": {
+          "start": {
+            "base": "start",
+            "plural": "starts"
+          }
+        }
+      }
+    },
+    {
+      "word": "belief",
+      "pos": "noun",
+      "replacements": [
+        "opinion"
+      ],
+      "inflections": {
+        "source": {
+          "base": "belief",
+          "plural": "believes"
+        },
+        "replacements": {
+          "opinion": {
+            "base": "opinion",
+            "plural": "opinions"
+          }
+        }
+      }
+    },
+    {
+      "word": "chance",
+      "pos": "noun",
+      "replacements": [
+        "possibility"
+      ],
+      "inflections": {
+        "source": {
+          "base": "chance",
+          "plural": "chances"
+        },
+        "replacements": {
+          "possibility": {
+            "base": "possibility",
+            "plural": "possibilities"
+          }
+        }
+      }
+    },
+    {
+      "word": "child",
+      "pos": "noun",
+      "replacements": [
+        "kid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "child",
+          "plural": "children"
+        },
+        "replacements": {
+          "kid": {
+            "base": "kid",
+            "plural": "kids"
+          }
+        }
+      }
+    },
+    {
+      "word": "choice",
+      "pos": "noun",
+      "replacements": [
+        "option"
+      ],
+      "inflections": {
+        "source": {
+          "base": "choice",
+          "plural": "choices"
+        },
+        "replacements": {
+          "option": {
+            "base": "option",
+            "plural": "options"
+          }
+        }
+      }
+    },
+    {
+      "word": "city",
+      "pos": "noun",
+      "replacements": [
+        "town"
+      ],
+      "inflections": {
+        "source": {
+          "base": "city",
+          "plural": "cities"
+        },
+        "replacements": {
+          "town": {
+            "base": "town",
+            "plural": "towns"
+          }
+        }
+      }
+    },
+    {
+      "word": "clothing",
+      "pos": "noun",
+      "replacements": [
+        "apparel"
+      ],
+      "inflections": {
+        "source": {
+          "base": "clothing",
+          "plural": "clothings"
+        },
+        "replacements": {
+          "apparel": {
+            "base": "apparel",
+            "plural": "apparels"
+          }
+        }
+      }
+    },
+    {
+      "word": "danger",
+      "pos": "noun",
+      "replacements": [
+        "hazard"
+      ],
+      "inflections": {
+        "source": {
+          "base": "danger",
+          "plural": "dangers"
+        },
+        "replacements": {
+          "hazard": {
+            "base": "hazard",
+            "plural": "hazards"
+          }
+        }
+      }
+    },
+    {
+      "word": "difference",
+      "pos": "noun",
+      "replacements": [
+        "contrast"
+      ],
+      "inflections": {
+        "source": {
+          "base": "difference",
+          "plural": "differences"
+        },
+        "replacements": {
+          "contrast": {
+            "base": "contrast",
+            "plural": "contrasts"
+          }
+        }
+      }
+    },
+    {
+      "word": "difficulty",
+      "pos": "noun",
+      "replacements": [
+        "problem"
+      ],
+      "inflections": {
+        "source": {
+          "base": "difficulty",
+          "plural": "difficulties"
+        },
+        "replacements": {
+          "problem": {
+            "base": "problem",
+            "plural": "problems"
+          }
+        }
+      }
+    },
+    {
+      "word": "doctor",
+      "pos": "noun",
+      "replacements": [
+        "physician"
+      ],
+      "inflections": {
+        "source": {
+          "base": "doctor",
+          "plural": "doctors"
+        },
+        "replacements": {
+          "physician": {
+            "base": "physician",
+            "plural": "physicians"
+          }
+        }
+      }
+    },
+    {
+      "word": "enemy",
+      "pos": "noun",
+      "replacements": [
+        "opponent"
+      ],
+      "inflections": {
+        "source": {
+          "base": "enemy",
+          "plural": "enemies"
+        },
+        "replacements": {
+          "opponent": {
+            "base": "opponent",
+            "plural": "opponents"
+          }
+        }
+      }
+    },
+    {
+      "word": "error",
+      "pos": "noun",
+      "replacements": [
+        "mistake"
+      ],
+      "inflections": {
+        "source": {
+          "base": "error",
+          "plural": "errors"
+        },
+        "replacements": {
+          "mistake": {
+            "base": "mistake",
+            "plural": "mistakes"
+          }
+        }
+      }
+    },
+    {
+      "word": "fact",
+      "pos": "noun",
+      "replacements": [
+        "truth"
+      ],
+      "inflections": {
+        "source": {
+          "base": "fact",
+          "plural": "facts"
+        },
+        "replacements": {
+          "truth": {
+            "base": "truth",
+            "plural": "truths"
+          }
+        }
+      }
+    },
+    {
+      "word": "friend",
+      "pos": "noun",
+      "replacements": [
+        "companion"
+      ],
+      "inflections": {
+        "source": {
+          "base": "friend",
+          "plural": "friends"
+        },
+        "replacements": {
+          "companion": {
+            "base": "companion",
+            "plural": "companions"
+          }
+        }
+      }
+    },
+    {
+      "word": "goal",
+      "pos": "noun",
+      "replacements": [
+        "aim"
+      ],
+      "inflections": {
+        "source": {
+          "base": "goal",
+          "plural": "goals"
+        },
+        "replacements": {
+          "aim": {
+            "base": "aim",
+            "plural": "aims"
+          }
+        }
+      }
+    },
+    {
+      "word": "group",
+      "pos": "noun",
+      "replacements": [
+        "team"
+      ],
+      "inflections": {
+        "source": {
+          "base": "group",
+          "plural": "groups"
+        },
+        "replacements": {
+          "team": {
+            "base": "team",
+            "plural": "teams"
+          }
+        }
+      }
+    },
+    {
+      "word": "idea",
+      "pos": "noun",
+      "replacements": [
+        "notion"
+      ],
+      "inflections": {
+        "source": {
+          "base": "idea",
+          "plural": "ideas"
+        },
+        "replacements": {
+          "notion": {
+            "base": "notion",
+            "plural": "notions"
+          }
+        }
+      }
+    },
+    {
+      "word": "job",
+      "pos": "noun",
+      "replacements": [
+        "occupation"
+      ],
+      "inflections": {
+        "source": {
+          "base": "job",
+          "plural": "jobs"
+        },
+        "replacements": {
+          "occupation": {
+            "base": "occupation",
+            "plural": "occupations"
+          }
+        }
+      }
+    },
+    {
+      "word": "journey",
+      "pos": "noun",
+      "replacements": [
+        "trip"
+      ],
+      "inflections": {
+        "source": {
+          "base": "journey",
+          "plural": "journeys"
+        },
+        "replacements": {
+          "trip": {
+            "base": "trip",
+            "plural": "trips"
+          }
+        }
+      }
+    },
+    {
+      "word": "language",
+      "pos": "noun",
+      "replacements": [
+        "speech"
+      ],
+      "inflections": {
+        "source": {
+          "base": "language",
+          "plural": "languages"
+        },
+        "replacements": {
+          "speech": {
+            "base": "speech",
+            "plural": "speeches"
+          }
+        }
+      }
+    },
+    {
+      "word": "law",
+      "pos": "noun",
+      "replacements": [
+        "statute"
+      ],
+      "inflections": {
+        "source": {
+          "base": "law",
+          "plural": "laws"
+        },
+        "replacements": {
+          "statute": {
+            "base": "statute",
+            "plural": "statutes"
+          }
+        }
+      }
+    },
+    {
+      "word": "location",
+      "pos": "noun",
+      "replacements": [
+        "site"
+      ],
+      "inflections": {
+        "source": {
+          "base": "location",
+          "plural": "locations"
+        },
+        "replacements": {
+          "site": {
+            "base": "site",
+            "plural": "sites"
+          }
+        }
+      }
+    },
+    {
+      "word": "machine",
+      "pos": "noun",
+      "replacements": [
+        "device"
+      ],
+      "inflections": {
+        "source": {
+          "base": "machine",
+          "plural": "machines"
+        },
+        "replacements": {
+          "device": {
+            "base": "device",
+            "plural": "devices"
+          }
+        }
+      }
+    },
+    {
+      "word": "method",
+      "pos": "noun",
+      "replacements": [
+        "technique"
+      ],
+      "inflections": {
+        "source": {
+          "base": "method",
+          "plural": "methods"
+        },
+        "replacements": {
+          "technique": {
+            "base": "technique",
+            "plural": "techniques"
+          }
+        }
+      }
+    },
+    {
+      "word": "money",
+      "pos": "noun",
+      "replacements": [
+        "cash"
+      ],
+      "inflections": {
+        "source": {
+          "base": "money",
+          "plural": "moneys"
+        },
+        "replacements": {
+          "cash": {
+            "base": "cash",
+            "plural": "cashes"
+          }
+        }
+      }
+    },
+    {
+      "word": "neighbor",
+      "pos": "noun",
+      "replacements": [
+        "resident"
+      ],
+      "inflections": {
+        "source": {
+          "base": "neighbor",
+          "plural": "neighbors"
+        },
+        "replacements": {
+          "resident": {
+            "base": "resident",
+            "plural": "residents"
+          }
+        }
+      }
+    },
+    {
+      "word": "noise",
+      "pos": "noun",
+      "replacements": [
+        "sound"
+      ],
+      "inflections": {
+        "source": {
+          "base": "noise",
+          "plural": "noises"
+        },
+        "replacements": {
+          "sound": {
+            "base": "sound",
+            "plural": "sounds"
+          }
+        }
+      }
+    },
+    {
+      "word": "opinion",
+      "pos": "noun",
+      "replacements": [
+        "viewpoint"
+      ],
+      "inflections": {
+        "source": {
+          "base": "opinion",
+          "plural": "opinions"
+        },
+        "replacements": {
+          "viewpoint": {
+            "base": "viewpoint",
+            "plural": "viewpoints"
+          }
+        }
+      }
+    },
+    {
+      "word": "opportunity",
+      "pos": "noun",
+      "replacements": [
+        "opening"
+      ],
+      "inflections": {
+        "source": {
+          "base": "opportunity",
+          "plural": "opportunities"
+        },
+        "replacements": {
+          "opening": {
+            "base": "opening",
+            "plural": "openings"
+          }
+        }
+      }
+    },
+    {
+      "word": "option",
+      "pos": "noun",
+      "replacements": [
+        "alternative"
+      ],
+      "inflections": {
+        "source": {
+          "base": "option",
+          "plural": "options"
+        },
+        "replacements": {
+          "alternative": {
+            "base": "alternative",
+            "plural": "alternatives"
+          }
+        }
+      }
+    },
+    {
+      "word": "part",
+      "pos": "noun",
+      "replacements": [
+        "section"
+      ],
+      "inflections": {
+        "source": {
+          "base": "part",
+          "plural": "parts"
+        },
+        "replacements": {
+          "section": {
+            "base": "section",
+            "plural": "sections"
+          }
+        }
+      }
+    },
+    {
+      "word": "path",
+      "pos": "noun",
+      "replacements": [
+        "route"
+      ],
+      "inflections": {
+        "source": {
+          "base": "path",
+          "plural": "paths"
+        },
+        "replacements": {
+          "route": {
+            "base": "route",
+            "plural": "routes"
+          }
+        }
+      }
+    },
+    {
+      "word": "person",
+      "pos": "noun",
+      "replacements": [
+        "individual"
+      ],
+      "inflections": {
+        "source": {
+          "base": "person",
+          "plural": "people"
+        },
+        "replacements": {
+          "individual": {
+            "base": "individual",
+            "plural": "individuals"
+          }
+        }
+      }
+    },
+    {
+      "word": "place",
+      "pos": "noun",
+      "replacements": [
+        "spot"
+      ],
+      "inflections": {
+        "source": {
+          "base": "place",
+          "plural": "places"
+        },
+        "replacements": {
+          "spot": {
+            "base": "spot",
+            "plural": "spots"
+          }
+        }
+      }
+    },
+    {
+      "word": "price",
+      "pos": "noun",
+      "replacements": [
+        "cost"
+      ],
+      "inflections": {
+        "source": {
+          "base": "price",
+          "plural": "prices"
+        },
+        "replacements": {
+          "cost": {
+            "base": "cost",
+            "plural": "costs"
+          }
+        }
+      }
+    },
+    {
+      "word": "reason",
+      "pos": "noun",
+      "replacements": [
+        "cause"
+      ],
+      "inflections": {
+        "source": {
+          "base": "reason",
+          "plural": "reasons"
+        },
+        "replacements": {
+          "cause": {
+            "base": "cause",
+            "plural": "causes"
+          }
+        }
+      }
+    },
+    {
+      "word": "result",
+      "pos": "noun",
+      "replacements": [
+        "outcome"
+      ],
+      "inflections": {
+        "source": {
+          "base": "result",
+          "plural": "results"
+        },
+        "replacements": {
+          "outcome": {
+            "base": "outcome",
+            "plural": "outcomes"
+          }
+        }
+      }
+    },
+    {
+      "word": "road",
+      "pos": "noun",
+      "replacements": [
+        "street"
+      ],
+      "inflections": {
+        "source": {
+          "base": "road",
+          "plural": "roads"
+        },
+        "replacements": {
+          "street": {
+            "base": "street",
+            "plural": "streets"
+          }
+        }
+      }
+    },
+    {
+      "word": "room",
+      "pos": "noun",
+      "replacements": [
+        "chamber"
+      ],
+      "inflections": {
+        "source": {
+          "base": "room",
+          "plural": "rooms"
+        },
+        "replacements": {
+          "chamber": {
+            "base": "chamber",
+            "plural": "chambers"
+          }
+        }
+      }
+    },
+    {
+      "word": "rule",
+      "pos": "noun",
+      "replacements": [
+        "regulation"
+      ],
+      "inflections": {
+        "source": {
+          "base": "rule",
+          "plural": "rules"
+        },
+        "replacements": {
+          "regulation": {
+            "base": "regulation",
+            "plural": "regulations"
+          }
+        }
+      }
+    },
+    {
+      "word": "safety",
+      "pos": "noun",
+      "replacements": [
+        "security"
+      ],
+      "inflections": {
+        "source": {
+          "base": "safety",
+          "plural": "safeties"
+        },
+        "replacements": {
+          "security": {
+            "base": "security",
+            "plural": "securities"
+          }
+        }
+      }
+    },
+    {
+      "word": "story",
+      "pos": "noun",
+      "replacements": [
+        "tale"
+      ],
+      "inflections": {
+        "source": {
+          "base": "story",
+          "plural": "stories"
+        },
+        "replacements": {
+          "tale": {
+            "base": "tale",
+            "plural": "tales"
+          }
+        }
+      }
+    },
+    {
+      "word": "task",
+      "pos": "noun",
+      "replacements": [
+        "assignment"
+      ],
+      "inflections": {
+        "source": {
+          "base": "task",
+          "plural": "tasks"
+        },
+        "replacements": {
+          "assignment": {
+            "base": "assignment",
+            "plural": "assignments"
+          }
+        }
+      }
+    },
+    {
+      "word": "thing",
+      "pos": "noun",
+      "replacements": [
+        "object"
+      ],
+      "inflections": {
+        "source": {
+          "base": "thing",
+          "plural": "things"
+        },
+        "replacements": {
+          "object": {
+            "base": "object",
+            "plural": "objects"
+          }
+        }
+      }
+    },
+    {
+      "word": "thought",
+      "pos": "noun",
+      "replacements": [
+        "idea"
+      ],
+      "inflections": {
+        "source": {
+          "base": "thought",
+          "plural": "thoughts"
+        },
+        "replacements": {
+          "idea": {
+            "base": "idea",
+            "plural": "ideas"
+          }
+        }
+      }
+    },
+    {
+      "word": "time",
+      "pos": "noun",
+      "replacements": [
+        "period"
+      ],
+      "inflections": {
+        "source": {
+          "base": "time",
+          "plural": "times"
+        },
+        "replacements": {
+          "period": {
+            "base": "period",
+            "plural": "periods"
+          }
+        }
+      }
+    },
+    {
+      "word": "topic",
+      "pos": "noun",
+      "replacements": [
+        "subject"
+      ],
+      "inflections": {
+        "source": {
+          "base": "topic",
+          "plural": "topics"
+        },
+        "replacements": {
+          "subject": {
+            "base": "subject",
+            "plural": "subjects"
+          }
+        }
+      }
+    },
+    {
+      "word": "voice",
+      "pos": "noun",
+      "replacements": [
+        "tone"
+      ],
+      "inflections": {
+        "source": {
+          "base": "voice",
+          "plural": "voices"
+        },
+        "replacements": {
+          "tone": {
+            "base": "tone",
+            "plural": "tones"
+          }
+        }
+      }
+    },
+    {
+      "word": "writer",
+      "pos": "noun",
+      "replacements": [
+        "author"
+      ],
+      "inflections": {
+        "source": {
+          "base": "writer",
+          "plural": "writers"
+        },
+        "replacements": {
+          "author": {
+            "base": "author",
+            "plural": "authors"
+          }
+        }
+      }
+    },
+    {
+      "word": "album",
+      "pos": "noun",
+      "replacements": [
+        "record"
+      ],
+      "inflections": {
+        "source": {
+          "base": "album",
+          "plural": "albums"
+        },
+        "replacements": {
+          "record": {
+            "base": "record",
+            "plural": "records"
+          }
+        }
+      }
+    },
+    {
+      "word": "amount",
+      "pos": "noun",
+      "replacements": [
+        "quantity"
+      ],
+      "inflections": {
+        "source": {
+          "base": "amount",
+          "plural": "amounts"
+        },
+        "replacements": {
+          "quantity": {
+            "base": "quantity",
+            "plural": "quantities"
+          }
+        }
+      }
+    },
+    {
+      "word": "animal",
+      "pos": "noun",
+      "replacements": [
+        "creature"
+      ],
+      "inflections": {
+        "source": {
+          "base": "animal",
+          "plural": "animals"
+        },
+        "replacements": {
+          "creature": {
+            "base": "creature",
+            "plural": "creatures"
+          }
+        }
+      }
+    },
+    {
+      "word": "baby",
+      "pos": "noun",
+      "replacements": [
+        "infant"
+      ],
+      "inflections": {
+        "source": {
+          "base": "baby",
+          "plural": "babies"
+        },
+        "replacements": {
+          "infant": {
+            "base": "infant",
+            "plural": "infants"
+          }
+        }
+      }
+    },
+    {
+      "word": "bag",
+      "pos": "noun",
+      "replacements": [
+        "sack"
+      ],
+      "inflections": {
+        "source": {
+          "base": "bag",
+          "plural": "bags"
+        },
+        "replacements": {
+          "sack": {
+            "base": "sack",
+            "plural": "sacks"
+          }
+        }
+      }
+    },
+    {
+      "word": "bill",
+      "pos": "noun",
+      "replacements": [
+        "invoice"
+      ],
+      "inflections": {
+        "source": {
+          "base": "bill",
+          "plural": "bills"
+        },
+        "replacements": {
+          "invoice": {
+            "base": "invoice",
+            "plural": "invoices"
+          }
+        }
+      }
+    },
+    {
+      "word": "book",
+      "pos": "noun",
+      "replacements": [
+        "volume"
+      ],
+      "inflections": {
+        "source": {
+          "base": "book",
+          "plural": "books"
+        },
+        "replacements": {
+          "volume": {
+            "base": "volume",
+            "plural": "volumes"
+          }
+        }
+      }
+    },
+    {
+      "word": "branch",
+      "pos": "noun",
+      "replacements": [
+        "limb"
+      ],
+      "inflections": {
+        "source": {
+          "base": "branch",
+          "plural": "branches"
+        },
+        "replacements": {
+          "limb": {
+            "base": "limb",
+            "plural": "limbs"
+          }
+        }
+      }
+    },
+    {
+      "word": "building",
+      "pos": "noun",
+      "replacements": [
+        "structure"
+      ],
+      "inflections": {
+        "source": {
+          "base": "building",
+          "plural": "buildings"
+        },
+        "replacements": {
+          "structure": {
+            "base": "structure",
+            "plural": "structures"
+          }
+        }
+      }
+    },
+    {
+      "word": "business",
+      "pos": "noun",
+      "replacements": [
+        "company"
+      ],
+      "inflections": {
+        "source": {
+          "base": "business",
+          "plural": "businesses"
+        },
+        "replacements": {
+          "company": {
+            "base": "company",
+            "plural": "companies"
+          }
+        }
+      }
+    },
+    {
+      "word": "car",
+      "pos": "noun",
+      "replacements": [
+        "automobile"
+      ],
+      "inflections": {
+        "source": {
+          "base": "car",
+          "plural": "cars"
+        },
+        "replacements": {
+          "automobile": {
+            "base": "automobile",
+            "plural": "automobiles"
+          }
+        }
+      }
+    },
+    {
+      "word": "center",
+      "pos": "noun",
+      "replacements": [
+        "hub"
+      ],
+      "inflections": {
+        "source": {
+          "base": "center",
+          "plural": "centers"
+        },
+        "replacements": {
+          "hub": {
+            "base": "hub",
+            "plural": "hubs"
+          }
+        }
+      }
+    },
+    {
+      "word": "class",
+      "pos": "noun",
+      "replacements": [
+        "course"
+      ],
+      "inflections": {
+        "source": {
+          "base": "class",
+          "plural": "classes"
+        },
+        "replacements": {
+          "course": {
+            "base": "course",
+            "plural": "courses"
+          }
+        }
+      }
+    },
+    {
+      "word": "clue",
+      "pos": "noun",
+      "replacements": [
+        "hint"
+      ],
+      "inflections": {
+        "source": {
+          "base": "clue",
+          "plural": "clues"
+        },
+        "replacements": {
+          "hint": {
+            "base": "hint",
+            "plural": "hints"
+          }
+        }
+      }
+    },
+    {
+      "word": "corner",
+      "pos": "noun",
+      "replacements": [
+        "angle"
+      ],
+      "inflections": {
+        "source": {
+          "base": "corner",
+          "plural": "corners"
+        },
+        "replacements": {
+          "angle": {
+            "base": "angle",
+            "plural": "angles"
+          }
+        }
+      }
+    },
+    {
+      "word": "country",
+      "pos": "noun",
+      "replacements": [
+        "nation"
+      ],
+      "inflections": {
+        "source": {
+          "base": "country",
+          "plural": "countries"
+        },
+        "replacements": {
+          "nation": {
+            "base": "nation",
+            "plural": "nations"
+          }
+        }
+      }
+    },
+    {
+      "word": "damage",
+      "pos": "noun",
+      "replacements": [
+        "harm"
+      ],
+      "inflections": {
+        "source": {
+          "base": "damage",
+          "plural": "damages"
+        },
+        "replacements": {
+          "harm": {
+            "base": "harm",
+            "plural": "harms"
+          }
+        }
+      }
+    },
+    {
+      "word": "dream",
+      "pos": "noun",
+      "replacements": [
+        "aspiration"
+      ],
+      "inflections": {
+        "source": {
+          "base": "dream",
+          "plural": "dreams"
+        },
+        "replacements": {
+          "aspiration": {
+            "base": "aspiration",
+            "plural": "aspirations"
+          }
+        }
+      }
+    },
+    {
+      "word": "end",
+      "pos": "noun",
+      "replacements": [
+        "finish"
+      ],
+      "inflections": {
+        "source": {
+          "base": "end",
+          "plural": "ends"
+        },
+        "replacements": {
+          "finish": {
+            "base": "finish",
+            "plural": "finishes"
+          }
+        }
+      }
+    },
+    {
+      "word": "afraid",
+      "pos": "adjective",
+      "replacements": [
+        "scared"
+      ],
+      "inflections": {
+        "source": {
+          "base": "afraid"
+        },
+        "replacements": {
+          "scared": {
+            "base": "scared"
+          }
+        }
+      }
+    },
+    {
+      "word": "angry",
+      "pos": "adjective",
+      "replacements": [
+        "upset"
+      ],
+      "inflections": {
+        "source": {
+          "base": "angry"
+        },
+        "replacements": {
+          "upset": {
+            "base": "upset"
+          }
+        }
+      }
+    },
+    {
+      "word": "available",
+      "pos": "adjective",
+      "replacements": [
+        "ready"
+      ],
+      "inflections": {
+        "source": {
+          "base": "available"
+        },
+        "replacements": {
+          "ready": {
+            "base": "ready"
+          }
+        }
+      }
+    },
+    {
+      "word": "bad",
+      "pos": "adjective",
+      "replacements": [
+        "poor"
+      ],
+      "inflections": {
+        "source": {
+          "base": "bad"
+        },
+        "replacements": {
+          "poor": {
+            "base": "poor"
+          }
+        }
+      }
+    },
+    {
+      "word": "beautiful",
+      "pos": "adjective",
+      "replacements": [
+        "lovely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "beautiful"
+        },
+        "replacements": {
+          "lovely": {
+            "base": "lovely"
+          }
+        }
+      }
+    },
+    {
+      "word": "big",
+      "pos": "adjective",
+      "replacements": [
+        "large"
+      ],
+      "inflections": {
+        "source": {
+          "base": "big"
+        },
+        "replacements": {
+          "large": {
+            "base": "large"
+          }
+        }
+      }
+    },
+    {
+      "word": "brave",
+      "pos": "adjective",
+      "replacements": [
+        "bold"
+      ],
+      "inflections": {
+        "source": {
+          "base": "brave"
+        },
+        "replacements": {
+          "bold": {
+            "base": "bold"
+          }
+        }
+      }
+    },
+    {
+      "word": "brief",
+      "pos": "adjective",
+      "replacements": [
+        "short"
+      ],
+      "inflections": {
+        "source": {
+          "base": "brief"
+        },
+        "replacements": {
+          "short": {
+            "base": "short"
+          }
+        }
+      }
+    },
+    {
+      "word": "calm",
+      "pos": "adjective",
+      "replacements": [
+        "quiet"
+      ],
+      "inflections": {
+        "source": {
+          "base": "calm"
+        },
+        "replacements": {
+          "quiet": {
+            "base": "quiet"
+          }
+        }
+      }
+    },
+    {
+      "word": "careful",
+      "pos": "adjective",
+      "replacements": [
+        "cautious"
+      ],
+      "inflections": {
+        "source": {
+          "base": "careful"
+        },
+        "replacements": {
+          "cautious": {
+            "base": "cautious"
+          }
+        }
+      }
+    },
+    {
+      "word": "cheap",
+      "pos": "adjective",
+      "replacements": [
+        "inexpensive"
+      ],
+      "inflections": {
+        "source": {
+          "base": "cheap"
+        },
+        "replacements": {
+          "inexpensive": {
+            "base": "inexpensive"
+          }
+        }
+      }
+    },
+    {
+      "word": "clean",
+      "pos": "adjective",
+      "replacements": [
+        "tidy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "clean"
+        },
+        "replacements": {
+          "tidy": {
+            "base": "tidy"
+          }
+        }
+      }
+    },
+    {
+      "word": "clear",
+      "pos": "adjective",
+      "replacements": [
+        "plain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "clear"
+        },
+        "replacements": {
+          "plain": {
+            "base": "plain"
+          }
+        }
+      }
+    },
+    {
+      "word": "common",
+      "pos": "adjective",
+      "replacements": [
+        "usual"
+      ],
+      "inflections": {
+        "source": {
+          "base": "common"
+        },
+        "replacements": {
+          "usual": {
+            "base": "usual"
+          }
+        }
+      }
+    },
+    {
+      "word": "correct",
+      "pos": "adjective",
+      "replacements": [
+        "accurate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "correct"
+        },
+        "replacements": {
+          "accurate": {
+            "base": "accurate"
+          }
+        }
+      }
+    },
+    {
+      "word": "dark",
+      "pos": "adjective",
+      "replacements": [
+        "dim"
+      ],
+      "inflections": {
+        "source": {
+          "base": "dark"
+        },
+        "replacements": {
+          "dim": {
+            "base": "dim"
+          }
+        }
+      }
+    },
+    {
+      "word": "different",
+      "pos": "adjective",
+      "replacements": [
+        "distinct"
+      ],
+      "inflections": {
+        "source": {
+          "base": "different"
+        },
+        "replacements": {
+          "distinct": {
+            "base": "distinct"
+          }
+        }
+      }
+    },
+    {
+      "word": "difficult",
+      "pos": "adjective",
+      "replacements": [
+        "hard"
+      ],
+      "inflections": {
+        "source": {
+          "base": "difficult"
+        },
+        "replacements": {
+          "hard": {
+            "base": "hard"
+          }
+        }
+      }
+    },
+    {
+      "word": "dirty",
+      "pos": "adjective",
+      "replacements": [
+        "messy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "dirty"
+        },
+        "replacements": {
+          "messy": {
+            "base": "messy"
+          }
+        }
+      }
+    },
+    {
+      "word": "dry",
+      "pos": "adjective",
+      "replacements": [
+        "arid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "dry"
+        },
+        "replacements": {
+          "arid": {
+            "base": "arid"
+          }
+        }
+      }
+    },
+    {
+      "word": "early",
+      "pos": "adjective",
+      "replacements": [
+        "prompt"
+      ],
+      "inflections": {
+        "source": {
+          "base": "early"
+        },
+        "replacements": {
+          "prompt": {
+            "base": "prompt"
+          }
+        }
+      }
+    },
+    {
+      "word": "easy",
+      "pos": "adjective",
+      "replacements": [
+        "simple"
+      ],
+      "inflections": {
+        "source": {
+          "base": "easy"
+        },
+        "replacements": {
+          "simple": {
+            "base": "simple"
+          }
+        }
+      }
+    },
+    {
+      "word": "empty",
+      "pos": "adjective",
+      "replacements": [
+        "vacant"
+      ],
+      "inflections": {
+        "source": {
+          "base": "empty"
+        },
+        "replacements": {
+          "vacant": {
+            "base": "vacant"
+          }
+        }
+      }
+    },
+    {
+      "word": "exact",
+      "pos": "adjective",
+      "replacements": [
+        "precise"
+      ],
+      "inflections": {
+        "source": {
+          "base": "exact"
+        },
+        "replacements": {
+          "precise": {
+            "base": "precise"
+          }
+        }
+      }
+    },
+    {
+      "word": "famous",
+      "pos": "adjective",
+      "replacements": [
+        "noted"
+      ],
+      "inflections": {
+        "source": {
+          "base": "famous"
+        },
+        "replacements": {
+          "noted": {
+            "base": "noted"
+          }
+        }
+      }
+    },
+    {
+      "word": "fast",
+      "pos": "adjective",
+      "replacements": [
+        "quick"
+      ],
+      "inflections": {
+        "source": {
+          "base": "fast"
+        },
+        "replacements": {
+          "quick": {
+            "base": "quick"
+          }
+        }
+      }
+    },
+    {
+      "word": "firm",
+      "pos": "adjective",
+      "replacements": [
+        "solid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "firm"
+        },
+        "replacements": {
+          "solid": {
+            "base": "solid"
+          }
+        }
+      }
+    },
+    {
+      "word": "fresh",
+      "pos": "adjective",
+      "replacements": [
+        "new"
+      ],
+      "inflections": {
+        "source": {
+          "base": "fresh"
+        },
+        "replacements": {
+          "new": {
+            "base": "new"
+          }
+        }
+      }
+    },
+    {
+      "word": "friendly",
+      "pos": "adjective",
+      "replacements": [
+        "kind"
+      ],
+      "inflections": {
+        "source": {
+          "base": "friendly"
+        },
+        "replacements": {
+          "kind": {
+            "base": "kind"
+          }
+        }
+      }
+    },
+    {
+      "word": "full",
+      "pos": "adjective",
+      "replacements": [
+        "complete"
+      ],
+      "inflections": {
+        "source": {
+          "base": "full"
+        },
+        "replacements": {
+          "complete": {
+            "base": "complete"
+          }
+        }
+      }
+    },
+    {
+      "word": "funny",
+      "pos": "adjective",
+      "replacements": [
+        "amusing"
+      ],
+      "inflections": {
+        "source": {
+          "base": "funny"
+        },
+        "replacements": {
+          "amusing": {
+            "base": "amusing"
+          }
+        }
+      }
+    },
+    {
+      "word": "glad",
+      "pos": "adjective",
+      "replacements": [
+        "happy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "glad"
+        },
+        "replacements": {
+          "happy": {
+            "base": "happy"
+          }
+        }
+      }
+    },
+    {
+      "word": "great",
+      "pos": "adjective",
+      "replacements": [
+        "fine"
+      ],
+      "inflections": {
+        "source": {
+          "base": "great"
+        },
+        "replacements": {
+          "fine": {
+            "base": "fine"
+          }
+        }
+      }
+    },
+    {
+      "word": "hard",
+      "pos": "adjective",
+      "replacements": [
+        "tough"
+      ],
+      "inflections": {
+        "source": {
+          "base": "hard"
+        },
+        "replacements": {
+          "tough": {
+            "base": "tough"
+          }
+        }
+      }
+    },
+    {
+      "word": "healthy",
+      "pos": "adjective",
+      "replacements": [
+        "fit"
+      ],
+      "inflections": {
+        "source": {
+          "base": "healthy"
+        },
+        "replacements": {
+          "fit": {
+            "base": "fit"
+          }
+        }
+      }
+    },
+    {
+      "word": "honest",
+      "pos": "adjective",
+      "replacements": [
+        "truthful"
+      ],
+      "inflections": {
+        "source": {
+          "base": "honest"
+        },
+        "replacements": {
+          "truthful": {
+            "base": "truthful"
+          }
+        }
+      }
+    },
+    {
+      "word": "huge",
+      "pos": "adjective",
+      "replacements": [
+        "enormous"
+      ],
+      "inflections": {
+        "source": {
+          "base": "huge"
+        },
+        "replacements": {
+          "enormous": {
+            "base": "enormous"
+          }
+        }
+      }
+    },
+    {
+      "word": "important",
+      "pos": "adjective",
+      "replacements": [
+        "major"
+      ],
+      "inflections": {
+        "source": {
+          "base": "important"
+        },
+        "replacements": {
+          "major": {
+            "base": "major"
+          }
+        }
+      }
+    },
+    {
+      "word": "interesting",
+      "pos": "adjective",
+      "replacements": [
+        "engaging"
+      ],
+      "inflections": {
+        "source": {
+          "base": "interesting"
+        },
+        "replacements": {
+          "engaging": {
+            "base": "engaging"
+          }
+        }
+      }
+    },
+    {
+      "word": "kind",
+      "pos": "adjective",
+      "replacements": [
+        "caring"
+      ],
+      "inflections": {
+        "source": {
+          "base": "kind"
+        },
+        "replacements": {
+          "caring": {
+            "base": "caring"
+          }
+        }
+      }
+    },
+    {
+      "word": "large",
+      "pos": "adjective",
+      "replacements": [
+        "big"
+      ],
+      "inflections": {
+        "source": {
+          "base": "large"
+        },
+        "replacements": {
+          "big": {
+            "base": "big"
+          }
+        }
+      }
+    },
+    {
+      "word": "late",
+      "pos": "adjective",
+      "replacements": [
+        "delayed"
+      ],
+      "inflections": {
+        "source": {
+          "base": "late"
+        },
+        "replacements": {
+          "delayed": {
+            "base": "delayed"
+          }
+        }
+      }
+    },
+    {
+      "word": "lazy",
+      "pos": "adjective",
+      "replacements": [
+        "idle"
+      ],
+      "inflections": {
+        "source": {
+          "base": "lazy"
+        },
+        "replacements": {
+          "idle": {
+            "base": "idle"
+          }
+        }
+      }
+    },
+    {
+      "word": "little",
+      "pos": "adjective",
+      "replacements": [
+        "small"
+      ],
+      "inflections": {
+        "source": {
+          "base": "little"
+        },
+        "replacements": {
+          "small": {
+            "base": "small"
+          }
+        }
+      }
+    },
+    {
+      "word": "lonely",
+      "pos": "adjective",
+      "replacements": [
+        "alone"
+      ],
+      "inflections": {
+        "source": {
+          "base": "lonely"
+        },
+        "replacements": {
+          "alone": {
+            "base": "alone"
+          }
+        }
+      }
+    },
+    {
+      "word": "loud",
+      "pos": "adjective",
+      "replacements": [
+        "noisy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "loud"
+        },
+        "replacements": {
+          "noisy": {
+            "base": "noisy"
+          }
+        }
+      }
+    },
+    {
+      "word": "lucky",
+      "pos": "adjective",
+      "replacements": [
+        "fortunate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "lucky"
+        },
+        "replacements": {
+          "fortunate": {
+            "base": "fortunate"
+          }
+        }
+      }
+    },
+    {
+      "word": "main",
+      "pos": "adjective",
+      "replacements": [
+        "primary"
+      ],
+      "inflections": {
+        "source": {
+          "base": "main"
+        },
+        "replacements": {
+          "primary": {
+            "base": "primary"
+          }
+        }
+      }
+    },
+    {
+      "word": "near",
+      "pos": "adjective",
+      "replacements": [
+        "nearby"
+      ],
+      "inflections": {
+        "source": {
+          "base": "near"
+        },
+        "replacements": {
+          "nearby": {
+            "base": "nearby"
+          }
+        }
+      }
+    },
+    {
+      "word": "necessary",
+      "pos": "adjective",
+      "replacements": [
+        "needed"
+      ],
+      "inflections": {
+        "source": {
+          "base": "necessary"
+        },
+        "replacements": {
+          "needed": {
+            "base": "needed"
+          }
+        }
+      }
+    },
+    {
+      "word": "new",
+      "pos": "adjective",
+      "replacements": [
+        "recent"
+      ],
+      "inflections": {
+        "source": {
+          "base": "new"
+        },
+        "replacements": {
+          "recent": {
+            "base": "recent"
+          }
+        }
+      }
+    },
+    {
+      "word": "nice",
+      "pos": "adjective",
+      "replacements": [
+        "pleasant"
+      ],
+      "inflections": {
+        "source": {
+          "base": "nice"
+        },
+        "replacements": {
+          "pleasant": {
+            "base": "pleasant"
+          }
+        }
+      }
+    },
+    {
+      "word": "old",
+      "pos": "adjective",
+      "replacements": [
+        "aged"
+      ],
+      "inflections": {
+        "source": {
+          "base": "old"
+        },
+        "replacements": {
+          "aged": {
+            "base": "aged"
+          }
+        }
+      }
+    },
+    {
+      "word": "ordinary",
+      "pos": "adjective",
+      "replacements": [
+        "normal"
+      ],
+      "inflections": {
+        "source": {
+          "base": "ordinary"
+        },
+        "replacements": {
+          "normal": {
+            "base": "normal"
+          }
+        }
+      }
+    },
+    {
+      "word": "patient",
+      "pos": "adjective",
+      "replacements": [
+        "calm"
+      ],
+      "inflections": {
+        "source": {
+          "base": "patient"
+        },
+        "replacements": {
+          "calm": {
+            "base": "calm"
+          }
+        }
+      }
+    },
+    {
+      "word": "poor",
+      "pos": "adjective",
+      "replacements": [
+        "needy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "poor"
+        },
+        "replacements": {
+          "needy": {
+            "base": "needy"
+          }
+        }
+      }
+    },
+    {
+      "word": "possible",
+      "pos": "adjective",
+      "replacements": [
+        "feasible"
+      ],
+      "inflections": {
+        "source": {
+          "base": "possible"
+        },
+        "replacements": {
+          "feasible": {
+            "base": "feasible"
+          }
+        }
+      }
+    },
+    {
+      "word": "pretty",
+      "pos": "adjective",
+      "replacements": [
+        "lovely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "pretty"
+        },
+        "replacements": {
+          "lovely": {
+            "base": "lovely"
+          }
+        }
+      }
+    },
+    {
+      "word": "quiet",
+      "pos": "adjective",
+      "replacements": [
+        "silent"
+      ],
+      "inflections": {
+        "source": {
+          "base": "quiet"
+        },
+        "replacements": {
+          "silent": {
+            "base": "silent"
+          }
+        }
+      }
+    },
+    {
+      "word": "rapid",
+      "pos": "adjective",
+      "replacements": [
+        "swift"
+      ],
+      "inflections": {
+        "source": {
+          "base": "rapid"
+        },
+        "replacements": {
+          "swift": {
+            "base": "swift"
+          }
+        }
+      }
+    },
+    {
+      "word": "rare",
+      "pos": "adjective",
+      "replacements": [
+        "unusual"
+      ],
+      "inflections": {
+        "source": {
+          "base": "rare"
+        },
+        "replacements": {
+          "unusual": {
+            "base": "unusual"
+          }
+        }
+      }
+    },
+    {
+      "word": "real",
+      "pos": "adjective",
+      "replacements": [
+        "actual"
+      ],
+      "inflections": {
+        "source": {
+          "base": "real"
+        },
+        "replacements": {
+          "actual": {
+            "base": "actual"
+          }
+        }
+      }
+    },
+    {
+      "word": "rich",
+      "pos": "adjective",
+      "replacements": [
+        "wealthy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "rich"
+        },
+        "replacements": {
+          "wealthy": {
+            "base": "wealthy"
+          }
+        }
+      }
+    },
+    {
+      "word": "safe",
+      "pos": "adjective",
+      "replacements": [
+        "secure"
+      ],
+      "inflections": {
+        "source": {
+          "base": "safe"
+        },
+        "replacements": {
+          "secure": {
+            "base": "secure"
+          }
+        }
+      }
+    },
+    {
+      "word": "same",
+      "pos": "adjective",
+      "replacements": [
+        "equal"
+      ],
+      "inflections": {
+        "source": {
+          "base": "same"
+        },
+        "replacements": {
+          "equal": {
+            "base": "equal"
+          }
+        }
+      }
+    },
+    {
+      "word": "serious",
+      "pos": "adjective",
+      "replacements": [
+        "grave"
+      ],
+      "inflections": {
+        "source": {
+          "base": "serious"
+        },
+        "replacements": {
+          "grave": {
+            "base": "grave"
+          }
+        }
+      }
+    },
+    {
+      "word": "short",
+      "pos": "adjective",
+      "replacements": [
+        "brief"
+      ],
+      "inflections": {
+        "source": {
+          "base": "short"
+        },
+        "replacements": {
+          "brief": {
+            "base": "brief"
+          }
+        }
+      }
+    },
+    {
+      "word": "shy",
+      "pos": "adjective",
+      "replacements": [
+        "timid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "shy"
+        },
+        "replacements": {
+          "timid": {
+            "base": "timid"
+          }
+        }
+      }
+    },
+    {
+      "word": "sick",
+      "pos": "adjective",
+      "replacements": [
+        "ill"
+      ],
+      "inflections": {
+        "source": {
+          "base": "sick"
+        },
+        "replacements": {
+          "ill": {
+            "base": "ill"
+          }
+        }
+      }
+    },
+    {
+      "word": "small",
+      "pos": "adjective",
+      "replacements": [
+        "tiny"
+      ],
+      "inflections": {
+        "source": {
+          "base": "small"
+        },
+        "replacements": {
+          "tiny": {
+            "base": "tiny"
+          }
+        }
+      }
+    },
+    {
+      "word": "smart",
+      "pos": "adjective",
+      "replacements": [
+        "clever"
+      ],
+      "inflections": {
+        "source": {
+          "base": "smart"
+        },
+        "replacements": {
+          "clever": {
+            "base": "clever"
+          }
+        }
+      }
+    },
+    {
+      "word": "soft",
+      "pos": "adjective",
+      "replacements": [
+        "gentle"
+      ],
+      "inflections": {
+        "source": {
+          "base": "soft"
+        },
+        "replacements": {
+          "gentle": {
+            "base": "gentle"
+          }
+        }
+      }
+    },
+    {
+      "word": "strong",
+      "pos": "adjective",
+      "replacements": [
+        "sturdy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "strong"
+        },
+        "replacements": {
+          "sturdy": {
+            "base": "sturdy"
+          }
+        }
+      }
+    },
+    {
+      "word": "sure",
+      "pos": "adjective",
+      "replacements": [
+        "certain"
+      ],
+      "inflections": {
+        "source": {
+          "base": "sure"
+        },
+        "replacements": {
+          "certain": {
+            "base": "certain"
+          }
+        }
+      }
+    },
+    {
+      "word": "sweet",
+      "pos": "adjective",
+      "replacements": [
+        "sugary"
+      ],
+      "inflections": {
+        "source": {
+          "base": "sweet"
+        },
+        "replacements": {
+          "sugary": {
+            "base": "sugary"
+          }
+        }
+      }
+    },
+    {
+      "word": "tall",
+      "pos": "adjective",
+      "replacements": [
+        "high"
+      ],
+      "inflections": {
+        "source": {
+          "base": "tall"
+        },
+        "replacements": {
+          "high": {
+            "base": "high"
+          }
+        }
+      }
+    },
+    {
+      "word": "tired",
+      "pos": "adjective",
+      "replacements": [
+        "weary"
+      ],
+      "inflections": {
+        "source": {
+          "base": "tired"
+        },
+        "replacements": {
+          "weary": {
+            "base": "weary"
+          }
+        }
+      }
+    },
+    {
+      "word": "true",
+      "pos": "adjective",
+      "replacements": [
+        "accurate"
+      ],
+      "inflections": {
+        "source": {
+          "base": "true"
+        },
+        "replacements": {
+          "accurate": {
+            "base": "accurate"
+          }
+        }
+      }
+    },
+    {
+      "word": "ugly",
+      "pos": "adjective",
+      "replacements": [
+        "unattractive"
+      ],
+      "inflections": {
+        "source": {
+          "base": "ugly"
+        },
+        "replacements": {
+          "unattractive": {
+            "base": "unattractive"
+          }
+        }
+      }
+    },
+    {
+      "word": "usual",
+      "pos": "adjective",
+      "replacements": [
+        "typical"
+      ],
+      "inflections": {
+        "source": {
+          "base": "usual"
+        },
+        "replacements": {
+          "typical": {
+            "base": "typical"
+          }
+        }
+      }
+    },
+    {
+      "word": "weak",
+      "pos": "adjective",
+      "replacements": [
+        "frail"
+      ],
+      "inflections": {
+        "source": {
+          "base": "weak"
+        },
+        "replacements": {
+          "frail": {
+            "base": "frail"
+          }
+        }
+      }
+    },
+    {
+      "word": "wide",
+      "pos": "adjective",
+      "replacements": [
+        "broad"
+      ],
+      "inflections": {
+        "source": {
+          "base": "wide"
+        },
+        "replacements": {
+          "broad": {
+            "base": "broad"
+          }
+        }
+      }
+    },
+    {
+      "word": "wrong",
+      "pos": "adjective",
+      "replacements": [
+        "incorrect"
+      ],
+      "inflections": {
+        "source": {
+          "base": "wrong"
+        },
+        "replacements": {
+          "incorrect": {
+            "base": "incorrect"
+          }
+        }
+      }
+    },
+    {
+      "word": "young",
+      "pos": "adjective",
+      "replacements": [
+        "youthful"
+      ],
+      "inflections": {
+        "source": {
+          "base": "young"
+        },
+        "replacements": {
+          "youthful": {
+            "base": "youthful"
+          }
+        }
+      }
+    },
+    {
+      "word": "worthwhile",
+      "pos": "adjective",
+      "replacements": [
+        "useful"
+      ],
+      "inflections": {
+        "source": {
+          "base": "worthwhile"
+        },
+        "replacements": {
+          "useful": {
+            "base": "useful"
+          }
+        }
+      }
+    },
+    {
+      "word": "active",
+      "pos": "adjective",
+      "replacements": [
+        "busy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "active"
+        },
+        "replacements": {
+          "busy": {
+            "base": "busy"
+          }
+        }
+      }
+    },
+    {
+      "word": "alive",
+      "pos": "adjective",
+      "replacements": [
+        "living"
+      ],
+      "inflections": {
+        "source": {
+          "base": "alive"
+        },
+        "replacements": {
+          "living": {
+            "base": "living"
+          }
+        }
+      }
+    },
+    {
+      "word": "asleep",
+      "pos": "adjective",
+      "replacements": [
+        "unconscious"
+      ],
+      "inflections": {
+        "source": {
+          "base": "asleep"
+        },
+        "replacements": {
+          "unconscious": {
+            "base": "unconscious"
+          }
+        }
+      }
+    },
+    {
+      "word": "awake",
+      "pos": "adjective",
+      "replacements": [
+        "alert"
+      ],
+      "inflections": {
+        "source": {
+          "base": "awake"
+        },
+        "replacements": {
+          "alert": {
+            "base": "alert"
+          }
+        }
+      }
+    },
+    {
+      "word": "bitter",
+      "pos": "adjective",
+      "replacements": [
+        "sour"
+      ],
+      "inflections": {
+        "source": {
+          "base": "bitter"
+        },
+        "replacements": {
+          "sour": {
+            "base": "sour"
+          }
+        }
+      }
+    },
+    {
+      "word": "blank",
+      "pos": "adjective",
+      "replacements": [
+        "empty"
+      ],
+      "inflections": {
+        "source": {
+          "base": "blank"
+        },
+        "replacements": {
+          "empty": {
+            "base": "empty"
+          }
+        }
+      }
+    },
+    {
+      "word": "boring",
+      "pos": "adjective",
+      "replacements": [
+        "dull"
+      ],
+      "inflections": {
+        "source": {
+          "base": "boring"
+        },
+        "replacements": {
+          "dull": {
+            "base": "dull"
+          }
+        }
+      }
+    },
+    {
+      "word": "bright",
+      "pos": "adjective",
+      "replacements": [
+        "vivid"
+      ],
+      "inflections": {
+        "source": {
+          "base": "bright"
+        },
+        "replacements": {
+          "vivid": {
+            "base": "vivid"
+          }
+        }
+      }
+    },
+    {
+      "word": "busy",
+      "pos": "adjective",
+      "replacements": [
+        "occupied"
+      ],
+      "inflections": {
+        "source": {
+          "base": "busy"
+        },
+        "replacements": {
+          "occupied": {
+            "base": "occupied"
+          }
+        }
+      }
+    },
+    {
+      "word": "comfortable",
+      "pos": "adjective",
+      "replacements": [
+        "cozy"
+      ],
+      "inflections": {
+        "source": {
+          "base": "comfortable"
+        },
+        "replacements": {
+          "cozy": {
+            "base": "cozy"
+          }
+        }
+      }
+    },
+    {
+      "word": "complex",
+      "pos": "adjective",
+      "replacements": [
+        "complicated"
+      ],
+      "inflections": {
+        "source": {
+          "base": "complex"
+        },
+        "replacements": {
+          "complicated": {
+            "base": "complicated"
+          }
+        }
+      }
+    },
+    {
+      "word": "curious",
+      "pos": "adjective",
+      "replacements": [
+        "inquisitive"
+      ],
+      "inflections": {
+        "source": {
+          "base": "curious"
+        },
+        "replacements": {
+          "inquisitive": {
+            "base": "inquisitive"
+          }
+        }
+      }
+    },
+    {
+      "word": "delighted",
+      "pos": "adjective",
+      "replacements": [
+        "pleased"
+      ],
+      "inflections": {
+        "source": {
+          "base": "delighted"
+        },
+        "replacements": {
+          "pleased": {
+            "base": "pleased"
+          }
+        }
+      }
+    },
+    {
+      "word": "eager",
+      "pos": "adjective",
+      "replacements": [
+        "keen"
+      ],
+      "inflections": {
+        "source": {
+          "base": "eager"
+        },
+        "replacements": {
+          "keen": {
+            "base": "keen"
+          }
+        }
+      }
+    },
+    {
+      "word": "familiar",
+      "pos": "adjective",
+      "replacements": [
+        "known"
+      ],
+      "inflections": {
+        "source": {
+          "base": "familiar"
+        },
+        "replacements": {
+          "known": {
+            "base": "known"
+          }
+        }
+      }
+    },
+    {
+      "word": "actually",
+      "pos": "adverb",
+      "replacements": [
+        "really"
+      ],
+      "inflections": {
+        "source": {
+          "base": "actually"
+        },
+        "replacements": {
+          "really": {
+            "base": "really"
+          }
+        }
+      }
+    },
+    {
+      "word": "almost",
+      "pos": "adverb",
+      "replacements": [
+        "nearly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "almost"
+        },
+        "replacements": {
+          "nearly": {
+            "base": "nearly"
+          }
+        }
+      }
+    },
+    {
+      "word": "badly",
+      "pos": "adverb",
+      "replacements": [
+        "poorly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "badly"
+        },
+        "replacements": {
+          "poorly": {
+            "base": "poorly"
+          }
+        }
+      }
+    },
+    {
+      "word": "carefully",
+      "pos": "adverb",
+      "replacements": [
+        "closely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "carefully"
+        },
+        "replacements": {
+          "closely": {
+            "base": "closely"
+          }
+        }
+      }
+    },
+    {
+      "word": "clearly",
+      "pos": "adverb",
+      "replacements": [
+        "plainly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "clearly"
+        },
+        "replacements": {
+          "plainly": {
+            "base": "plainly"
+          }
+        }
+      }
+    },
+    {
+      "word": "closely",
+      "pos": "adverb",
+      "replacements": [
+        "nearby"
+      ],
+      "inflections": {
+        "source": {
+          "base": "closely"
+        },
+        "replacements": {
+          "nearby": {
+            "base": "nearby"
+          }
+        }
+      }
+    },
+    {
+      "word": "correctly",
+      "pos": "adverb",
+      "replacements": [
+        "properly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "correctly"
+        },
+        "replacements": {
+          "properly": {
+            "base": "properly"
+          }
+        }
+      }
+    },
+    {
+      "word": "easily",
+      "pos": "adverb",
+      "replacements": [
+        "simply"
+      ],
+      "inflections": {
+        "source": {
+          "base": "easily"
+        },
+        "replacements": {
+          "simply": {
+            "base": "simply"
+          }
+        }
+      }
+    },
+    {
+      "word": "especially",
+      "pos": "adverb",
+      "replacements": [
+        "mainly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "especially"
+        },
+        "replacements": {
+          "mainly": {
+            "base": "mainly"
+          }
+        }
+      }
+    },
+    {
+      "word": "exactly",
+      "pos": "adverb",
+      "replacements": [
+        "precisely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "exactly"
+        },
+        "replacements": {
+          "precisely": {
+            "base": "precisely"
+          }
+        }
+      }
+    },
+    {
+      "word": "fairly",
+      "pos": "adverb",
+      "replacements": [
+        "quite"
+      ],
+      "inflections": {
+        "source": {
+          "base": "fairly"
+        },
+        "replacements": {
+          "quite": {
+            "base": "quite"
+          }
+        }
+      }
+    },
+    {
+      "word": "finally",
+      "pos": "adverb",
+      "replacements": [
+        "lastly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "finally"
+        },
+        "replacements": {
+          "lastly": {
+            "base": "lastly"
+          }
+        }
+      }
+    },
+    {
+      "word": "frequently",
+      "pos": "adverb",
+      "replacements": [
+        "often"
+      ],
+      "inflections": {
+        "source": {
+          "base": "frequently"
+        },
+        "replacements": {
+          "often": {
+            "base": "often"
+          }
+        }
+      }
+    },
+    {
+      "word": "gladly",
+      "pos": "adverb",
+      "replacements": [
+        "happily"
+      ],
+      "inflections": {
+        "source": {
+          "base": "gladly"
+        },
+        "replacements": {
+          "happily": {
+            "base": "happily"
+          }
+        }
+      }
+    },
+    {
+      "word": "gradually",
+      "pos": "adverb",
+      "replacements": [
+        "slowly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "gradually"
+        },
+        "replacements": {
+          "slowly": {
+            "base": "slowly"
+          }
+        }
+      }
+    },
+    {
+      "word": "immediately",
+      "pos": "adverb",
+      "replacements": [
+        "instantly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "immediately"
+        },
+        "replacements": {
+          "instantly": {
+            "base": "instantly"
+          }
+        }
+      }
+    },
+    {
+      "word": "mainly",
+      "pos": "adverb",
+      "replacements": [
+        "mostly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "mainly"
+        },
+        "replacements": {
+          "mostly": {
+            "base": "mostly"
+          }
+        }
+      }
+    },
+    {
+      "word": "mostly",
+      "pos": "adverb",
+      "replacements": [
+        "largely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "mostly"
+        },
+        "replacements": {
+          "largely": {
+            "base": "largely"
+          }
+        }
+      }
+    },
+    {
+      "word": "nearly",
+      "pos": "adverb",
+      "replacements": [
+        "almost"
+      ],
+      "inflections": {
+        "source": {
+          "base": "nearly"
+        },
+        "replacements": {
+          "almost": {
+            "base": "almost"
+          }
+        }
+      }
+    },
+    {
+      "word": "often",
+      "pos": "adverb",
+      "replacements": [
+        "frequently"
+      ],
+      "inflections": {
+        "source": {
+          "base": "often"
+        },
+        "replacements": {
+          "frequently": {
+            "base": "frequently"
+          }
+        }
+      }
+    },
+    {
+      "word": "quietly",
+      "pos": "adverb",
+      "replacements": [
+        "softly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "quietly"
+        },
+        "replacements": {
+          "softly": {
+            "base": "softly"
+          }
+        }
+      }
+    },
+    {
+      "word": "rarely",
+      "pos": "adverb",
+      "replacements": [
+        "seldom"
+      ],
+      "inflections": {
+        "source": {
+          "base": "rarely"
+        },
+        "replacements": {
+          "seldom": {
+            "base": "seldom"
+          }
+        }
+      }
+    },
+    {
+      "word": "recently",
+      "pos": "adverb",
+      "replacements": [
+        "lately"
+      ],
+      "inflections": {
+        "source": {
+          "base": "recently"
+        },
+        "replacements": {
+          "lately": {
+            "base": "lately"
+          }
+        }
+      }
+    },
+    {
+      "word": "safely",
+      "pos": "adverb",
+      "replacements": [
+        "securely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "safely"
+        },
+        "replacements": {
+          "securely": {
+            "base": "securely"
+          }
+        }
+      }
+    },
+    {
+      "word": "simply",
+      "pos": "adverb",
+      "replacements": [
+        "plainly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "simply"
+        },
+        "replacements": {
+          "plainly": {
+            "base": "plainly"
+          }
+        }
+      }
+    },
+    {
+      "word": "slowly",
+      "pos": "adverb",
+      "replacements": [
+        "gradually"
+      ],
+      "inflections": {
+        "source": {
+          "base": "slowly"
+        },
+        "replacements": {
+          "gradually": {
+            "base": "gradually"
+          }
+        }
+      }
+    },
+    {
+      "word": "sometimes",
+      "pos": "adverb",
+      "replacements": [
+        "occasionally"
+      ],
+      "inflections": {
+        "source": {
+          "base": "sometimes"
+        },
+        "replacements": {
+          "occasionally": {
+            "base": "occasionally"
+          }
+        }
+      }
+    },
+    {
+      "word": "soon",
+      "pos": "adverb",
+      "replacements": [
+        "shortly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "soon"
+        },
+        "replacements": {
+          "shortly": {
+            "base": "shortly"
+          }
+        }
+      }
+    },
+    {
+      "word": "therefore",
+      "pos": "adverb",
+      "replacements": [
+        "thus"
+      ],
+      "inflections": {
+        "source": {
+          "base": "therefore"
+        },
+        "replacements": {
+          "thus": {
+            "base": "thus"
+          }
+        }
+      }
+    },
+    {
+      "word": "together",
+      "pos": "adverb",
+      "replacements": [
+        "jointly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "together"
+        },
+        "replacements": {
+          "jointly": {
+            "base": "jointly"
+          }
+        }
+      }
+    },
+    {
+      "word": "truly",
+      "pos": "adverb",
+      "replacements": [
+        "really"
+      ],
+      "inflections": {
+        "source": {
+          "base": "truly"
+        },
+        "replacements": {
+          "really": {
+            "base": "really"
+          }
+        }
+      }
+    },
+    {
+      "word": "usually",
+      "pos": "adverb",
+      "replacements": [
+        "normally"
+      ],
+      "inflections": {
+        "source": {
+          "base": "usually"
+        },
+        "replacements": {
+          "normally": {
+            "base": "normally"
+          }
+        }
+      }
+    },
+    {
+      "word": "widely",
+      "pos": "adverb",
+      "replacements": [
+        "broadly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "widely"
+        },
+        "replacements": {
+          "broadly": {
+            "base": "broadly"
+          }
+        }
+      }
+    },
+    {
+      "word": "willingly",
+      "pos": "adverb",
+      "replacements": [
+        "freely"
+      ],
+      "inflections": {
+        "source": {
+          "base": "willingly"
+        },
+        "replacements": {
+          "freely": {
+            "base": "freely"
+          }
+        }
+      }
+    },
+    {
+      "word": "wrongly",
+      "pos": "adverb",
+      "replacements": [
+        "incorrectly"
+      ],
+      "inflections": {
+        "source": {
+          "base": "wrongly"
+        },
+        "replacements": {
+          "incorrectly": {
+            "base": "incorrectly"
+          }
+        }
+      }
+    }
+  ]
 }
