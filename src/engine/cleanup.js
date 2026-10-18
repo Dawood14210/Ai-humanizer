@@ -21,6 +21,12 @@
 //
 // Protected spans are split out first and copied through verbatim.
 //
+// Stage options (ctx.options):
+//   • replaceDashes   (default true)  em dash → ", " when it joins two clauses,
+//                                     " - " otherwise. Set false to keep them.
+//   • formal          (default false) strip emojis outside protected spans.
+//   • removeFormatting (default false) strip Markdown bold/italic markers.
+//
 // Signature: (text, ctx) => { text, changes }
 
 import { findProtectedSpans } from './protected.js'
@@ -40,12 +46,14 @@ const CURLY_QUOTES = {
 }
 
 // Length-CHANGING typographic substitutions, emitted as ordinary edits so they
-// still respect protected spans.
+// still respect protected spans. The em dash is NOT here — it has its own
+// context-sensitive rule below (see getEmDashEdits).
 const TYPOGRAPHY = [
-  { from: '\u2014', to: '--' },  // em dash
   { from: '\u2013', to: '-' },   // en dash
   { from: '\u2026', to: '...' }, // horizontal ellipsis
 ]
+
+const EM_DASH = '\u2014'
 
 // Non-breaking space is 1:1 with a normal space, but it competes with the
 // horizontal-run collapse rule: for "a\u00A0\u00A0b" we want the COLLAPSE to win
@@ -60,6 +68,7 @@ const PRIORITY = {
   markdownBold: 40,
   markdownItalic: 35,
   emoji: 30,
+  emDash: 26,
   typography: 25,
   repeatedPunctuation: 20,
   trimEdges: 15,
@@ -290,7 +299,71 @@ function getEmojiEdits(str) {
   return edits
 }
 
-/** Em dash / en dash / ellipsis → ASCII. */
+/**
+ * Em dash → ", " when it joins two clauses, " - " otherwise.
+ *
+ * "Joining two clauses" means the dash is tightly attached to visible text on
+ * both sides ("word—word"), the classic parenthetical / appositive em dash.
+ * Any other placement — spaced out ("word — word"), at a line break, or at the
+ * very start/end of the text — gets " - ".
+ *
+ * The edit swallows the horizontal whitespace hugging the dash so the
+ * replacement supplies its own spacing; at a line/text boundary the outer space
+ * is dropped so we never leave a stray leading or trailing space.
+ *
+ * Only ranges inside `str` are edited, but classification may look at `full`
+ * (the whole document) via `offset`, so a dash sitting right next to a
+ * protected span is classified correctly.
+ *
+ * @param {string} str   the segment text (edits are relative to this)
+ * @param {{offset?:number, full?:string}} [ctx]
+ */
+function getEmDashEdits(str, ctx = {}) {
+  const full = ctx.full || str
+  const offset = ctx.offset || 0
+  const edits = []
+  let i = 0
+  for (;;) {
+    const at = str.indexOf(EM_DASH, i)
+    if (at === -1) break
+    i = at + 1
+
+    const abs = offset + at
+    const charBefore = abs > 0 ? full[abs - 1] : ''
+    const charAfter = abs + 1 < full.length ? full[abs + 1] : ''
+    const joinsClauses =
+      charBefore !== '' && !/\s/.test(charBefore) &&
+      charAfter !== '' && !/\s/.test(charAfter)
+
+    if (joinsClauses) {
+      edits.push({ start: at, end: at + 1, original: EM_DASH, replacement: ', ', rule: 'emDash' })
+      continue
+    }
+
+    // Not a clause joiner: absorb the horizontal whitespace hugging the dash
+    // (never crossing a newline) and supply our own spacing.
+    let start = at
+    let end = at + 1
+    while (start > 0 && HSPACE.test(str[start - 1])) start--
+    while (end < str.length && HSPACE.test(str[end])) end++
+
+    const absStart = offset + start
+    const absEnd = offset + end
+    const atLineStart = absStart === 0 || full[absStart - 1] === '\n'
+    const atLineEnd = absEnd >= full.length || full[absEnd] === '\n'
+
+    let replacement
+    if (atLineStart && atLineEnd) replacement = '-'
+    else if (atLineStart) replacement = '- '
+    else if (atLineEnd) replacement = ' -'
+    else replacement = ' - '
+
+    edits.push({ start, end, original: str.slice(start, end), replacement, rule: 'emDash' })
+  }
+  return edits
+}
+
+/** En dash / ellipsis / NBSP → ASCII. */
 function getTypographyEdits(str) {
   const edits = []
   for (const { from, to } of TYPOGRAPHY) {
@@ -506,6 +579,10 @@ export function cleanup(text, ctx = {}) {
       ...getChatbotEdits(seg.text),
       ...(opts.removeFormatting ? getMarkdownEdits(seg.text) : []),
       ...(opts.formal ? getEmojiEdits(seg.text) : []),
+      // options.replaceDashes defaults to ON; set it false to keep em dashes.
+      ...(opts.replaceDashes !== false
+        ? getEmDashEdits(seg.text, { offset: seg.offset, full: working })
+        : []),
       ...getTypographyEdits(seg.text),
       ...getPunctuationEdits(seg.text),
       ...getWhitespaceEdits(seg.text, { docStart: isDocStart, docEnd: isDocEnd }),

@@ -28,7 +28,8 @@ describe('cleanup — whitespace and typography', () => {
   it('converts curly quotes to ASCII quotes', () => {
     expect(clean('\u201Chello\u201D')).toBe('"hello"')
     expect(clean('it\u2019s')).toBe("it's")
-    expect(clean('em\u2014dash and en\u2013dash')).toBe('em--dash and en-dash')
+    // em dash is tight here → clause joiner → ", "; en dash → "-"
+    expect(clean('em\u2014dash and en\u2013dash')).toBe('em, dash and en-dash')
     expect(clean('a\u2026b')).toBe('a...b')
   })
 
@@ -38,6 +39,57 @@ describe('cleanup — whitespace and typography', () => {
     expect(clean('Wait......')).toBe('Wait...') // 6 dots → ellipsis
     expect(clean('What?!')).toBe('What!') // mixed → last char (strongest)
     expect(clean('Hello... world!!!')).toBe('Hello... world!')
+  })
+})
+
+describe('cleanup — em dash rule (options.replaceDashes, default ON)', () => {
+  it('replaces a clause-joining em dash with ", "', () => {
+    // Tightly attached to text on both sides → joins two clauses.
+    expect(clean('The rule\u2014such as it is\u2014applies.')).toBe('The rule, such as it is, applies.')
+    expect(clean('He left\u2014and never returned.')).toBe('He left, and never returned.')
+    expect(clean('a\u2014b')).toBe('a, b')
+  })
+
+  it('replaces a non-joining em dash with " - "', () => {
+    // Spaced out on either side → not a clause joiner.
+    expect(clean('a \u2014 b')).toBe('a - b')
+    expect(clean('a\u2014 b')).toBe('a - b')
+    expect(clean('a \u2014b')).toBe('a - b')
+    // Absorbs the hugging whitespace, so runs never double up.
+    expect(clean('a  \u2014  b')).toBe('a - b')
+  })
+
+  it('drops the outer space at a line or text boundary', () => {
+    expect(clean('Hello\u2014')).toBe('Hello -')            // end of text
+    expect(clean('\u2014Hello')).toBe('- Hello')            // start of text
+    expect(clean('Hello\u2014\n\nBye.')).toBe('Hello -\n\nBye.')  // end of line
+    expect(clean('Hi.\n\n\u2014Bye.')).toBe('Hi.\n\n- Bye.')      // start of line
+  })
+
+  it('is skipped when options.replaceDashes is false', () => {
+    expect(clean('a\u2014b', { replaceDashes: false })).toBe('a\u2014b')
+    expect(clean('a \u2014 b', { replaceDashes: false })).toBe('a \u2014 b')
+    // Other typography still applies.
+    expect(clean('en\u2013dash', { replaceDashes: false })).toBe('en-dash')
+    expect(clean('a\u2026b', { replaceDashes: false })).toBe('a...b')
+  })
+
+  it('defaults to ON, and is explicit when set to true', () => {
+    expect(clean('a\u2014b')).toBe('a, b')
+    expect(clean('a\u2014b', { replaceDashes: true })).toBe('a, b')
+  })
+
+  it('never touches an em dash inside a protected span', () => {
+    expect(clean('Use "a\u2014b" now.')).toBe('Use "a\u2014b" now.')
+    expect(clean('Run `a \u2014 b` now.')).toBe('Run `a \u2014 b` now.')
+  })
+
+  it('classifies a dash sitting next to a protected span correctly', () => {
+    // Dash is tight against the closing quote on its left and text on its right
+    // → clause joiner, even though the quote lives in a protected segment.
+    expect(clean('Use "x"\u2014it works.')).toBe('Use "x", it works.')
+    // Spaced out → " - ", and the protected span is untouched.
+    expect(clean('Use "x" \u2014 it works.')).toBe('Use "x" - it works.')
   })
 })
 
@@ -226,8 +278,28 @@ const FIXTURES = [
   ['Stop , go ; now :go.', {}, 'Stop, go; now: go.'],
   ['\u201Chello\u201D', {}, '"hello"'],
   ["it\u2019s", {}, "it's"],
-  ['em\u2014dash and en\u2013dash', {}, 'em--dash and en-dash'],
+  ['em\u2014dash and en\u2013dash', {}, 'em, dash and en-dash'],
   ['a\u2026b', {}, 'a...b'],
+
+  // --- em dash rule (replaceDashes, default ON) ---
+  ['The rule\u2014such as it is\u2014applies.', {}, 'The rule, such as it is, applies.'],
+  ['He left\u2014and never returned.', {}, 'He left, and never returned.'],
+  ['a\u2014b', {}, 'a, b'],
+  ['a \u2014 b', {}, 'a - b'],
+  ['a\u2014 b', {}, 'a - b'],
+  ['a \u2014b', {}, 'a - b'],
+  ['a  \u2014  b', {}, 'a - b'],
+  ['Hello\u2014', {}, 'Hello -'],
+  ['\u2014Hello', {}, '- Hello'],
+  ['Hello\u2014\n\nBye.', {}, 'Hello -\n\nBye.'],
+  ['Hi.\n\n\u2014Bye.', {}, 'Hi.\n\n- Bye.'],
+  ['Use "a\u2014b" now.', {}, 'Use "a\u2014b" now.'],
+  ['Use "x"\u2014it works.', {}, 'Use "x", it works.'],
+  ['Use "x" \u2014 it works.', {}, 'Use "x" - it works.'],
+  ['a\u2014b', { replaceDashes: false }, 'a\u2014b'],
+  ['a \u2014 b', { replaceDashes: false }, 'a \u2014 b'],
+  ['en\u2013dash', { replaceDashes: false }, 'en-dash'],
+  ['a\u2014b', { replaceDashes: true }, 'a, b'],
   ['Wow!!!', {}, 'Wow!'],
   ['Wait...', {}, 'Wait...'],
   ['Wait......', {}, 'Wait...'],
